@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 export default function Footer() {
     return (
@@ -6,7 +8,9 @@ export default function Footer() {
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem' }}>
                     <div>
-                        <h3 style={{ color: 'white', marginBottom: '1rem' }}>OptiPro</h3>
+                        <div style={{ marginBottom: '1rem' }}>
+                            <Image src="/logo.png" alt="OptiPro Logo" width={160} height={50} style={{ objectFit: 'contain', borderRadius: '4px' }} />
+                        </div>
                         <p style={{ color: '#94a3b8' }}>
                             La solution de pilotage et de gestion administrative de référence pour les artisans du BTP dans les Alpes-Maritimes (06).
                         </p>
