@@ -28,7 +28,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 style={{ color: 'white', marginBottom: '1rem' }}>Contact & Zone d'intervention</h4>
+                        <h4 style={{ color: 'white', marginBottom: '1rem' }}>Contact & Zone d&apos;intervention</h4>
                         <ul style={{ listStyle: 'none', color: '#94a3b8' }}>
                             <li style={{ marginBottom: '0.5rem' }}>Pierre Laurent</li>
                             <li style={{ marginBottom: '0.5rem' }}>Missions sur site et à distance :</li>
@@ -40,7 +40,7 @@ export default function Footer() {
                 </div>
 
                 <div style={{ borderTop: '1px solid #475569', marginTop: '3rem', paddingTop: '1.5rem', textAlign: 'center', color: '#94a3b8', fontSize: '0.875rem' }}>
-                    &copy; {new Date().getFullYear()} OptiPro. Tous droits réservés. Service dédié aux plombiers, électriciens, menuisiers et artisans du BTP de la Côte d'Azur.
+                    &copy; {new Date().getFullYear()} OptiPro. Tous droits réservés. Service dédié aux plombiers, électriciens, menuisiers et artisans du BTP de la Côte d&apos;Azur.
                 </div>
             </div>
         </footer>

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Button from '@/components/ui/Button';
+
+export const metadata: Metadata = {
+    title: "Nos Offres & Services",
+    description: "Gestion administrative, préparation comptable, outils et process. Packs Essentiel, Confort et Sérénité pour artisans BTP et TPE.",
+};
 
 export default function ServicesPage() {
     return (

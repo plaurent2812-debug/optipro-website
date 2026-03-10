@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Notre Approche",
+    description: "OptiPro : votre partenaire de terrain qui anticipe vos besoins. Accompagnement humain + outils technologiques pour les artisans du BTP des Alpes-Maritimes.",
+};
 
 export default function AboutPage() {
     return (

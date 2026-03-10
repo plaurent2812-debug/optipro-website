@@ -5,7 +5,7 @@ export default function DashboardPage() {
             <aside style={{ width: '250px', background: 'var(--primary)', color: 'white', padding: '2rem' }}>
                 <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '3rem', color: 'var(--accent)' }}>OptiBoard</div>
                 <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    <div style={{ padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.1)', borderRadius: '0.5rem' }}>Vue d'ensemble</div>
+                    <div style={{ padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.1)', borderRadius: '0.5rem' }}>Vue d&apos;ensemble</div>
                     <div style={{ padding: '0.75rem 1rem', opacity: 0.7 }}>Chantiers en cours</div>
                     <div style={{ padding: '0.75rem 1rem', opacity: 0.7 }}>Trésorerie / Factures</div>
                     <div style={{ padding: '0.75rem 1rem', opacity: 0.7 }}>Relances auto</div>

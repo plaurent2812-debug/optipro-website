@@ -125,3 +125,67 @@ h6 {
   resize: vertical;
   min-height: 120px;
 }
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  /* Header: show hamburger, hide desktop nav */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  /* Typography scaling */
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  /* Sections padding */
+  section {
+    padding: 3rem 0 !important;
+  }
+
+  /* Pricing cards: remove scale transforms */
+  .container > div[style*="scale"] {
+    transform: none !important;
+  }
+
+  /* Footer grid */
+  footer .container > div:first-child {
+    gap: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Form grid collapse */
+  div[style*="gridTemplateColumns: '1fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+  }
+}
