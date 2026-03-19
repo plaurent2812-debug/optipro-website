@@ -34,11 +34,11 @@ export default function Header() {
 
                 {/* Desktop nav */}
                 <nav className="desktop-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <Link href="/services" style={{ fontWeight: '500', color: 'var(--secondary)' }}>Nos Offres</Link>
-                    <Link href="/sectors" style={{ fontWeight: '500', color: 'var(--secondary)' }}>Secteurs</Link>
-                    <Link href="/about" style={{ fontWeight: '500', color: 'var(--secondary)' }}>Notre Approche</Link>
+                    <Link href="/services" style={{ fontWeight: '500', color: 'var(--secondary)' }}>Tarifs</Link>
+                    <Link href="/sectors" style={{ fontWeight: '500', color: 'var(--secondary)' }}>Secteurs BTP</Link>
+                    <Link href="/about" style={{ fontWeight: '500', color: 'var(--secondary)' }}>Notre approche</Link>
                     <Button href="/contact" variant="primary">
-                        Demander une Démo
+                        Essai gratuit 14 jours
                     </Button>
                 </nav>
 
@@ -115,17 +115,17 @@ export default function Header() {
                 }}
             >
                 <Link href="/services" onClick={closeMenu} style={{ padding: '1rem 0', fontWeight: '500', fontSize: '1.125rem', color: 'var(--secondary)', borderBottom: '1px solid var(--border)' }}>
-                    Nos Offres
+                    Tarifs
                 </Link>
                 <Link href="/sectors" onClick={closeMenu} style={{ padding: '1rem 0', fontWeight: '500', fontSize: '1.125rem', color: 'var(--secondary)', borderBottom: '1px solid var(--border)' }}>
-                    Secteurs
+                    Secteurs BTP
                 </Link>
                 <Link href="/about" onClick={closeMenu} style={{ padding: '1rem 0', fontWeight: '500', fontSize: '1.125rem', color: 'var(--secondary)', borderBottom: '1px solid var(--border)' }}>
-                    Notre Approche
+                    Notre approche
                 </Link>
                 <div style={{ marginTop: '1rem' }}>
                     <Button href="/contact" variant="primary" style={{ width: '100%', textAlign: 'center' }}>
-                        Demander une Démo
+                        Essai gratuit 14 jours
                     </Button>
                 </div>
             </div>

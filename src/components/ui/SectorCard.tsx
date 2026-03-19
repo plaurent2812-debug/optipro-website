@@ -8,7 +8,10 @@ interface SectorCardProps {
 export default function SectorCard({ sector }: SectorCardProps) {
     return (
         <section className={styles.section}>
-            <h2 className={styles.title}>{sector.title}</h2>
+            <h2 className={styles.title}>
+                {sector.icon && <span style={{ marginRight: '0.5rem' }}>{sector.icon}</span>}
+                {sector.title}
+            </h2>
             <p className={styles.subtitle}>{sector.subtitle}</p>
             <div className={styles.content}>
                 <h3 className={styles.heading}>Vos défis</h3>

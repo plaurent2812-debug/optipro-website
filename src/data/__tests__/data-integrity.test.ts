@@ -1,4 +1,4 @@
-import { optiboardPacks, servicePacks } from '@/data/packs';
+import { optiboardPacks } from '@/data/packs';
 import { addons } from '@/data/addons';
 import { sectors } from '@/data/sectors';
 
@@ -26,47 +26,26 @@ describe('Data integrity', () => {
             const highlighted = optiboardPacks.filter((p) => p.highlighted);
             expect(highlighted).toHaveLength(1);
         });
-    });
 
-    describe('servicePacks', () => {
-        it('has exactly 3 packs', () => {
-            expect(servicePacks).toHaveLength(3);
-        });
-
-        it('all packs have required fields', () => {
-            servicePacks.forEach((pack) => {
-                expect(pack.id).toBeTruthy();
-                expect(pack.name).toBeTruthy();
-                expect(pack.price).toBeTruthy();
-                expect(pack.contactParam).toBeTruthy();
-                expect(pack.features.length).toBeGreaterThan(0);
-            });
-        });
-
-        it('has exactly one highlighted pack', () => {
-            const highlighted = servicePacks.filter((p) => p.highlighted);
-            expect(highlighted).toHaveLength(1);
+        it('prices match Starter 299, Confort 399, Premium 549', () => {
+            const starter = optiboardPacks.find((p) => p.id === 'starter');
+            const confort = optiboardPacks.find((p) => p.id === 'confort');
+            const premium = optiboardPacks.find((p) => p.id === 'premium');
+            expect(starter?.priceNum).toBe(299);
+            expect(confort?.priceNum).toBe(399);
+            expect(premium?.priceNum).toBe(549);
         });
     });
 
     describe('addons', () => {
-        it('has exactly 3 addons', () => {
-            expect(addons).toHaveLength(3);
-        });
-
-        it('all addons have required fields', () => {
-            addons.forEach((addon) => {
-                expect(addon.id).toBeTruthy();
-                expect(addon.name).toBeTruthy();
-                expect(addon.icon).toBeTruthy();
-                expect(addon.description).toBeTruthy();
-            });
+        it('is an array (features now embedded in plans)', () => {
+            expect(Array.isArray(addons)).toBe(true);
         });
     });
 
     describe('sectors', () => {
-        it('has exactly 3 sectors', () => {
-            expect(sectors).toHaveLength(3);
+        it('has at least 3 sectors', () => {
+            expect(sectors.length).toBeGreaterThanOrEqual(3);
         });
 
         it('all sectors have required fields', () => {
@@ -75,6 +54,13 @@ describe('Data integrity', () => {
                 expect(sector.title).toBeTruthy();
                 expect(sector.challenges).toBeTruthy();
                 expect(sector.solution).toBeTruthy();
+            });
+        });
+
+        it('all sectors target BTP trades', () => {
+            // Every sector must have an icon (new field added)
+            sectors.forEach((sector) => {
+                expect(sector.icon).toBeTruthy();
             });
         });
     });

@@ -9,22 +9,22 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "OptiPro - Le Tableau de Bord des Artisans du BTP",
-    template: "%s | OptiPro",
+    default: "OptiBoard — Administration externalisée pour artisans du bâtiment",
+    template: "%s | OptiBoard",
   },
-  description: "Reprenez le contrôle de vos chantiers et de votre rentabilité. L'OptiBoard automatise votre gestion, facturation et relances. Conçu pour les plombiers, électriciens, menuisiers et artisans.",
+  description: "Vous posez, on gère. OptiBoard prend en charge 100% de votre paperasse : devis en 2 minutes par vocal, facturation automatique, relances impayés, export comptable FEC. Essai gratuit 14 jours.",
   metadataBase: new URL("https://optipro.fr"),
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    siteName: "OptiPro",
-    title: "OptiPro - Le Tableau de Bord des Artisans du BTP",
-    description: "Reprenez le contrôle de vos chantiers et de votre rentabilité. Conçu pour les artisans du BTP.",
+    siteName: "OptiBoard",
+    title: "OptiBoard — Administration externalisée pour artisans du bâtiment",
+    description: "Vous posez, on gère. Devis, factures, relances, trésorerie : 100% délégués. Essai gratuit 14 jours.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OptiPro - Gestion BTP Intelligente",
-    description: "L'OptiBoard automatise votre gestion, facturation et relances.",
+    title: "OptiBoard — Votre secrétaire spécialisée bâtiment",
+    description: "Service d'administration externalisée pour artisans du BTP. Devis par vocal, facturation auto, relances impayés.",
   },
 };
 

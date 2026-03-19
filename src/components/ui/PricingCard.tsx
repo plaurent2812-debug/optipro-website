@@ -19,18 +19,18 @@ export default function PricingCard({ pack }: PricingCardProps) {
                 {pack.name}
             </h3>
             <div className={`${styles.priceAmount} ${isHighlighted ? styles.priceAmountWhite : ''}`}>
-                {pack.price} <span className={`${styles.priceUnit} ${isHighlighted ? styles.priceUnitLight : styles.priceUnitMuted}`}>HT / mois</span>
+                {pack.price} <span className={`${styles.priceUnit} ${isHighlighted ? styles.priceUnitLight : styles.priceUnitMuted}`}>/mois</span>
             </div>
             <div className={`${styles.setupFee} ${isHighlighted ? styles.setupFeeLight : styles.setupFeeMuted}`}>
-                + {pack.setupFee} de frais de setup*
+                {pack.target}
             </div>
             {isHighlighted ? (
                 <Button href="/contact" style={{ width: '100%', backgroundColor: 'var(--accent)', border: 'none', color: 'white' }}>
-                    Contacter les ventes
+                    Essai gratuit 14 jours
                 </Button>
             ) : (
                 <Button href="/contact" variant="outline" style={{ width: '100%' }}>
-                    Contacter les ventes
+                    Essai gratuit 14 jours
                 </Button>
             )}
         </div>

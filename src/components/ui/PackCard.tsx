@@ -6,7 +6,7 @@ interface PackCardProps {
 }
 
 export default function PackCard({ pack }: PackCardProps) {
-    const isLast = pack.id === 'optiintegral';
+    const isLast = pack.id === 'premium';
 
     return (
         <div className={`${styles.card} ${pack.highlighted ? styles.cardHighlighted : ''}`}>

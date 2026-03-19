@@ -12,7 +12,7 @@ export default function Footer() {
                             <Image src="/logo.png" alt="OptiPro Logo" width={160} height={50} style={{ objectFit: 'contain', filter: 'invert(1) grayscale(1) brightness(2)' }} />
                         </div>
                         <p style={{ color: '#94a3b8' }}>
-                            La solution de pilotage et de gestion administrative de référence pour les artisans du BTP dans les Alpes-Maritimes (06).
+                            Administration externalisée pour artisans du bâtiment. Devis, factures, relances, trésorerie — on gère tout.
                         </p>
                     </div>
 
@@ -20,27 +20,27 @@ export default function Footer() {
                         <h4 style={{ color: 'white', marginBottom: '1rem' }}>Liens Rapides</h4>
                         <ul style={{ listStyle: 'none' }}>
                             <li style={{ marginBottom: '0.5rem' }}><Link href="/">Accueil</Link></li>
-                            <li style={{ marginBottom: '0.5rem' }}><Link href="/services">Services & Tarifs</Link></li>
+                            <li style={{ marginBottom: '0.5rem' }}><Link href="/services">Tarifs & Plans</Link></li>
                             <li style={{ marginBottom: '0.5rem' }}><Link href="/sectors">Secteurs BTP</Link></li>
-                            <li style={{ marginBottom: '0.5rem' }}><Link href="/about">À propos</Link></li>
-                            <li><Link href="/contact">Contact & Démo</Link></li>
+                            <li style={{ marginBottom: '0.5rem' }}><Link href="/about">Notre approche</Link></li>
+                            <li><Link href="/contact">Essai gratuit</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 style={{ color: 'white', marginBottom: '1rem' }}>Contact & Zone d&apos;intervention</h4>
+                        <h4 style={{ color: 'white', marginBottom: '1rem' }}>Contact</h4>
                         <ul style={{ listStyle: 'none', color: '#94a3b8' }}>
-                            <li style={{ marginBottom: '0.5rem' }}>Pierre Laurent</li>
-                            <li style={{ marginBottom: '0.5rem' }}>Missions sur site et à distance :</li>
-                            <li style={{ marginBottom: '0.5rem', fontWeight: '500', color: 'var(--accent)' }}>Vence, Grasse, Antibes, Cannes</li>
+                            <li style={{ marginBottom: '0.5rem' }}>Pierre Laurent — Fondateur</li>
+                            <li style={{ marginBottom: '0.5rem' }}>Essai gratuit 14 jours</li>
+                            <li style={{ marginBottom: '0.5rem' }}>Onboarding en 1 appel de 30 min</li>
                             <li style={{ marginBottom: '0.5rem' }}><a href="mailto:contact@optipro.fr">contact@optipro.fr</a></li>
-                            <li><a href="https://www.linkedin.com/in/pierre-laurent-809410123" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>LinkedIn</a></li>
+                            <li><a href="https://www.linkedin.com/in/pierre-laurent-809410123?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div style={{ borderTop: '1px solid #475569', marginTop: '3rem', paddingTop: '1.5rem', textAlign: 'center', color: '#94a3b8', fontSize: '0.875rem' }}>
-                    &copy; {new Date().getFullYear()} OptiPro. Tous droits réservés. Service dédié aux plombiers, électriciens, menuisiers et artisans du BTP de la Côte d&apos;Azur.
+                    &copy; {new Date().getFullYear()} OptiBoard. Tous droits réservés. Service d&apos;administration externalisée pour artisans du bâtiment.
                 </div>
             </div>
         </footer>
