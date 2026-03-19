@@ -57,7 +57,7 @@ export default function Home() {
                     
                     <p style={{ fontSize: '1.25rem', color: 'var(--secondary)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto', lineHeight: 1.6 }}>
                         Le premier service d'administration externalisée dédié au bâtiment, 3x moins cher et disponible 7j/7. 
-                        <strong> Création de devis en 2 min par vocal via Telegram, facturation en 1 clic, relances impayés.</strong> On s'occupe de 100% de votre paperasse.
+                        <strong> Création de clients, chantiers et devis en 2 min par simple vocal sur Telegram.</strong> Vous nous dictez votre besoin, vous validez, et tout est généré dans l'app, de la facturation aux relances.
                     </p>
 
                     <div style={{ backgroundColor: 'white', padding: '2.5rem', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)', maxWidth: '500px', margin: '0 auto', textAlign: 'left' }}>
