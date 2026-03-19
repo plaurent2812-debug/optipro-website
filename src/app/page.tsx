@@ -44,7 +44,7 @@ export default function Home() {
                 </span>
             </header>
 
-            <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4rem 5%' }}>
+            <main style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4rem 5%' }}>
                 <style>{`
                     @keyframes pulse-ring {
                         0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
@@ -63,7 +63,7 @@ export default function Home() {
                         animation: typing-status 8s infinite;
                     }
                 `}</style>
-                <div style={{ maxWidth: '800px', width: '100%', textAlign: 'center' }}>
+                <div style={{ maxWidth: '800px', width: '100%', textAlign: 'center', marginBottom: '6rem' }}>
                     
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', padding: '0.5rem 1rem', backgroundColor: '#f8fafc', borderRadius: '2rem', border: '1px solid #e2e8f0', width: 'fit-content', margin: '0 auto 2rem auto' }}>
                         <div style={{ width: '8px', height: '8px', backgroundColor: '#10b981', borderRadius: '50%', animation: 'pulse-ring 2s infinite' }}></div>
@@ -131,6 +131,34 @@ export default function Home() {
                     </div>
 
                 </div>
+
+                <section style={{ maxWidth: '1000px', width: '100%', textAlign: 'center', marginBottom: '4rem' }}>
+                    <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--primary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
+                        Concrètement, qu'est-ce qu'OptiBoard ?
+                    </h2>
+                    <p style={{ fontSize: '1.125rem', color: 'var(--secondary)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 4rem auto' }}>
+                        C'est votre plateforme d'administration invisible. Vous n'avez même pas besoin de vous y connecter pour l'utiliser.
+                    </p>
+                    
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', textAlign: 'left' }}>
+                        <div style={{ padding: '2.5rem 2rem', backgroundColor: 'white', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)' }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', backgroundColor: '#e0f2fe', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '1rem' }}>🎙️</div>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.75rem', color: 'var(--primary)' }}>1. Vous dictez</h3>
+                            <p style={{ color: 'var(--secondary)', lineHeight: 1.6 }}>Sur le chantier, envoyez un simple vocal via Telegram à votre assistant avec les informations du client et les travaux à chiffrer.</p>
+                        </div>
+                        <div style={{ padding: '2.5rem 2rem', backgroundColor: 'white', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)', position: 'relative' }}>
+                            <div style={{ position: 'absolute', top: '-12px', right: '24px', backgroundColor: 'var(--accent)', color: 'white', fontSize: '0.75rem', fontWeight: 'bold', padding: '0.25rem 0.75rem', borderRadius: '1rem', textTransform: 'uppercase' }}>Magie</div>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', backgroundColor: '#fef08a', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '1rem' }}>⚡️</div>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.75rem', color: 'var(--primary)' }}>2. L'IA génère</h3>
+                            <p style={{ color: 'var(--secondary)', lineHeight: 1.6 }}>En 2 minutes, OptiBoard rédige, chiffre, formate et vous renvoie le devis PDF prêt à être validé et envoyé au client.</p>
+                        </div>
+                        <div style={{ padding: '2.5rem 2rem', backgroundColor: 'white', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)' }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', backgroundColor: '#dcfce7', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '1rem' }}>💻</div>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.75rem', color: 'var(--primary)' }}>3. La plateforme gère</h3>
+                            <p style={{ color: 'var(--secondary)', lineHeight: 1.6 }}>Retrouvez tous vos clients, chantiers, factures, et recevez des alertes automatiques pour vos impayés sur votre espace.</p>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             {/* Minimal Footer */}
