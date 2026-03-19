@@ -150,7 +150,7 @@ export default function Home() {
                             <div style={{ position: 'absolute', top: '-12px', right: '24px', backgroundColor: 'var(--accent)', color: 'white', fontSize: '0.75rem', fontWeight: 'bold', padding: '0.25rem 0.75rem', borderRadius: '1rem', textTransform: 'uppercase' }}>Magie</div>
                             <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', backgroundColor: '#fef08a', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '1rem' }}>⚡️</div>
                             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.75rem', color: 'var(--primary)' }}>2. L'IA génère</h3>
-                            <p style={{ color: 'var(--secondary)', lineHeight: 1.6 }}>En 2 minutes, OptiBoard rédige, chiffre, formate et vous renvoie le devis PDF prêt à être validé et envoyé au client.</p>
+                            <p style={{ color: 'var(--secondary)', lineHeight: 1.6 }}>En 2 minutes, OptiBoard rédige, chiffre, formate et vous renvoie le devis PDF. Vous validez ou modifiez, et ça part au client.</p>
                         </div>
                         <div style={{ padding: '2.5rem 2rem', backgroundColor: 'white', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)' }}>
                             <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem', backgroundColor: '#dcfce7', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '1rem' }}>💻</div>
