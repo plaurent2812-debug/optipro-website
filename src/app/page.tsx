@@ -112,7 +112,7 @@ export default function Home() {
 
             {/* Minimal Footer */}
             <footer style={{ padding: '2rem 5%', textAlign: 'center', borderTop: '1px solid var(--border)', color: 'var(--muted)', fontSize: '0.875rem', backgroundColor: 'white' }}>
-                &copy; {new Date().getFullYear()} OptiBoard. Service exclusif pour les artisans du bâtiment.
+                &copy; {new Date().getFullYear()} OptiPro. OptiBoard est un service exclusif pour les artisans du bâtiment.
             </footer>
         </div>
     );
