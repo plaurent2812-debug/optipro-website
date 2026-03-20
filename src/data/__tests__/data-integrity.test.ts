@@ -27,13 +27,13 @@ describe('Data integrity', () => {
             expect(highlighted).toHaveLength(1);
         });
 
-        it('prices match Starter 299, Confort 399, Premium 549', () => {
-            const starter = optiboardPacks.find((p) => p.id === 'starter');
-            const confort = optiboardPacks.find((p) => p.id === 'confort');
+        it('prices match Self-service 59, Accompagné 299, Premium 499', () => {
+            const selfService = optiboardPacks.find((p) => p.id === 'self-service');
+            const accompagne = optiboardPacks.find((p) => p.id === 'accompagne');
             const premium = optiboardPacks.find((p) => p.id === 'premium');
-            expect(starter?.priceNum).toBe(299);
-            expect(confort?.priceNum).toBe(399);
-            expect(premium?.priceNum).toBe(549);
+            expect(selfService?.priceNum).toBe(59);
+            expect(accompagne?.priceNum).toBe(299);
+            expect(premium?.priceNum).toBe(499);
         });
     });
 

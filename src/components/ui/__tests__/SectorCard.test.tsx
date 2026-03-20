@@ -5,6 +5,7 @@ import type { Sector } from '@/data/sectors';
 describe('SectorCard component', () => {
     const sector: Sector = {
         id: 'test-sector',
+        icon: '🔧',
         title: 'Artisans Test',
         subtitle: 'Plombier, Électricien...',
         challenges: 'Too much admin work.',

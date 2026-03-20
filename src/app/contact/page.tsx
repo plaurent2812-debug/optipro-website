@@ -96,9 +96,9 @@ function ContactForm() {
                 <label htmlFor="chantiers" className="form-label">Chantiers par mois (environ)</label>
                 <select id="chantiers" name="chantiers" className="form-select">
                     <option value="">Sélectionner</option>
-                    <option value="5-10">5-10 chantiers/mois (→ Starter)</option>
-                    <option value="10-20">10-20 chantiers/mois (→ Confort)</option>
-                    <option value="20+">20+ ou équipe (→ Premium)</option>
+                    <option value="5-10">5-10 chantiers/mois</option>
+                    <option value="10-20">10-20 chantiers/mois</option>
+                    <option value="20+">20+ ou équipe</option>
                 </select>
             </div>
 
@@ -106,9 +106,9 @@ function ContactForm() {
                 <label htmlFor="plan" className="form-label">Plan envisagé</label>
                 <select id="plan" name="plan" className="form-select" defaultValue={initialPlan}>
                     <option value="">Je ne sais pas encore</option>
-                    <option value="starter">Starter — 299€/mois</option>
-                    <option value="confort">Confort — 399€/mois</option>
-                    <option value="premium">Premium — 549€/mois</option>
+                    <option value="self-service">Self-service — 59€/mois</option>
+                    <option value="accompagne">Accompagné — 299€/mois</option>
+                    <option value="premium">Premium — 499€/mois</option>
                 </select>
             </div>
 

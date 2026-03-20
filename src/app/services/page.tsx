@@ -4,54 +4,56 @@ import Button from "@/components/ui/Button";
 export const metadata: Metadata = {
     title: "Tarifs & Services — OptiBoard",
     description:
-        "3 plans sans engagement à partir de 299€/mois. Essai gratuit 14 jours. Devis illimités, facturation automatique, relances impayés, export comptable FEC.",
+        "3 formules à partir de 59€/mois. Bot Telegram + IA + sync Pennylane. Essai gratuit 14 jours.",
 };
 
 const plans = [
     {
-        id: 'starter',
-        name: 'Starter',
-        price: '299€',
+        id: 'self-service',
+        name: 'Self-service',
+        price: '59€',
         billing: '/mois',
-        target: 'Artisan solo · 5-10 chantiers/mois',
+        target: 'Artisan autonome · Telegram + IA + Pennylane',
         highlighted: false,
         features: [
-            'Devis et factures illimités',
-            'Gestion clients et projets',
-            'Planning et rappels automatiques',
-            'Notifications en temps réel',
-            'Export comptable CSV',
-            'Paiement en ligne pour vos clients (Stripe)',
+            'Bot Telegram + assistant IA',
+            'Devis PDF générés en 2 min',
+            'Sync automatique Pennylane',
+            'Planning & suivi projets',
+            'Export comptable FEC',
+            'Essai gratuit 14 jours',
         ],
     },
     {
-        id: 'confort',
-        name: 'Confort',
-        price: '399€',
+        id: 'accompagne',
+        name: 'Accompagné',
+        price: '299€',
         billing: '/mois',
-        target: 'Artisan établi · 10-20 chantiers/mois',
+        target: 'Artisan qui délègue · Gestion complète par Pierre',
         highlighted: true,
-        badge: 'LE PLUS CHOISI',
+        badge: 'RECOMMANDÉ',
         features: [
-            'Tout le plan Starter',
-            'Relances automatiques impayés (J+15, J+30, J+45)',
-            'Portail client : signature en ligne + suivi chantier',
-            'Justificatifs photo OCR (tickets de caisse, factures fournisseur)',
+            'Tout le plan Self-service',
+            'Captures frais & justificatifs',
+            'Gestion admin quotidienne par Pierre',
+            'Relances impayés automatiques',
+            'Onboarding personnalisé',
+            'Support prioritaire',
         ],
     },
     {
         id: 'premium',
         name: 'Premium',
-        price: '549€',
+        price: '499€',
         billing: '/mois',
-        target: 'Entreprise 3-10 salariés',
+        target: 'Entreprise 3-10 salariés · Multi-utilisateurs',
         highlighted: false,
         features: [
-            'Tout le plan Confort',
-            'Assistant IA : devis en 30s par vocal ou texte',
-            'Multi-devis par projet (variantes, options)',
-            'Export comptable avancé FEC (Pennylane, Indy…)',
-            'Multi-utilisateurs avec rôles (artisan / admin)',
+            'Tout le plan Accompagné',
+            'Appel hebdomadaire avec Pierre',
+            'Reporting mensuel détaillé',
+            'Multi-utilisateurs avec rôles',
+            'Traitement prioritaire',
         ],
     },
 ];
@@ -59,19 +61,23 @@ const plans = [
 const comparaison = [
     { alternative: 'Secrétaire mi-temps', cout: '800-1 200€/mois', limites: 'Chère, pas spécialisée bâtiment' },
     { alternative: 'Assistante freelance', cout: '400-700€/mois', limites: "Pas d'outil intégré" },
-    { alternative: 'Comptable', cout: '200-400€/mois', limites: 'Ne fait que la compta' },
+    { alternative: 'Logiciel de devis classique', cout: '20-80€/mois', limites: 'Il faut tout saisir soi-même' },
     { alternative: "L'artisan fait tout seul", cout: '0€ + 10h + stress', limites: 'Oublie les relances, perd des tickets' },
-    { alternative: 'OptiBoard', cout: '299-549€/mois', isUs: true, limites: 'Tout inclus, zéro effort artisan' },
+    { alternative: 'OptiBoard', cout: '59-499€/mois', isUs: true, limites: 'Telegram + IA + Pennylane, zéro saisie' },
 ];
 
 const faq = [
     {
-        q: "Je ne suis pas à l'aise avec l'informatique.",
-        a: "Pas besoin. Vous envoyez un vocal ou un SMS — on fait le reste. Zéro logiciel à apprendre.",
+        q: "C'est quoi exactement OptiBoard ?",
+        a: "OptiBoard est le pont entre votre bot Telegram IA et Pennylane. Vous dictez vos devis sur Telegram, l'IA les génère en 2 minutes, et tout est synchronisé automatiquement dans Pennylane pour votre comptabilité.",
     },
     {
-        q: "Quelle est la différence avec un logiciel de devis (Obat, Henrri, Tolteck) ?",
-        a: "Un logiciel, vous devez l'apprendre et l'utiliser. Nous, c'est un service : vous déléguez, on exécute. C'est aussi simple que d'envoyer un message.",
+        q: "Je ne suis pas à l'aise avec l'informatique.",
+        a: "Si vous savez envoyer un message sur Telegram, vous savez utiliser OptiBoard. Aucun logiciel à apprendre — vous parlez, l'IA fait le reste.",
+    },
+    {
+        q: "Quelle est la différence entre Self-service et Accompagné ?",
+        a: "Le Self-service vous donne les outils (bot Telegram, IA, sync Pennylane). L'Accompagné ajoute Pierre comme assistant dédié : il gère votre admin au quotidien, les relances, les captures de frais.",
     },
     {
         q: "Mes données sont-elles sécurisées ?",
@@ -82,16 +88,12 @@ const faq = [
         a: "Non. Sans engagement, préavis d'un mois. Vous pouvez arrêter quand vous voulez.",
     },
     {
-        q: "Comment mes clients paient-ils ?",
-        a: "Lien de paiement par email, paiement par carte bancaire. L'argent arrive directement sur votre compte via Stripe Connect.",
-    },
-    {
-        q: "Et mon comptable dans tout ça ?",
-        a: "Export FEC chaque mois, compatible tous logiciels (Pennylane, Indy, EBP, Sage…). Votre comptable reçoit tout, propre, sans vous déranger.",
+        q: "Comment ça se connecte à Pennylane ?",
+        a: "La synchronisation est automatique. Chaque devis, facture et paiement est poussé dans votre compte Pennylane en temps réel. Votre comptable a toujours une vue à jour.",
     },
     {
         q: "Comment se passe l'onboarding ?",
-        a: "1 appel de 30 minutes avec Pierre. Il configure tout pour vous. Vous êtes opérationnel dès le lendemain.",
+        a: "Self-service : vous êtes guidé pas à pas dans l'app. Accompagné et Premium : 1 appel de 30 minutes avec Pierre qui configure tout pour vous.",
     },
 ];
 
@@ -101,11 +103,11 @@ export default function ServicesPage() {
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                 <div style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', borderRadius: '2rem', padding: '0.35rem 1rem', fontSize: '0.85rem', fontWeight: 700, marginBottom: '1rem', letterSpacing: '0.05em' }}>
-                    SERVICE · PAS UN LOGICIEL
+                    TELEGRAM + PENNYLANE + IA
                 </div>
                 <h1 style={{ marginBottom: '1rem' }}>Tarifs simples et transparents</h1>
                 <p style={{ color: 'var(--muted)', maxWidth: '620px', margin: '0 auto', fontSize: '1.15rem' }}>
-                    Sans engagement · Essai gratuit 14 jours · Onboarding en 1 appel de 30 min
+                    Sans engagement · Essai gratuit 14 jours · Sync Pennylane incluse
                 </p>
             </div>
 
@@ -177,7 +179,7 @@ export default function ServicesPage() {
                                     key={row.alternative}
                                     style={{
                                         borderBottom: '1px solid var(--border)',
-                                        background: row.isUs ? 'rgba(var(--accent-rgb, 234, 88, 12), 0.06)' : 'white',
+                                        background: row.isUs ? 'rgba(249, 115, 22, 0.06)' : 'white',
                                         fontWeight: row.isUs ? 700 : 400,
                                     }}
                                 >
@@ -213,9 +215,9 @@ export default function ServicesPage() {
 
             {/* CTA */}
             <div style={{ textAlign: 'center', background: 'var(--primary)', borderRadius: '1.5rem', padding: '3rem 2rem', color: 'white' }}>
-                <h2 style={{ color: 'white', marginBottom: '1rem' }}>Prêt à déléguer votre paperasse ?</h2>
+                <h2 style={{ color: 'white', marginBottom: '1rem' }}>Prêt à automatiser votre admin ?</h2>
                 <p style={{ opacity: 0.85, marginBottom: '2rem', fontSize: '1.1rem' }}>
-                    Essai gratuit 14 jours. Pierre vous contacte dans les 24h pour un onboarding de 30 minutes.
+                    Essai gratuit 14 jours. Envoyez un message depuis votre chantier, on s&apos;occupe du reste.
                 </p>
                 <Button
                     href="/contact"

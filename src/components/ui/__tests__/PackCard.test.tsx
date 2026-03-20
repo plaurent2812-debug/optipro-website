@@ -9,7 +9,8 @@ describe('PackCard component', () => {
         name: 'TestPilot',
         tagline: 'Test & Control',
         price: '100€',
-        setupFee: '50€',
+        priceNum: 100,
+        target: 'Test target',
         features: ['Feature A', 'Feature B', 'Feature C'],
     };
 

@@ -9,22 +9,22 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "OptiBoard — Administration externalisée pour artisans du bâtiment",
+    default: "OptiBoard — Admin chantier automatisée pour artisans",
     template: "%s | OptiBoard",
   },
-  description: "Vous posez, on gère. OptiBoard prend en charge 100% de votre paperasse : devis en 2 minutes par vocal, facturation automatique, relances impayés, export comptable FEC. Essai gratuit 14 jours.",
+  description: "Créez vos devis en 2 min depuis Telegram, synchronisés avec Pennylane. Essai gratuit 14 jours.",
   metadataBase: new URL("https://optipro.fr"),
   openGraph: {
     type: "website",
     locale: "fr_FR",
     siteName: "OptiBoard",
-    title: "OptiBoard — Administration externalisée pour artisans du bâtiment",
-    description: "Vous posez, on gère. Devis, factures, relances, trésorerie : 100% délégués. Essai gratuit 14 jours.",
+    title: "OptiBoard — Admin chantier automatisée pour artisans",
+    description: "Envoyez un message depuis votre chantier, on s'occupe du reste. Devis par Telegram, sync Pennylane. Essai gratuit 14 jours.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OptiBoard — Votre secrétaire spécialisée bâtiment",
-    description: "Service d'administration externalisée pour artisans du BTP. Devis par vocal, facturation auto, relances impayés.",
+    title: "OptiBoard — Admin chantier automatisée pour artisans",
+    description: "Créez vos devis en 2 min depuis Telegram, synchronisés avec Pennylane. Essai gratuit 14 jours.",
   },
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isTeaserMode = true; // Activer le mode Teaser pour masquer la navigation complète
+  const isTeaserMode = false;
 
   return (
     <html lang="fr">
