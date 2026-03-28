@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     try {
         const body = await request.json();
-        const { name, company, email, phone, activity, chantiers, plan, message } = body;
+        const { name, company, email, phone, activity, message } = body;
 
         // Validation basique
         if (!name || !email) {
@@ -20,21 +20,19 @@ export async function POST(request: Request) {
         }
 
         const data = await resend.emails.send({
-            from: 'OptiBoard Contact <onboarding@resend.dev>', // Par défaut avec l'essai Resend. Il faudra vérifier le domaine sur Resend pour utiliser une adresse personnalisée.
+            from: 'OptiPro Contact <onboarding@resend.dev>', // Par défaut avec l'essai Resend. Il faudra vérifier le domaine sur Resend pour utiliser une adresse personnalisée.
             to: ['contact@optipro.fr'], // Ton adresse de réception
             replyTo: email,
-            subject: `Nouvelle demande OptiBoard : ${company || name}`,
+            subject: `Nouveau contact OptiPro — ${name}`,
             html: `
                 <div style="font-family: sans-serif; max-width: 600px; padding: 20px;">
-                    <h2>Nouvelle demande de contact OptiBoard</h2>
+                    <h2>Nouveau contact OptiPro</h2>
                     <p><strong>Nom :</strong> ${name}</p>
                     <p><strong>Entreprise :</strong> ${company || 'Non renseigné'}</p>
                     <p><strong>Email :</strong> <a href="mailto:${email}">${email}</a></p>
                     <p><strong>Téléphone :</strong> ${phone || 'Non renseigné'}</p>
                     <hr style="margin: 20px 0; border: none; border-top: 1px solid #eaeaea;" />
-                    <p><strong>Métier :</strong> ${activity || 'Non renseigné'}</p>
-                    <p><strong>Chantiers/mois :</strong> ${chantiers || 'Non renseigné'}</p>
-                    <p><strong>Plan envisagé :</strong> ${plan || 'Non renseigné'}</p>
+                    <p><strong>Secteur d'activité :</strong> ${activity || 'Non renseigné'}</p>
                     <hr style="margin: 20px 0; border: none; border-top: 1px solid #eaeaea;" />
                     <p><strong>Message / Problème principal :</strong></p>
                     <p style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-radius: 5px;">${message || 'Aucun message.'}</p>

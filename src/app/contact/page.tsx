@@ -1,13 +1,10 @@
 'use client';
 
 import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import { FormEvent, useState } from 'react';
 
 function ContactForm() {
-    const searchParams = useSearchParams();
-    const initialPlan = searchParams.get('plan') || '';
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -79,36 +76,13 @@ function ContactForm() {
             </div>
 
             <div className="form-group">
-                <label htmlFor="activity" className="form-label">Corps de métier</label>
-                <select id="activity" name="activity" className="form-select">
-                    <option value="">Sélectionnez votre métier</option>
-                    <option value="plombier">Plombier / Chauffagiste</option>
-                    <option value="electricien">Électricien</option>
-                    <option value="menuisier">Menuisier / Charpentier</option>
-                    <option value="peintre">Peintre / Décorateur</option>
-                    <option value="macon">Maçon / Carreleur</option>
-                    <option value="multi">Entreprise multi-corps</option>
-                    <option value="autre">Autre artisan BTP</option>
-                </select>
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="chantiers" className="form-label">Chantiers par mois (environ)</label>
-                <select id="chantiers" name="chantiers" className="form-select">
-                    <option value="">Sélectionner</option>
-                    <option value="5-10">5-10 chantiers/mois</option>
-                    <option value="10-20">10-20 chantiers/mois</option>
-                    <option value="20+">20+ ou équipe</option>
-                </select>
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="plan" className="form-label">Plan envisagé</label>
-                <select id="plan" name="plan" className="form-select" defaultValue={initialPlan}>
-                    <option value="">Je ne sais pas encore</option>
-                    <option value="accompagne">Accompagné — 299€/mois</option>
-                    <option value="premium">Premium — 499€/mois</option>
-                </select>
+                <label htmlFor="activity" className="form-label">Secteur d&apos;activité</label>
+                <input
+                    className="form-input"
+                    id="activity"
+                    name="activity"
+                    placeholder="Votre secteur d'activité"
+                />
             </div>
 
             <div className="form-group">
@@ -140,6 +114,10 @@ function ContactForm() {
                     'Démarrer l\'essai gratuit — Pierre me contacte sous 24h'
                 )}
             </Button>
+            <p style={{ textAlign: 'center', color: 'var(--muted)', fontSize: '0.9rem', marginTop: '1.5rem' }}>
+                L&apos;audit est notre point d&apos;entrée recommandé. Il est remboursé si vous
+                signez un contrat.
+            </p>
         </form>
     );
 }
@@ -149,13 +127,12 @@ export default function ContactPage() {
         <div style={{ minHeight: '100vh', background: 'var(--background)', paddingTop: 'var(--header-height)' }}>
             <div className="container" style={{ padding: '4rem 1.5rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <div className="section-label">🚀 Démarrer</div>
+                    <div className="section-label">Contactez-nous</div>
                     <h1 style={{ fontSize: '2.75rem', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '1rem', color: 'var(--foreground)' }}>
-                        Essai gratuit 14 jours
+                        Parlons de votre projet
                     </h1>
                     <p style={{ color: 'var(--secondary)', fontSize: '1.1rem', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
-                        <strong style={{ color: 'var(--foreground)' }}>1 appel de 30 minutes</strong> avec Pierre —
-                        il configure tout, vous êtes opérationnel dès le lendemain.
+                        Décrivez votre besoin, Pierre vous recontacte sous 24h.
                     </p>
                 </div>
 
