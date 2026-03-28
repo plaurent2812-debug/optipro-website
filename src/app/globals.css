@@ -1112,3 +1112,116 @@ h1, h2, h3 {
   border-color: rgba(239, 68, 68, 0.3);
   transform: translateX(4px);
 }
+
+/* ===== Typing dots animation ===== */
+@keyframes typingDot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* ===== Service Showcase ===== */
+.service-showcase {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-showcase:nth-child(even) {
+  background: var(--surface);
+}
+
+.service-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.service-showcase-grid.reversed {
+  direction: rtl;
+}
+
+.service-showcase-grid.reversed > * {
+  direction: ltr;
+}
+
+.service-showcase-text {
+  max-width: 480px;
+}
+
+.service-showcase-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--accent);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.service-showcase-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.service-showcase-desc {
+  color: var(--secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.service-showcase-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-showcase-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.service-showcase-features li::before {
+  content: '\2192';
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.service-showcase-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .service-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .service-showcase-grid.reversed {
+    direction: ltr;
+  }
+
+  .service-showcase-visual {
+    order: -1;
+  }
+
+  .service-showcase {
+    padding: 4rem 0;
+  }
+}
