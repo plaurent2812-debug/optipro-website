@@ -1,8 +1,24 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
+
 export default function AnalyseMockup() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <div style={{
+    <div ref={ref} style={{
       background: '#0f172a',
       borderRadius: '16px',
       boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
@@ -23,8 +39,16 @@ export default function AnalyseMockup() {
           { value: '12h', label: 'perdues/sem', color: '#ef4444' },
           { value: '3', label: 'outils inadaptés', color: '#f59e0b' },
           { value: '\u20AC2.4k', label: 'coût mensuel', color: '#f97316' },
-        ].map((m) => (
-          <div key={m.label} style={{ background: '#1e293b', borderRadius: '10px', padding: '0.75rem', textAlign: 'center' }}>
+        ].map((m, index) => (
+          <div key={m.label} style={{
+            background: '#1e293b',
+            borderRadius: '10px',
+            padding: '0.75rem',
+            textAlign: 'center',
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(10px)',
+            transition: `opacity 0.5s ease ${index * 0.15}s, transform 0.5s ease ${index * 0.15}s`,
+          }}>
             <div style={{ fontSize: '1.25rem', fontWeight: 800, color: m.color, fontFamily: 'var(--font-display), sans-serif' }}>{m.value}</div>
             <div style={{ fontSize: '0.65rem', color: '#64748b', marginTop: '0.15rem' }}>{m.label}</div>
           </div>
@@ -45,7 +69,13 @@ export default function AnalyseMockup() {
             <span style={{ fontSize: '0.75rem', color: '#f97316', fontWeight: 600 }}>{bar.time}</span>
           </div>
           <div style={{ height: '6px', background: '#1e293b', borderRadius: '3px', overflow: 'hidden' }}>
-            <div style={{ height: '100%', width: `${bar.pct}%`, background: `linear-gradient(90deg, #f97316, ${bar.pct > 70 ? '#ef4444' : '#fb923c'})`, borderRadius: '3px', transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)' }} />
+            <div style={{
+              height: '100%',
+              width: isVisible ? `${bar.pct}%` : '0%',
+              background: `linear-gradient(90deg, #f97316, ${bar.pct > 70 ? '#ef4444' : '#fb923c'})`,
+              borderRadius: '3px',
+              transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)',
+            }} />
           </div>
         </div>
       ))}

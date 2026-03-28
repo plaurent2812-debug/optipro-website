@@ -4,12 +4,23 @@ export default function CreationMockup() {
   return (
     <div style={{ maxWidth: '460px' }}>
       {/* Browser window */}
-      <div style={{
-        background: '#1e293b',
-        borderRadius: '12px',
-        overflow: 'hidden',
-        boxShadow: '0 25px 60px rgba(0,0,0,0.2)',
-      }}>
+      <div
+        style={{
+          background: '#1e293b',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 25px 60px rgba(0,0,0,0.2)',
+          transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'perspective(800px) rotateY(-2deg) rotateX(1deg) scale(1.02)';
+          e.currentTarget.style.boxShadow = '0 30px 70px rgba(0,0,0,0.25)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'perspective(800px) rotateY(0) rotateX(0) scale(1)';
+          e.currentTarget.style.boxShadow = '0 25px 60px rgba(0,0,0,0.2)';
+        }}
+      >
         {/* Chrome bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', background: '#0f172a', borderBottom: '1px solid #334155' }}>
           <div style={{ display: 'flex', gap: '6px' }}>
