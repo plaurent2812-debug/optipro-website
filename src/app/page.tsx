@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
 import Button from '@/components/ui/Button';
 import ProjectCard from '@/components/ui/ProjectCard';
@@ -14,6 +14,14 @@ import { services } from '@/data/services';
 import { projects } from '@/data/projects';
 
 export default function HomePage() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     if (!reveals.length) return;
@@ -44,6 +52,8 @@ export default function HomePage() {
             background: 'rgba(249, 115, 22, 0.03)',
             filter: 'blur(60px)',
             pointerEvents: 'none',
+            transform: `translateY(${scrollY * 0.15}px)`,
+            transition: 'transform 0.1s linear',
           }} />
           <div style={{
             position: 'absolute',
@@ -55,6 +65,8 @@ export default function HomePage() {
             background: 'rgba(249, 115, 22, 0.04)',
             filter: 'blur(40px)',
             pointerEvents: 'none',
+            transform: `translateY(${scrollY * -0.1}px)`,
+            transition: 'transform 0.1s linear',
           }} />
           <div className={styles.heroGrid}>
             <div className={styles.heroText}>
