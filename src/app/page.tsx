@@ -97,7 +97,7 @@ export default function HomePage() {
               <div className={styles.heroCard}>
                 <div className={styles.heroCardTitle}>
                   <span style={{ color: '#10b981', marginRight: '0.5rem', fontFamily: 'monospace' }}>$</span>
-                  Démarche OptiPro
+                  La Méthode OptiPro
                 </div>
                 {services.map((s) => (
                   <div key={s.id} className={styles.heroStep}>
