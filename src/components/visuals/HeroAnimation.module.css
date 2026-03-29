@@ -505,8 +505,8 @@
   .heroAnimation {
     width: 400px;
     height: 400px;
-    margin: 0 auto;
-    transform: scale(0.8);
+    margin: 1rem auto 0;
+    transform: scale(0.9);
     transform-origin: center center;
   }
   /* On ne cache plus .orbitalLayer, .scanline ou .particle */
