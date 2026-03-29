@@ -6,7 +6,7 @@ import { FormEvent, useState } from 'react';
 
 function ContactForm() {
     const [isLoading, setIsLoading] = useState(false);
-    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [status, setStatus] = useState<string>('idle');
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -23,12 +23,17 @@ function ContactForm() {
                 body: JSON.stringify(data),
             });
 
-            if (!res.ok) throw new Error('Erreur lors de l\'envoi');
+            const resData = await res.json().catch(() => null);
+
+            if (!res.ok) {
+                throw new Error(resData?.details || resData?.error || 'Erreur inattendue lors de l\'envoi');
+            }
+            
             setStatus('success');
             (e.target as HTMLFormElement).reset();
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            setStatus('error');
+            setStatus(error.message || 'error');
         } finally {
             setIsLoading(false);
         }

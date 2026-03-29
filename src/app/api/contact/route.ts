@@ -19,9 +19,9 @@ export async function POST(request: Request) {
             );
         }
 
-        const data = await resend.emails.send({
-            from: 'OptiPro Contact <onboarding@resend.dev>', // Par défaut avec l'essai Resend. Il faudra vérifier le domaine sur Resend pour utiliser une adresse personnalisée.
-            to: ['contact@optipro.fr'], // Ton adresse de réception
+        const { data, error } = await resend.emails.send({
+            from: 'OptiPro Contact <onboarding@resend.dev>', // Par défaut avec l'essai Resend.
+            to: ['contact@optipro.fr'], // Adresse de réception
             replyTo: email,
             subject: `Nouveau contact OptiPro — ${name}`,
             html: `
@@ -40,9 +40,17 @@ export async function POST(request: Request) {
             `,
         });
 
+        if (error) {
+            console.error("Erreur renvoyée par Resend :", error);
+            return NextResponse.json(
+                { error: 'Erreur Serveur Resend', details: error.message },
+                { status: 500 }
+            );
+        }
+
         return NextResponse.json({ success: true, data });
-    } catch (error) {
-        console.error('Erreur API Contact:', error);
+    } catch (err: unknown) {
+        console.error('Erreur API Contact (catch):', err);
         return NextResponse.json(
             { error: 'Erreur lors de l\'envoi du message' },
             { status: 500 }
