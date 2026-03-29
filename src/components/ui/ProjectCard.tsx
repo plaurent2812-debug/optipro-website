@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { Project } from '@/data/projects';
 import Image from 'next/image';
 
@@ -7,11 +10,52 @@ interface Props {
 }
 
 export default function ProjectCard({ project, compact = false }: Props) {
+  const images = project.images || [];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="project-card">
-      {project.image && (
+      {images.length > 0 && (
         <div style={{ position: 'relative', width: '100%', height: compact ? '200px' : '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid rgba(255,255,255,0.06)' }}>
-          <Image src={project.image} alt={`Aperçu de ${project.title}`} fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
+          <Image src={images[currentIndex]} alt={`Aperçu de ${project.title} - ${currentIndex + 1}`} fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
+          
+          {images.length > 1 && (
+            <>
+              {/* Flèches de navigation */}
+              <button 
+                onClick={prevImage} 
+                style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', zIndex: 10, backdropFilter: 'blur(4px)' }}
+                aria-label="Image précédente"
+              >
+                ←
+              </button>
+              <button 
+                onClick={nextImage} 
+                style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', zIndex: 10, backdropFilter: 'blur(4px)' }}
+                aria-label="Image suivante"
+              >
+                →
+              </button>
+
+              {/* Indicateurs de progression (dots) */}
+              <div style={{ position: 'absolute', bottom: '12px', left: '0', right: '0', display: 'flex', justifyContent: 'center', gap: '6px', zIndex: 10 }}>
+                {images.map((_, idx) => (
+                  <span 
+                    key={idx} 
+                    style={{ width: '8px', height: '8px', borderRadius: '50%', background: idx === currentIndex ? 'var(--accent)' : 'rgba(255,255,255,0.5)', transition: 'background 0.3s' }}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       )}
       <div className="project-card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
