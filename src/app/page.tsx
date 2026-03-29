@@ -10,7 +10,7 @@ import CreationMockup from '@/components/visuals/CreationMockup';
 import AutomationMockup from '@/components/visuals/AutomationMockup';
 import AuditCta from '@/components/ui/AuditCta';
 import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
-import { services } from '@/data/services';
+import HeroAnimation from '@/components/visuals/HeroAnimation';
 import { projects } from '@/data/projects';
 
 export default function HomePage() {
@@ -92,23 +92,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Mini timeline visual */}
+            {/* Hero animation */}
             <div className={styles.heroVisual}>
-              <div className={styles.heroCard}>
-                <div className={styles.heroCardTitle}>
-                  <span style={{ color: '#10b981', marginRight: '0.5rem', fontFamily: 'monospace' }}>$</span>
-                  La Méthode OptiPro
-                </div>
-                {services.map((s) => (
-                  <div key={s.id} className={styles.heroStep}>
-                    <div className={styles.heroStepNum}>{s.number}</div>
-                    <div>
-                      <strong>{s.title}</strong>
-                      <p>{s.shortDescription}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <HeroAnimation />
             </div>
           </div>
         </div>
