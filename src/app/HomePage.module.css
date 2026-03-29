@@ -114,7 +114,7 @@
   }
 
   .heroGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
   }
 
@@ -124,6 +124,9 @@
 
   .heroVisual {
     justify-self: center;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 
