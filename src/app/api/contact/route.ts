@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
         const { data, error } = await resend.emails.send({
             from: 'OptiPro Contact <onboarding@resend.dev>', // Par défaut avec l'essai Resend.
-            to: ['contact@optipro.fr'], // Adresse de réception
+            to: ['p.laurent2812@gmail.com'], // Adresse de réception (temporaire, le temps de vérifier le domaine cible sur Resend)
             replyTo: email,
             subject: `Nouveau contact OptiPro — ${name}`,
             html: `
