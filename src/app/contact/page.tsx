@@ -60,9 +60,9 @@ function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto', background: 'var(--surface)', padding: '2.25rem', borderRadius: '1.25rem', border: '1px solid var(--border)' }}>
-            {status === 'error' && (
+            {status !== 'idle' && status !== 'success' && (
                 <div style={{ padding: '1rem', background: 'rgba(239,68,68,0.08)', color: '#991b1b', borderRadius: '0.75rem', marginBottom: '1.5rem', textAlign: 'center', border: '1px solid rgba(239,68,68,0.25)', fontWeight: 500 }}>
-                    ⚠️ Une erreur est survenue. Veuillez réessayer ou nous contacter par email.
+                    ⚠️ {status}
                 </div>
             )}
             <div className="form-group">
@@ -126,8 +126,7 @@ function ContactForm() {
                 )}
             </Button>
             <p style={{ textAlign: 'center', color: 'var(--muted)', fontSize: '0.9rem', marginTop: '1.5rem' }}>
-                L&apos;audit est notre point d&apos;entrée recommandé. Il est remboursé si vous
-                signez un contrat.
+                L&apos;audit est notre point d&apos;entrée recommandé. Il est <strong>100% gratuit et sans engagement</strong>.
             </p>
         </form>
     );

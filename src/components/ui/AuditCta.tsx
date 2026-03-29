@@ -55,7 +55,7 @@ export default function AuditCta() {
           On regarde ensemble vos outils et vos process. Vous repartez avec un
           diagnostic clair et des recommandations concrètes.
         </p>
-        <p className="audit-cta-note">Remboursé si contrat signé</p>
+        <p className="audit-cta-note">100% gratuit et sans engagement</p>
         <Button href="/contact" variant="primary">
           Demander un contact
         </Button>
