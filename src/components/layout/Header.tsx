@@ -34,6 +34,7 @@ export default function Header() {
     ];
 
     return (
+        <>
         <header style={{
             height: 'var(--header-height)',
             borderBottom: '1px solid var(--border)',
@@ -138,53 +139,58 @@ export default function Header() {
                     </div>
                 </button>
             </div>
-
-            {/* Mobile nav — slide-down animated */}
-            <div
-                className={`mobile-nav${menuOpen ? ' mobile-nav--open' : ''}`}
-                style={{
-                    position: 'fixed',
-                    top: 'var(--header-height)',
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: 'rgba(5, 12, 26, 0.97)',
-                    backdropFilter: 'blur(20px)',
-                    flexDirection: 'column',
-                    padding: '2rem 1.5rem',
-                    gap: '0.5rem',
-                    zIndex: 999,
-                    borderTop: '1px solid var(--border)',
-                    /* animation handled via CSS classes */
-                    display: menuOpen ? 'flex' : 'none',
-                    animation: menuOpen ? 'mobileMenuIn 0.25s cubic-bezier(0.22,1,0.36,1) both' : 'none',
-                }}
-            >
-                {navLinks.map(({ href, label }) => {
-                    const isActive = pathname === href;
-                    return (
-                        <Link
-                            key={href}
-                            href={href}
-                            onClick={closeMenu}
-                            style={{
-                                padding: '1rem 0',
-                                fontWeight: isActive ? 700 : 500,
-                                fontSize: '1.125rem',
-                                color: isActive ? 'var(--accent)' : '#94a3b8',
-                                borderBottom: '1px solid rgba(255,255,255,0.07)',
-                            }}
-                        >
-                            {label}
-                        </Link>
-                    );
-                })}
-                <div style={{ marginTop: '1rem' }}>
-                    <Button href="/contact" variant="primary" style={{ width: '100%', textAlign: 'center' }}>
-                        Demander un contact
-                    </Button>
-                </div>
-            </div>
         </header>
+
+        {/* Mobile nav — slide-down animated, sorti du <header> pour corriger les bugs de stacking context iOS/Safari */}
+        <div
+            className={`mobile-nav${menuOpen ? ' mobile-nav--open' : ''}`}
+            style={{
+                position: 'fixed',
+                top: 'var(--header-height)',
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(5, 12, 26, 0.97)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '2rem 1.5rem',
+                gap: '0.5rem',
+                zIndex: 999, /* zIndex juste en dessous du header(1000) pour qu'il passe dessous, mais au dessus du contenu complet */
+                borderTop: '1px solid var(--border)',
+                /* animation handled via CSS classes */
+                transform: menuOpen ? 'translateY(0)' : 'translateY(-100%)',
+                opacity: menuOpen ? 1 : 0,
+                transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.3s',
+                pointerEvents: menuOpen ? 'auto' : 'none',
+            }}
+        >
+            {navLinks.map(({ href, label }) => {
+                const isActive = pathname === href;
+                return (
+                    <Link
+                        key={href}
+                        href={href}
+                        onClick={closeMenu}
+                        style={{
+                            padding: '1rem 0',
+                            fontWeight: isActive ? 700 : 500,
+                            fontSize: '1.125rem',
+                            color: isActive ? 'var(--accent)' : '#94a3b8',
+                            borderBottom: '1px solid rgba(255,255,255,0.07)',
+                        }}
+                    >
+                        {label}
+                    </Link>
+                );
+            })}
+            <div style={{ marginTop: '1rem' }}>
+                <Button href="/contact" variant="primary" style={{ width: '100%', textAlign: 'center' }} onClick={closeMenu}>
+                    Demander un contact
+                </Button>
+            </div>
+        </div>
+        </>
     );
 }
