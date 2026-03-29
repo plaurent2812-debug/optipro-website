@@ -499,6 +499,8 @@
   .chart { height: 55px; }
   .node { width: 32px; height: 32px; font-size: 13px; }
   .nodeLabel { display: none; }
+  .nodeTop { top: 4px; }
+  .nodeBottom { bottom: 4px; }
 }
 
 @media (max-width: 480px) {
