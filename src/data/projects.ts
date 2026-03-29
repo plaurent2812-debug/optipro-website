@@ -26,7 +26,8 @@ export const projects: Project[] = [
       'Plateforme prête au "scale" pour analyser des milliers de matchs et cotes chaque jour',
       'Parcours utilisateur d\'abonnement fluide intégré avec Stripe (Freemium)'
     ],
-    tags: ['SaaS', 'Web App', 'Machine Learning', 'Stripe API'],
-    url: 'https://probalab.net',
+    tags: ['Machine Learning', 'Next.js', 'Supabase', 'Python', 'Stripe CRM'],
+    image: '/probalab.png',
+    url: 'https://probalab.net'
   }
 ];

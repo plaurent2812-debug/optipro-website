@@ -159,10 +159,10 @@ export default function Header() {
                 gap: '0.5rem',
                 zIndex: 999, /* zIndex juste en dessous du header(1000) pour qu'il passe dessous, mais au dessus du contenu complet */
                 borderTop: '1px solid var(--border)',
-                /* animation handled via CSS classes */
                 transform: menuOpen ? 'translateY(0)' : 'translateY(-100%)',
                 opacity: menuOpen ? 1 : 0,
-                transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.3s',
+                visibility: menuOpen ? 'visible' : 'hidden',
+                transition: 'transform 0.4s cubic-bezier(0.22,1,0.36,1), opacity 0.3s, visibility 0.4s',
                 pointerEvents: menuOpen ? 'auto' : 'none',
             }}
         >
