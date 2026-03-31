@@ -101,7 +101,8 @@ export default function AdminLoginPage() {
         </form>
 
         <p className={styles.footer}>
-          Accès réservé — OptiPro © {new Date().getFullYear()}
+          <a href="/" className={styles.backLink}>← Retour au site</a>
+          <span>Accès réservé — OptiPro © {new Date().getFullYear()}</span>
         </p>
       </div>
 
