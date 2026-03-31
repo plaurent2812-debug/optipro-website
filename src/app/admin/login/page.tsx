@@ -60,7 +60,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
-              placeholder="p.laurent@opti-pro.fr"
+              placeholder="nom@exemple.fr"
               required
               autoComplete="email"
             />
