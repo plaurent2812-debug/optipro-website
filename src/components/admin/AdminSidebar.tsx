@@ -18,16 +18,16 @@ export default function AdminSidebar() {
   const pathname = usePathname()
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
-  
-  // Masquer la sidebar sur la page de login
-  if (pathname === '/admin/login') {
-    return null
-  }
 
-  // Fermer la sidebar après un clic sur mobile
+  // Fermer la sidebar après un clic sur mobile (doit être AVANT le return)
   useEffect(() => {
     setIsOpen(false)
   }, [pathname])
+  
+  // Masquer la sidebar sur la page de login (Après les hooks !)
+  if (pathname === '/admin/login') {
+    return null
+  }
 
   const handleLogout = async () => {
     const supabase = createClient()
