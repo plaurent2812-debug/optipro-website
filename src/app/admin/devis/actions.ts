@@ -254,11 +254,11 @@ export async function pushDevisToPennylaneAction(devisId: string) {
   const quotePayload: PennylaneQuotePayload = {
     customer_id: pennylaneCustomerId,
     date: devis.date_emission,
-    expiry_date: expiryDate,
-    line_items_attributes: devis.devis_lignes.map((l: any) => ({
+    deadline: expiryDate,
+    invoice_lines: devis.devis_lignes.map((l: any) => ({
       label: l.description,
       quantity: l.quantite,
-      unit_price_cents: Math.round(l.prix_unitaire_ht * 100), // En centimes !
+      raw_currency_unit_price: String(l.prix_unitaire_ht),
       vat_rate: 'FR_0' // Exonération auto-entrepreneur
     }))
   };
