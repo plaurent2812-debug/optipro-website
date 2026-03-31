@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { generateDevisNumero } from '@/lib/utils'
-import { createPennylaneCustomer, PennylaneCustomerPayload, createPennylaneQuote, PennylaneQuotePayload, getPennylaneQuote, mapPennylaneQuoteStatus } from '@/lib/pennylane'
+import { createPennylaneCustomer, PennylaneCustomerPayload, createPennylaneQuote, PennylaneQuotePayload, getPennylaneQuote, mapPennylaneQuoteStatus, getPennylaneCustomer } from '@/lib/pennylane'
 
 export async function createDevisAction(prevState: any, formData: FormData) {
   const supabase = await createClient()
@@ -318,7 +318,7 @@ export async function syncDevisFromPennylaneAction(devisId: string) {
 
   const { data: devis, error } = await supabase
     .from('devis')
-    .select('pennylane_quote_id, statut')
+    .select('pennylane_quote_id, statut, client_id, clients(pennylane_customer_id)')
     .eq('id', devisId)
     .single()
 
@@ -330,26 +330,87 @@ export async function syncDevisFromPennylaneAction(devisId: string) {
     return { error: "Ce devis n'a pas encore été envoyé sur Pennylane." }
   }
 
+  const updates: string[] = []
+
   try {
+    // --- 1. Sync du statut du devis depuis Pennylane ---
     const pennylaneQuote = await getPennylaneQuote(devis.pennylane_quote_id)
     const newStatus = mapPennylaneQuoteStatus(pennylaneQuote.status)
 
-    if (!newStatus) {
-      return { error: `Statut Pennylane inconnu : "${pennylaneQuote.status}"` }
+    if (newStatus && newStatus !== devis.statut) {
+      await supabase
+        .from('devis')
+        .update({ statut: newStatus })
+        .eq('id', devisId)
+      updates.push(`Statut devis : ${devis.statut} → ${newStatus}`)
     }
 
-    if (newStatus === devis.statut) {
-      return { success: true, message: `Déjà à jour (${devis.statut}).` }
+    // --- 2. Sync des infos client depuis Pennylane ---
+    const pennylaneCustomerId = (devis.clients as any)?.pennylane_customer_id
+    if (pennylaneCustomerId) {
+      try {
+        const plClient = await getPennylaneCustomer(pennylaneCustomerId)
+        
+        // Extraction des données client depuis la réponse Pennylane
+        const clientUpdate: Record<string, any> = {}
+
+        // Nom / entreprise
+        if (plClient.name) {
+          clientUpdate.entreprise = plClient.name
+        }
+
+        // Email (Pennylane renvoie un tableau)
+        if (plClient.emails && plClient.emails.length > 0) {
+          clientUpdate.email = plClient.emails[0]
+        }
+
+        // Téléphone
+        if (plClient.phone) {
+          clientUpdate.telephone = plClient.phone
+        }
+
+        // Adresse de facturation
+        if (plClient.billing_address) {
+          if (plClient.billing_address.address) {
+            clientUpdate.adresse = plClient.billing_address.address
+          }
+          if (plClient.billing_address.postal_code) {
+            clientUpdate.code_postal = plClient.billing_address.postal_code
+          }
+          if (plClient.billing_address.city) {
+            clientUpdate.ville = plClient.billing_address.city
+          }
+        }
+
+        // SIRET / Numéro d'enregistrement
+        if (plClient.reg_no) {
+          clientUpdate.siret = plClient.reg_no
+        }
+
+        // Appliquer la mise à jour si on a des données
+        if (Object.keys(clientUpdate).length > 0) {
+          await supabase
+            .from('clients')
+            .update(clientUpdate)
+            .eq('id', devis.client_id)
+          updates.push('Infos client mises à jour depuis Pennylane')
+        }
+      } catch (clientErr: any) {
+        console.error('Erreur sync client:', clientErr.message)
+        // On ne bloque pas la sync du devis si le client échoue
+        updates.push(`⚠️ Client non synchronisé: ${clientErr.message}`)
+      }
     }
 
-    await supabase
-      .from('devis')
-      .update({ statut: newStatus })
-      .eq('id', devisId)
+    if (updates.length === 0) {
+      return { success: true, message: 'Déjà à jour ✓' }
+    }
 
     revalidatePath(`/admin/devis/${devisId}`)
+    revalidatePath(`/admin/clients/${devis.client_id}`)
     revalidatePath('/admin/devis')
-    return { success: true, message: `Statut mis à jour : ${newStatus}` }
+    revalidatePath('/admin/clients')
+    return { success: true, message: updates.join(' | ') }
   } catch (err: any) {
     return { error: err.message || "Erreur lors de la synchronisation avec Pennylane." }
   }

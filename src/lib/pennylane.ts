@@ -202,3 +202,24 @@ export async function getPennylaneInvoice(invoiceId: string) {
 export function mapPennylaneInvoiceStatus(pennylaneStatus: string): string | null {
   return PENNYLANE_INVOICE_STATUS_MAP[pennylaneStatus] || null;
 }
+
+export async function getPennylaneCustomer(customerId: string) {
+  const token = process.env.PENNYLANE_API_TOKEN;
+  if (!token) throw new Error("Clé API Pennylane manquante.");
+
+  // Try company customer first, then individual
+  for (const type of ['company_customers', 'individual_customers']) {
+    const response = await fetch(`https://app.pennylane.com/api/external/v2/${type}/${customerId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      return await response.json();
+    }
+  }
+
+  throw new Error(`Client Pennylane introuvable (ID: ${customerId}).`);
+}
