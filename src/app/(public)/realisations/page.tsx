@@ -4,14 +4,30 @@ import AuditCta from '@/components/ui/AuditCta';
 import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
-  title: 'Réalisations',
+  title: 'Portfolio — Sites web et applications sur mesure',
   description:
-    'Découvrez les projets réalisés par OptiPro — sites sur mesure, web apps, automatisations pour artisans et TPE.',
+    'Découvrez les projets réalisés par OptiPro — sites sur mesure, web apps et automatisations pour artisans et TPE. Exemples concrets avec résultats.',
+  alternates: {
+    canonical: '/realisations',
+  },
+  openGraph: {
+    title: 'Réalisations OptiPro — Projets sur mesure',
+    description:
+      'Sites web, applications et automatisations : exemples concrets de projets réalisés pour artisans et TPE.',
+  },
 };
 
 export default function RealisationsPage() {
   return (
     <main style={{ paddingTop: '6rem' }}>
+      <script type="application/ld+json">{JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.opti-pro.fr' },
+          { '@type': 'ListItem', position: 2, name: 'Réalisations', item: 'https://www.opti-pro.fr/realisations' },
+        ],
+      })}</script>
       {/* Hero */}
       <section style={{ padding: '3rem 0 4rem', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '700px' }}>

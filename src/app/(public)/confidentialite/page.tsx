@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Politique de confidentialité',
   description: 'Politique de confidentialité du site OptiPro — collecte, traitement et protection de vos données personnelles.',
+  alternates: {
+    canonical: '/confidentialite',
+  },
 };
 
 const sectionHeadingStyle: React.CSSProperties = {
@@ -37,6 +40,14 @@ const listStyle: React.CSSProperties = {
 export default function ConfidentialitePage() {
   return (
     <main style={{ paddingTop: '6rem' }}>
+      <script type="application/ld+json">{JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.opti-pro.fr' },
+          { '@type': 'ListItem', position: 2, name: 'Politique de confidentialité', item: 'https://www.opti-pro.fr/confidentialite' },
+        ],
+      })}</script>
       <section style={{ padding: '3rem 0 6rem' }}>
         <div className="container" style={{ maxWidth: '760px' }}>
 

@@ -43,6 +43,31 @@
 - [ ] Tests + vérification
 - [ ] Déploiement
 
+## Terminé — Optimisation SEO Phase 1+2 (2026-03-31)
+- [x] Corriger domaine sitemap.ts (optipro.fr → www.opti-pro.fr)
+- [x] Ajouter pages légales au sitemap
+- [x] Corriger robots.ts (bloquer /admin + fixer URL sitemap)
+- [x] Ajouter metadata Homepage (server component wrapper)
+- [x] Ajouter metadata Contact (server component wrapper)
+- [x] Améliorer titles/descriptions Services + Réalisations
+- [x] Ajouter JSON-LD Organization + LocalBusiness (Vence 06140)
+- [x] Ajouter metadataBase + canonical URLs + OG par page
+- [x] Ajouter manifest.ts (PWA)
+- [x] Ajouter Cache-Control headers + HSTS
+- [x] Build vérifié sans erreurs
+
+## Terminé — SEO Phase 3 (2026-03-31)
+- [x] FAQ structurée avec FAQSchema (5 questions, page Services)
+- [x] Service schema JSON-LD (4 services, page Services)
+- [x] BreadcrumbList schema sur toutes les pages
+- [x] Canonical URLs sur toutes les pages
+- [x] Build vérifié sans erreurs
+
+## À faire — SEO (actions manuelles Pierre)
+- [ ] Créer/revendiquer Google Business Profile (OptiPro, Vence)
+- [ ] Inscrire le site dans Google Search Console
+- [ ] Tester avec Google Rich Results Test après déploiement
+
 ## À faire — Site vitrine (plus tard)
 - [ ] Remplir les vrais projets dans src/data/projects.ts (SAPAL + autre)
 - [ ] Ajouter photo de Pierre dans la section Services

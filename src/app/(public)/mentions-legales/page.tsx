@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Mentions légales',
   description: 'Mentions légales du site OptiPro — éditeur, hébergement, données personnelles.',
+  alternates: {
+    canonical: '/mentions-legales',
+  },
 };
 
 const sectionHeadingStyle: React.CSSProperties = {
@@ -29,6 +32,14 @@ const linkStyle: React.CSSProperties = {
 export default function MentionsLegalesPage() {
   return (
     <main style={{ paddingTop: '6rem' }}>
+      <script type="application/ld+json">{JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.opti-pro.fr' },
+          { '@type': 'ListItem', position: 2, name: 'Mentions légales', item: 'https://www.opti-pro.fr/mentions-legales' },
+        ],
+      })}</script>
       <section style={{ padding: '3rem 0 6rem' }}>
         <div className="container" style={{ maxWidth: '760px' }}>
 

@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/dashboard'],
+      disallow: ['/dashboard', '/admin'],
     },
-    sitemap: 'https://optipro.fr/sitemap.xml',
+    sitemap: 'https://www.opti-pro.fr/sitemap.xml',
   };
 }
