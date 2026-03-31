@@ -259,7 +259,7 @@ export async function pushDevisToPennylaneAction(devisId: string) {
       label: l.description,
       quantity: l.quantite,
       raw_currency_unit_price: String(l.prix_unitaire_ht),
-      vat_rate: 'FR_0' // Exonération auto-entrepreneur
+      vat_rate: 'exempt' // Franchise en base de TVA (auto-entrepreneur)
     }))
   };
 
