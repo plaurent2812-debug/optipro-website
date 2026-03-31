@@ -77,7 +77,7 @@ export async function createPennylaneCustomer(payload: PennylaneCustomerPayload)
     ? 'https://app.pennylane.com/api/external/v2/company_customers'
     : 'https://app.pennylane.com/api/external/v2/individual_customers';
 
-  const { customer_type, ...requestBody } = payload;
+  const { customer_type, registration_number, ...requestBody } = payload;
 
   const response = await fetch(endpoint, {
     method: 'POST',
