@@ -6,8 +6,9 @@
 export interface PennylaneInvoiceItem {
   label: string;
   quantity: number;
+  unit: string;
   raw_currency_unit_price: string;
-  vat_rate: string; // Ex: 'FR_200' pour 20% TVA, 'FR_0' pour Auto-entrepreneur (Franchise en base)
+  vat_rate: string; // Ex: 'FR_200' pour 20% TVA, 'exempt' pour franchise en base
 }
 
 export interface PennylaneInvoicePayload {
@@ -101,6 +102,7 @@ export async function createPennylaneCustomer(payload: PennylaneCustomerPayload)
 export interface PennylaneQuoteLineItem {
   label: string;
   quantity: number;
+  unit: string;
   raw_currency_unit_price: string;
   vat_rate: string;
 }

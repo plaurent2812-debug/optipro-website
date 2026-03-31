@@ -48,6 +48,7 @@ export async function pushFactureToPennylaneAction(factureId: string) {
       line_items: facture.factures_lignes.map((l: any) => ({
         label: l.description,
         quantity: l.quantite,
+        unit: 'piece',
         raw_currency_unit_price: String(l.prix_unitaire_ht),
         vat_rate: 'exempt' // Franchise en base de TVA (auto-entrepreneur)
       }))
