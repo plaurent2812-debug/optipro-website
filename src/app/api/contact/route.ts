@@ -30,6 +30,38 @@ export async function POST(request: Request) {
             );
         }
 
+        // --- Enregistrement automatique dans le CRM (Table clients) ---
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+        if (supabaseUrl && supabaseServiceKey) {
+            import('@supabase/supabase-js').then(({ createClient }) => {
+                const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+                
+                const notes = `Secteur d'activité : ${activity || 'Non renseigné'}\nMessage/Problème :\n${message || 'Aucun message.'}`;
+                // Extraction basique du prénom/nom
+                const nameParts = name.trim().split(' ');
+                const prenom = nameParts.length > 1 ? nameParts[0] : '';
+                const nomFamille = nameParts.length > 1 ? nameParts.slice(1).join(' ') : name;
+
+                supabaseAdmin.from('clients').insert([{
+                    nom: nomFamille,
+                    prenom: prenom,
+                    email,
+                    telephone: phone || null,
+                    entreprise: company || null,
+                    notes,
+                    statut: 'prospect'
+                }]).then(({ error: dbError }) => {
+                    if (dbError) console.error("Erreur insertion Supabase CRM :", dbError);
+                    else console.log("Prospect enregistré avec succès dans le CRM !");
+                });
+            }).catch(err => console.error("Erreur import Supabase:", err));
+        } else {
+            console.warn("⚠️ PROSPECT NON SAUVEGARDÉ EN BASE : Il manque la SUPABASE_SERVICE_ROLE_KEY dans les variables d'environnement.");
+        }
+        // -------------------------------------------------------------
+
         const { data, error } = await resend.emails.send({
             from: 'Contact OptiPro <p.laurent@opti-pro.fr>', // Envoi depuis le nom de domaine vérifié
             to: ['p.laurent@opti-pro.fr'], // Adresse de réception principale
