@@ -332,3 +332,18 @@
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

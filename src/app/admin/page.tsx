@@ -104,7 +104,7 @@ export default async function AdminDashboardPage() {
 
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 1fr)', gap: '2rem', alignItems: 'start', marginTop: '1rem' }}>
+      <div className={styles.dashboardGrid}>
         
         {/* Derniers Devis */}
         <div className={styles.card}>
