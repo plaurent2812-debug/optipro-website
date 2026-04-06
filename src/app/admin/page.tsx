@@ -155,6 +155,15 @@ export default async function AdminDashboardPage() {
             <Link href="/admin/clients/new" className={styles.secondaryBtn} style={{ textAlign: 'center' }}>
               + Ajouter un Client
             </Link>
+            <a
+              href="https://app.pennylane.com/companies/23117446/welcome"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.secondaryBtn}
+              style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+            >
+              ↗ Ouvrir Pennylane
+            </a>
           </div>
         </div>
 
