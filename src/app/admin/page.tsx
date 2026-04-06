@@ -58,7 +58,18 @@ export default async function AdminDashboardPage() {
           <h1 className={styles.title}>Vue d'ensemble</h1>
           <p className={styles.subtitle}>Bienvenue dans votre CRM OptiPro. Voici vos statistiques actuelles.</p>
         </div>
-        <PennylaneSyncButton />
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <a
+            href="https://app.pennylane.com/companies/23117446/welcome"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.secondaryBtn}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+          >
+            ↗ Pennylane
+          </a>
+          <PennylaneSyncButton />
+        </div>
       </div>
 
       {/* KPIs Grid */}
@@ -155,15 +166,6 @@ export default async function AdminDashboardPage() {
             <Link href="/admin/clients/new" className={styles.secondaryBtn} style={{ textAlign: 'center' }}>
               + Ajouter un Client
             </Link>
-            <a
-              href="https://app.pennylane.com/companies/23117446/welcome"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondaryBtn}
-              style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
-            >
-              ↗ Ouvrir Pennylane
-            </a>
           </div>
         </div>
 
