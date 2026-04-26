@@ -117,3 +117,14 @@ A: Yes. Every engagement starts with a free 30-minute call and a process audit a
 
 **Q: What sectors do you serve?**
 A: Artisans and tradespeople (plumbers, electricians, carpenters, painters), freelancers, real estate professionals, event companies, small construction firms, and any TPE/PME looking to reduce administrative overhead.
+
+
+## Markdown Mirrors
+
+Clean, nav-free, script-free Markdown versions of each public page.
+Served as text/plain. Updated on each deployment.
+
+- https://www.opti-pro.fr/index.md — Home page
+- https://www.opti-pro.fr/services.md — Services and pricing
+- https://www.opti-pro.fr/realisations.md — Portfolio / case studies
+- https://www.opti-pro.fr/contact.md — Contact information
