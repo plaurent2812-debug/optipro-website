@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       {
         url: '/og-image.jpg',
         width: 1200,
-        height: 627,
+        height: 626,
         alt: 'OptiPro — Conseil & développement sur mesure',
       },
     ],
