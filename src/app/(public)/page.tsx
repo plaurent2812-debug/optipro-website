@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.jpg?v=2',
         width: 1200,
         height: 626,
         alt: 'OptiPro — Conseil & développement sur mesure',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'OptiPro — Conseil & développement sur mesure',
     description:
       'Je libère le temps des Artisans et TPE en optimisant et automatisant leurs processus.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.jpg?v=2'],
   },
 };
 
