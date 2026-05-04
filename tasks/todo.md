@@ -73,3 +73,14 @@
 - [ ] Ajouter photo de Pierre dans la section Services
 - [ ] Enrichir la page Services (FAQ, détails par étape)
 - [ ] Espace client (Niveau 3 — futur)
+
+## En cours — Animations GSAP /a-propos + blog (2026-04-28)
+- [x] AProposPageClient : timeline hero + ScrollTrigger philosophie
+- [x] AProposPageClient : timeline parcours scrubbed line + dot stagger
+- [x] AProposPageClient : valeurs staggered + CTA pulse glow
+- [x] Blog [slug] : split en page.tsx + ArticleClient.tsx
+- [x] ArticleClient : barre progression scrub + entrée breadcrumb/titre
+- [x] ArticleClient : reveal h2/h3 du contenu + sidebar slide
+- [x] Blog list page : ScrollTrigger.batch sur cards
+- [x] prefers-reduced-motion via gsap.matchMedia
+- [x] tsc --noEmit OK

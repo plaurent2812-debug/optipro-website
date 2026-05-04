@@ -10,3 +10,6 @@
 | 2026-03-31 | API Pennylane V2 : `unit_price_cents` (int centimes) → `raw_currency_unit_price` (string euros) | V2 attend le prix en euros sous forme de string, pas en centimes |
 | 2026-03-31 | API Pennylane V2 : `FR_0` n'existe plus pour la TVA → utiliser `exempt` | Pour franchise en base (auto-entrepreneur), le taux TVA V2 est `exempt` |
 | 2026-03-31 | API Pennylane V2 : le champ `unit` est obligatoire sur chaque ligne | Toujours inclure `unit: 'piece'` (ou autre) dans les invoice_lines |
+| 2026-04-28 | GSAP + Next.js : éviter `self.document` (n'existe pas hors browser global), passer par `rootRef.current?.querySelector` dans le scope du `useGSAP` | Toujours scoper les querySelector via le ref racine, pas via globals |
+| 2026-04-28 | gsap.matchMedia : `context.conditions` est typé `Record<string, boolean> \| undefined`, caster vers le type des clés déclarées et vérifier `!conditions` avant usage | Toujours guard nullish + cast explicite des conditions matchMedia |
+| 2026-04-28 | Quand un Server Component a besoin d'animations GSAP (Hooks React), créer un wrapper Client Component recevant les données en props ; garder JSON-LD et metadata côté Server | Pattern : page.tsx Server (SEO/data) → Client.tsx (animations + UI) |

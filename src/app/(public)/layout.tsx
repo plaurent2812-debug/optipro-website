@@ -26,7 +26,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'LocalBusiness',
+      '@type': ['LocalBusiness', 'ProfessionalService'],
       '@id': 'https://www.opti-pro.fr/#organization',
       name: 'OptiPro',
       description:
@@ -68,6 +68,14 @@ const jsonLd = {
       ],
       availableLanguage: 'fr',
       priceRange: 'Sur devis',
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '18:00',
+        },
+      ],
     },
     {
       '@type': 'WebSite',

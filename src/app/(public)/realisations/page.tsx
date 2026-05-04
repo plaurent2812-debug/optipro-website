@@ -17,17 +17,45 @@ export const metadata: Metadata = {
   },
 };
 
+const realisationsJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.opti-pro.fr' },
+        { '@type': 'ListItem', position: 2, name: 'Réalisations', item: 'https://www.opti-pro.fr/realisations' },
+      ],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.opti-pro.fr/realisations#webpage',
+      url: 'https://www.opti-pro.fr/realisations',
+      name: 'Réalisations OptiPro — Projets pour artisans et TPE',
+      isPartOf: { '@id': 'https://www.opti-pro.fr/#website' },
+      about: { '@id': 'https://www.opti-pro.fr/#organization' },
+      inLanguage: 'fr-FR',
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Réalisations OptiPro',
+      description: "Projets de développement et conseil réalisés pour artisans, TPE et indépendants",
+      url: 'https://www.opti-pro.fr/realisations',
+      numberOfItems: projects.length,
+      itemListElement: projects.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.title,
+        url: p.url ?? `https://www.opti-pro.fr/realisations#${p.id}`,
+      })),
+    },
+  ],
+};
+
 export default function RealisationsPage() {
   return (
     <main style={{ paddingTop: '6rem' }}>
-      <script type="application/ld+json">{JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.opti-pro.fr' },
-          { '@type': 'ListItem', position: 2, name: 'Réalisations', item: 'https://www.opti-pro.fr/realisations' },
-        ],
-      })}</script>
+      <script type="application/ld+json">{JSON.stringify(realisationsJsonLd)}</script>
       {/* Hero */}
       <section style={{ padding: '3rem 0 4rem', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '700px' }}>
