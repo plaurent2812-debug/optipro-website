@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -361,13 +362,19 @@ export default function AProposPageClient() {
             </div>
           </div>
 
-          {/* Avatar placeholder PL */}
-          <div className={styles.avatarWrap} aria-hidden="true">
-            <div className={styles.avatarRing} />
+          <div className={styles.avatarWrap}>
+            <div className={styles.avatarRing} aria-hidden="true" />
             <div className={styles.avatar}>
-              <span className={styles.avatarInitials}>PL</span>
+              <Image
+                src="/pierre-laurent.png"
+                alt="Pierre Laurent, fondateur d'OptiPro"
+                width={180}
+                height={180}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                priority
+              />
             </div>
-            <div className={styles.avatarGlow} />
+            <div className={styles.avatarGlow} aria-hidden="true" />
           </div>
         </div>
       </section>
