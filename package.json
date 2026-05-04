@@ -12,10 +12,11 @@
     "test:ci": "jest --ci --coverage"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@react-pdf/renderer": "^4.3.2",
     "@supabase/ssr": "^0.10.0",
     "@supabase/supabase-js": "^2.100.1",
-    "framer-motion": "^12.38.0",
+    "gsap": "^3.15.0",
     "next": "^16.2.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",

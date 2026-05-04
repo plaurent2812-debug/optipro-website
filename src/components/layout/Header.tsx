@@ -30,6 +30,7 @@ export default function Header() {
     const navLinks = [
         { href: '/services', label: 'Services' },
         { href: '/realisations', label: 'Réalisations' },
+        { href: '/a-propos', label: 'À propos' },
         { href: '/contact', label: 'Contact' },
     ];
 
@@ -82,7 +83,7 @@ export default function Header() {
                         variant="primary"
                         style={{ marginLeft: '0.75rem', fontSize: '0.9rem', padding: '0.6rem 1.25rem' }}
                     >
-                        Demander un contact
+                        Démarrer mon audit gratuit
                     </Button>
                 </nav>
 
@@ -187,7 +188,7 @@ export default function Header() {
             })}
             <div style={{ marginTop: '1rem' }}>
                 <Button href="/contact" variant="primary" style={{ width: '100%', textAlign: 'center' }} onClick={closeMenu}>
-                    Demander un contact
+                    Démarrer mon audit gratuit
                 </Button>
             </div>
         </div>

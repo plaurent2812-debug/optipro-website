@@ -1,22 +1,64 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/ui/Button';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function AuditCta() {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  useGSAP(
+    () => {
+      const target = ref.current;
+      if (!target) return;
+
+      const mm = gsap.matchMedia();
+
+      mm.add(
+        {
+          motionOk: '(prefers-reduced-motion: no-preference)',
+          motionReduced: '(prefers-reduced-motion: reduce)',
+        },
+        (context) => {
+          const conditions = context.conditions as {
+            motionOk: boolean;
+            motionReduced: boolean;
+          };
+          const reduced = conditions.motionReduced;
+
+          gsap.set(target, {
+            opacity: 0,
+            y: reduced ? 0 : 40,
+          });
+
+          ScrollTrigger.create({
+            trigger: target,
+            start: 'top 75%',
+            once: true,
+            onEnter: () => {
+              target.style.willChange = 'transform, opacity';
+              gsap.to(target, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out',
+                onComplete: () => {
+                  target.style.willChange = 'auto';
+                },
+              });
+            },
+          });
+        },
+      );
+
+      return () => mm.revert();
+    },
+    { scope: ref },
+  );
 
   return (
     <div
@@ -25,9 +67,6 @@ export default function AuditCta() {
       style={{
         position: 'relative',
         overflow: 'hidden',
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.6s ease, transform 0.6s ease',
       }}
     >
       {/* Animated background gradient */}
@@ -57,7 +96,7 @@ export default function AuditCta() {
         </p>
         <p className="audit-cta-note">100% gratuit et sans engagement</p>
         <Button href="/contact" variant="primary">
-          Demander un contact
+          Démarrer mon audit gratuit
         </Button>
       </div>
     </div>

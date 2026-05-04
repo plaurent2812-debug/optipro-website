@@ -42,7 +42,7 @@
 }
 
 .heroText {
-  animation: pageEnter 0.6s ease-out;
+  /* apparition pilotée par GSAP (cf. HomePageClient.tsx) */
 }
 
 .heroBadge {

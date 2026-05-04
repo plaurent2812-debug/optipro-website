@@ -1,6 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './HomePage.module.css';
 import Button from '@/components/ui/Button';
 import ProjectCard from '@/components/ui/ProjectCard';
@@ -13,7 +16,10 @@ import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
 import { projects } from '@/data/projects';
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function HomePageClient() {
+  const mainRef = useRef<HTMLElement>(null);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -22,22 +28,161 @@ export default function HomePageClient() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    if (!reveals.length) return;
-    const obs = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add('visible');
-        }),
-      { threshold: 0.1 }
-    );
-    reveals.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add(
+        {
+          motionOk: '(prefers-reduced-motion: no-preference)',
+          motionReduced: '(prefers-reduced-motion: reduce)',
+        },
+        (context) => {
+          const conditions = context.conditions as {
+            motionOk: boolean;
+            motionReduced: boolean;
+          };
+          const reduced = conditions.motionReduced;
+
+          // ========= HERO INTRO TIMELINE =========
+          const heroBadge = mainRef.current?.querySelector(
+            `.${styles.heroBadge}`,
+          );
+          const heroTitle = mainRef.current?.querySelector(
+            `.${styles.heroTitle}`,
+          );
+          const heroSub = mainRef.current?.querySelector(`.${styles.heroSub}`);
+          const heroCtas = mainRef.current?.querySelector(
+            `.${styles.heroCtas}`,
+          );
+          const heroVisual = mainRef.current?.querySelector(
+            `.${styles.heroVisual}`,
+          );
+
+          const heroEls = [heroBadge, heroTitle, heroSub, heroCtas].filter(
+            (el): el is Element => el != null,
+          );
+
+          if (heroEls.length > 0) {
+            gsap.set(heroEls, {
+              opacity: 0,
+              y: reduced ? 0 : 20,
+              willChange: 'transform, opacity',
+            });
+
+            const tl = gsap.timeline({
+              defaults: { ease: 'power3.out' },
+              onComplete: () => {
+                heroEls.forEach((el) => {
+                  if (el instanceof HTMLElement) el.style.willChange = 'auto';
+                });
+                if (heroVisual instanceof HTMLElement) {
+                  heroVisual.style.willChange = 'auto';
+                }
+              },
+            });
+
+            tl.to(heroEls, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              stagger: 0.1,
+            });
+
+            if (heroVisual) {
+              gsap.set(heroVisual, {
+                opacity: 0,
+                scale: reduced ? 1 : 0.95,
+                willChange: 'transform, opacity',
+              });
+              tl.to(
+                heroVisual,
+                {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                },
+                0.3,
+              );
+            }
+          }
+
+          // ========= REVEAL ON SCROLL (sections + cards) =========
+          const revealTargets = mainRef.current?.querySelectorAll<HTMLElement>(
+            '[data-reveal]',
+          );
+
+          revealTargets?.forEach((target) => {
+            gsap.set(target, {
+              opacity: 0,
+              y: reduced ? 0 : 30,
+            });
+
+            ScrollTrigger.create({
+              trigger: target,
+              start: 'top 80%',
+              once: true,
+              onEnter: () => {
+                target.style.willChange = 'transform, opacity';
+                gsap.to(target, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.7,
+                  ease: 'power2.out',
+                  onComplete: () => {
+                    target.style.willChange = 'auto';
+                  },
+                });
+              },
+            });
+          });
+
+          // ========= PROJECT CARDS — staggered =========
+          const projectCards =
+            mainRef.current?.querySelectorAll<HTMLElement>(
+              '[data-reveal-project]',
+            );
+
+          if (projectCards && projectCards.length > 0) {
+            gsap.set(projectCards, {
+              opacity: 0,
+              y: reduced ? 0 : 30,
+            });
+
+            ScrollTrigger.create({
+              trigger: projectCards[0],
+              start: 'top 80%',
+              once: true,
+              onEnter: () => {
+                projectCards.forEach((c) => {
+                  c.style.willChange = 'transform, opacity';
+                });
+                gsap.to(projectCards, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.7,
+                  ease: 'power2.out',
+                  stagger: 0.15,
+                  onComplete: () => {
+                    projectCards.forEach((c) => {
+                      c.style.willChange = 'auto';
+                    });
+                  },
+                });
+              },
+            });
+          }
+        },
+      );
+
+      return () => mm.revert();
+    },
+    { scope: mainRef },
+  );
 
   return (
-    <main>
+    <main ref={mainRef}>
       {/* ===== HERO ===== */}
       <section className={styles.hero}>
         <div className="container">
@@ -84,7 +229,7 @@ export default function HomePageClient() {
               </p>
               <div className={styles.heroCtas}>
                 <Button href="/contact" variant="primary">
-                  Demander un contact
+                  Démarrer mon audit gratuit
                 </Button>
                 <Button href="/services" variant="outline">
                   Voir les services
@@ -103,7 +248,7 @@ export default function HomePageClient() {
       <div className="section-divider" />
 
       {/* ===== LE PROBLÈME ===== */}
-      <section className="reveal-left" style={{ padding: '5rem 0' }}>
+      <section data-reveal style={{ padding: '5rem 0' }}>
         <div className="container">
           <div className="problem-grid">
             <div>
@@ -148,7 +293,7 @@ export default function HomePageClient() {
       <div className="section-divider" />
 
       {/* ===== SERVICE 1: AUDIT ===== */}
-      <section className="reveal service-showcase">
+      <section data-reveal className="service-showcase">
         <div className="container">
           <div className="service-showcase-grid">
             <div className="service-showcase-text">
@@ -165,7 +310,7 @@ export default function HomePageClient() {
                 <li>Cartographie complète de vos outils</li>
                 <li>Identification des points de friction</li>
                 <li>Rapport détaillé avec plan d&apos;action</li>
-                <li>L'audit est gratuit</li>
+                <li>L&apos;audit est gratuit</li>
               </ul>
             </div>
             <div className="service-showcase-visual">
@@ -176,7 +321,7 @@ export default function HomePageClient() {
       </section>
 
       {/* ===== SERVICE 2: ANALYSE ===== */}
-      <section className="reveal-right service-showcase">
+      <section data-reveal className="service-showcase">
         <div className="container">
           <div className="service-showcase-grid reversed">
             <div className="service-showcase-text">
@@ -203,7 +348,7 @@ export default function HomePageClient() {
       </section>
 
       {/* ===== SERVICE 3: CRÉATION ===== */}
-      <section className="reveal service-showcase">
+      <section data-reveal className="service-showcase">
         <div className="container">
           <div className="service-showcase-grid">
             <div className="service-showcase-text">
@@ -230,7 +375,7 @@ export default function HomePageClient() {
       </section>
 
       {/* ===== SERVICE 4: AUTOMATISATION ===== */}
-      <section className="reveal-left service-showcase">
+      <section data-reveal className="service-showcase">
         <div className="container">
           <div className="service-showcase-grid reversed">
             <div className="service-showcase-text">
@@ -259,7 +404,7 @@ export default function HomePageClient() {
       <div className="section-divider" />
 
       {/* ===== RÉALISATIONS ===== */}
-      <section className="reveal-right" style={{ padding: '5rem 0' }}>
+      <section data-reveal style={{ padding: '5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2
@@ -277,7 +422,9 @@ export default function HomePageClient() {
             </p>
           </div>
           {projects.map((p) => (
-            <ProjectCard key={p.id} project={p} compact />
+            <div key={p.id} data-reveal-project>
+              <ProjectCard project={p} compact />
+            </div>
           ))}
           <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
             <Button href="/realisations" variant="outline">
@@ -288,14 +435,14 @@ export default function HomePageClient() {
       </section>
 
       {/* ===== CTA AUDIT ===== */}
-      <section className="reveal">
+      <section>
         <div className="container">
           <AuditCta />
         </div>
       </section>
 
       {/* ===== TEASING OPTIBOARD ===== */}
-      <section className="reveal" style={{ padding: '3rem 0 5rem' }}>
+      <section data-reveal style={{ padding: '3rem 0 5rem' }}>
         <div className="container">
           <OptiboardTeaser />
         </div>

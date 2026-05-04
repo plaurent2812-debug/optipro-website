@@ -1,9 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { Project } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
+
+gsap.registerPlugin(useGSAP);
 
 interface Props {
   project: Project;
@@ -13,6 +17,8 @@ interface Props {
 export default function ProjectCard({ project, compact = false }: Props) {
   const images = project.images || [];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -21,6 +27,30 @@ export default function ProjectCard({ project, compact = false }: Props) {
   const prevImage = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  // Fade transition between images on index change (full version only)
+  useGSAP(
+    () => {
+      if (compact || images.length <= 1) return;
+      if (isFirstRender.current) {
+        isFirstRender.current = false;
+        return;
+      }
+      const wrapper = imageWrapperRef.current;
+      if (!wrapper) return;
+
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
+        .matches;
+      if (reduced) return;
+
+      gsap.fromTo(
+        wrapper,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.4, ease: 'power2.out' },
+      );
+    },
+    { dependencies: [currentIndex], scope: imageWrapperRef },
+  );
 
   /* ── VERSION COMPACTE (home page) ── */
   if (compact) {
@@ -57,7 +87,7 @@ export default function ProjectCard({ project, compact = false }: Props) {
   return (
     <div className="project-card">
       {images.length > 0 && (
-        <div style={{ position: 'relative', width: '100%', height: '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid rgba(255,255,255,0.06)' }}>
+        <div ref={imageWrapperRef} style={{ position: 'relative', width: '100%', height: '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.5rem', border: '1px solid rgba(255,255,255,0.06)' }}>
           <Image
             src={images[currentIndex]}
             alt={`Aperçu de ${project.title} - ${currentIndex + 1}`}
