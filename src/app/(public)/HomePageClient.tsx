@@ -14,6 +14,7 @@ import AutomationMockup from '@/components/visuals/AutomationMockup';
 import AuditCta from '@/components/ui/AuditCta';
 import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
+import Image from 'next/image';
 import { projects } from '@/data/projects';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -261,7 +262,7 @@ export default function HomePageClient() {
                   lineHeight: 1.2,
                 }}
               >
-                Vous perdez du temps sur des tâches qui ne sont pas votre métier
+                Pourquoi les artisans et TPE perdent-ils autant de temps sur l&apos;administratif ?
               </h2>
               <p
                 style={{
@@ -299,7 +300,7 @@ export default function HomePageClient() {
             <div className="service-showcase-text">
               <span className="service-showcase-label">Étape 1 · Audit</span>
               <h2 className="service-showcase-title">
-                On commence par comprendre<br />votre réalité
+                Comment se déroule un projet avec OptiPro ?
               </h2>
               <p className="service-showcase-desc">
                 Je passe en revue vos outils, vos process quotidiens et
@@ -415,7 +416,7 @@ export default function HomePageClient() {
                 marginBottom: '0.75rem',
               }}
             >
-              Réalisations
+              Quels résultats ont obtenu les clients d&apos;OptiPro ?
             </h2>
             <p style={{ color: 'var(--secondary)', fontSize: '1.05rem' }}>
               Des solutions concrètes, des résultats mesurables.
@@ -430,6 +431,56 @@ export default function HomePageClient() {
             <Button href="/realisations" variant="outline">
               Voir les détails
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FONDATEUR ===== */}
+      <section data-reveal style={{ padding: '5rem 0' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'auto 1fr',
+            gap: '3rem',
+            alignItems: 'center',
+            maxWidth: '760px',
+            margin: '0 auto',
+            background: 'var(--surface)',
+            border: '1px solid var(--border)',
+            borderRadius: '16px',
+            padding: '2.5rem',
+          }}>
+            <div style={{ flexShrink: 0 }}>
+              <Image
+                src="/pierre-laurent.png"
+                alt="Pierre Laurent, fondateur d'OptiPro"
+                width={120}
+                height={120}
+                style={{ borderRadius: '50%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div>
+              <p style={{ color: 'var(--muted)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
+                Votre interlocuteur
+              </p>
+              <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.75rem' }}>
+                Pierre Laurent — Fondateur OptiPro
+              </h2>
+              <p style={{ color: 'var(--secondary)', lineHeight: 1.7, fontSize: '0.97rem', marginBottom: '1rem' }}>
+                10 ans d&apos;expérience en opérations, logistique et gestion de projets — en startup immobilière, GL Events et dans le BTP. Je sais ce que coûte une heure perdue sur du travail administratif. J&apos;ai lancé OptiPro en 2025 pour régler ces problèmes concrètement, sans jargon, sans sous-traitance.
+              </p>
+              <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
+                Vous parlerez toujours avec moi directement — du diagnostic à la livraison.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/pierre-laurent-809410123"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--accent)', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 600 }}
+              >
+                Voir le profil LinkedIn →
+              </a>
+            </div>
           </div>
         </div>
       </section>
