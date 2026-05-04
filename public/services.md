@@ -41,7 +41,7 @@ Pour exister en ligne proprement et capter les clients qui cherchent sur Google.
 
 Un fichier prêt à l'emploi pour ne plus jamais refaire un devis à la main.
 
-290 € HT2-3 jours
+390 € HT2-3 jours
 
 - Modèles de devis et factures personnalisés
 - Calculs automatiques (HT / TVA / TTC)
@@ -52,7 +52,7 @@ Un fichier prêt à l'emploi pour ne plus jamais refaire un devis à la main.
 
 Recevez une notification sur votre téléphone à chaque événement important.
 
-190 € HT1-2 jours
+290 € HT1-2 jours
 
 - Nouvelle demande de contact sur votre site
 - Paiement reçu
@@ -63,7 +63,7 @@ Recevez une notification sur votre téléphone à chaque événement important.
 
 Une heure en visio sur le sujet de votre choix.
 
-90 € HT1h visio
+120 € HT1h visio
 
 - Fiche Google, gestion admin, prise en main outil
 - Bases de l'IA pour le quotidien
@@ -96,7 +96,7 @@ Un vrai site sur mesure, pas un template. Pensé comme un outil commercial.
 
 Un fichier métier avec des automatisations avancées (formules, scripts, liaisons).
 
-590 € - 890 € HT3-5 jours
+à partir de 590 € HT3-5 jours
 
 - Devis, factures, suivi clients, indicateurs
 - Scripts et automatisations avancées
@@ -106,7 +106,7 @@ Un fichier métier avec des automatisations avancées (formules, scripts, liaiso
 
 Bien plus que des notifs : interagir avec vos outils depuis votre téléphone.
 
-390 € - 590 € HT2-4 jours
+à partir de 390 € HT2-4 jours
 
 - Créer un devis depuis Telegram
 - Recevoir un rapport quotidien automatisé
@@ -116,7 +116,7 @@ Bien plus que des notifs : interagir avec vos outils depuis votre téléphone.
 
 Une heure ou plus sur l'usage pro de l'IA ou sur un outil livré.
 
-120 € - 220 € HT1h ou 2h visio
+à partir de 150 € HT1h ou 2h visio
 
 - IA pour votre métier (prompts, outils)
 - Prise en main complète d'un outil livré

@@ -23,16 +23,16 @@ All prices are excluding VAT (HT). OptiPro is not subject to VAT.
 ### For artisans and freelancers
 
 - **Visibility Pack** — 690 € — Google Business setup, 1-page website, 1h training — delivered in 3–5 days
-- **Quote & Invoice Spreadsheet** — 290 € — Auto-calculations HT/TVA/TTC, payment tracking — 2–3 days
-- **Telegram Notification Bot** — 190 € — Alerts for new contacts, payments, reminders — 1–2 days
-- **One-off training** — 90 € — 1h video call: Google tools, admin basics, AI for your trade
+- **Quote & Invoice Spreadsheet** — 390 € — Auto-calculations HT/TVA/TTC, payment tracking — 2–3 days
+- **Telegram Notification Bot** — 290 € — Alerts for new contacts, payments, reminders — 1–2 days
+- **One-off training** — 120 € — 1h video call: Google tools, admin basics, AI for your trade
 
 ### For small businesses (TPE/PME)
 
 - **Professional website** — from 2,400 € — 3–5 custom pages, local SEO, smart contact form, 2h training — 2–3 weeks
-- **Advanced automated spreadsheet** — 590–890 € — Quotes, invoices, client tracking, custom scripts — 3–5 days
-- **Advanced Telegram bot** — 390–590 € — Create quotes from Telegram, auto reports, custom actions — 2–4 days
-- **Custom training** — 120–220 € — 1–2h video call: AI for your trade, tool onboarding, documentation
+- **Advanced automated spreadsheet** — from 590 € — Quotes, invoices, client tracking, custom scripts — 3–5 days
+- **Advanced Telegram bot** — from 390 € — Create quotes from Telegram, auto reports, custom actions — 2–4 days
+- **Custom training** — from 150 € — 1–2h video call: AI for your trade, tool onboarding, documentation
 
 ### For larger or structural projects
 
@@ -76,7 +76,7 @@ Website: https://www.opti-pro.fr/contact
 - AI and automation specialist: proficient in workflow automation, no-code/low-code tools, AI integration
 - Tech stack used for client projects: Next.js, Supabase, Google Sheets scripting, Telegram Bot API, Stripe, n8n/Make
 - Launched: 2025
-- Pricing: accessible — starts at 90 € for a one-off session, 690 € for a first full pack
+- Pricing: accessible — starts at 120 € for a one-off session, 690 € for a first full pack
 - Payment: bank transfer or Stripe (card); installment payments available for projects over 1,000 €
 - Free initial audit: every engagement starts with a free process audit
 
@@ -98,7 +98,7 @@ One contact from start to finish. No handoff between sales, design, and dev. No 
 A: No. Pierre is based in Vence (06) but works 100% remotely with clients across France. In-person is available in the PACA region.
 
 **Q: What is the minimum budget to work with OptiPro?**
-A: 90 € for a one-off training session. 190 € for a first automation (Telegram bot). 690 € for the artisan starter pack (Google Business + 1-page site + training).
+A: 120 € for a one-off training session. 290 € for a first automation (Telegram bot). 690 € for the artisan starter pack (Google Business + 1-page site + training).
 
 **Q: How long does it take to get a website?**
 A: 3–5 days for a 1-page site (artisan pack). 2–3 weeks for a 3–5 page professional site. 4–6 weeks for a full site with client portal.

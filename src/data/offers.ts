@@ -45,7 +45,7 @@ export const offerCategories: OfferCategory[] = [
         id: 'sheets-devis',
         name: 'Sheets Devis / Factures',
         description: 'Un fichier prêt à l\'emploi pour ne plus jamais refaire un devis à la main.',
-        price: '290 € HT',
+        price: '390 € HT',
         delay: '2-3 jours',
         features: [
           'Modèles de devis et factures personnalisés',
@@ -58,7 +58,7 @@ export const offerCategories: OfferCategory[] = [
         id: 'bot-telegram',
         name: 'Bot Telegram Notifs',
         description: 'Recevez une notification sur votre téléphone à chaque événement important.',
-        price: '190 € HT',
+        price: '290 € HT',
         delay: '1-2 jours',
         features: [
           'Nouvelle demande de contact sur votre site',
@@ -71,7 +71,7 @@ export const offerCategories: OfferCategory[] = [
         id: 'formation-1h',
         name: 'Formation ponctuelle',
         description: 'Une heure en visio sur le sujet de votre choix.',
-        price: '90 € HT',
+        price: '120 € HT',
         delay: '1h visio',
         features: [
           'Fiche Google, gestion admin, prise en main outil',
@@ -109,7 +109,7 @@ export const offerCategories: OfferCategory[] = [
         id: 'sheets-pro',
         name: 'Sheets automatisé pro',
         description: 'Un fichier métier avec des automatisations avancées (formules, scripts, liaisons).',
-        price: '590 € - 890 € HT',
+        price: 'à partir de 590 € HT',
         delay: '3-5 jours',
         features: [
           'Devis, factures, suivi clients, indicateurs',
@@ -121,7 +121,7 @@ export const offerCategories: OfferCategory[] = [
         id: 'bot-telegram-pro',
         name: 'Bot Telegram avancé',
         description: 'Bien plus que des notifs : interagir avec vos outils depuis votre téléphone.',
-        price: '390 € - 590 € HT',
+        price: 'à partir de 390 € HT',
         delay: '2-4 jours',
         features: [
           'Créer un devis depuis Telegram',
@@ -133,7 +133,7 @@ export const offerCategories: OfferCategory[] = [
         id: 'formation-pro',
         name: 'Formation sur mesure',
         description: 'Une heure ou plus sur l\'usage pro de l\'IA ou sur un outil livré.',
-        price: '120 € - 220 € HT',
+        price: 'à partir de 150 € HT',
         delay: '1h ou 2h visio',
         features: [
           'IA pour votre métier (prompts, outils)',

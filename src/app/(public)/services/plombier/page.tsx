@@ -64,7 +64,7 @@ const jsonLd = {
           name: 'Comment automatiser mes devis et factures ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OptiPro propose un fichier Sheets prêt à l&apos;emploi (290€ HT) avec calcul automatique HT/TVA/TTC, suivi des paiements, et numérotation automatique. Pour aller plus loin, un Bot Telegram (190€ HT) vous notifie en temps réel à chaque demande de devis ou paiement reçu.',
+            text: 'OptiPro propose un fichier Sheets prêt à l&apos;emploi (390€ HT) avec calcul automatique HT/TVA/TTC, suivi des paiements, et numérotation automatique. Pour aller plus loin, un Bot Telegram (290€ HT) vous notifie en temps réel à chaque demande de devis ou paiement reçu.',
           },
         },
         {
@@ -142,7 +142,7 @@ export default function PlombierPage() {
         },
         {
           question: 'Comment automatiser mes devis et factures ?',
-          answer: "OptiPro propose un fichier Sheets prêt à l'emploi (290€ HT) avec calcul automatique HT/TVA/TTC, suivi des paiements et numérotation automatique. Pour aller plus loin, un Bot Telegram (190€ HT) vous notifie en temps réel à chaque demande de devis ou paiement reçu.",
+          answer: "OptiPro propose un fichier Sheets prêt à l'emploi (390€ HT) avec calcul automatique HT/TVA/TTC, suivi des paiements et numérotation automatique. Pour aller plus loin, un Bot Telegram (290€ HT) vous notifie en temps réel à chaque demande de devis ou paiement reçu.",
         },
         {
           question: 'Travaillez-vous avec des plombiers en dehors de la PACA ?',
