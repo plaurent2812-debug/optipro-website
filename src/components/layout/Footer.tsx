@@ -61,6 +61,16 @@ export default function Footer() {
                         <h4 style={{ color: 'var(--muted)', marginBottom: '1.25rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Contact</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--secondary)', fontSize: '0.95rem' }}>
                             <li>Pierre Laurent — Fondateur</li>
+                            <li style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Vence, 06140 — PACA</li>
+                            <li>
+                                <a
+                                    href="tel:+33670259333"
+                                    className="footer-link"
+                                    style={{ color: 'var(--secondary)' }}
+                                >
+                                    06 70 25 93 33
+                                </a>
+                            </li>
                             <li>
                                 <a
                                     href="mailto:p.laurent@opti-pro.fr"

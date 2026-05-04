@@ -56,7 +56,13 @@ const jsonLd = {
         sameAs: 'https://www.linkedin.com/in/pierre-laurent-809410123',
       },
       image: 'https://www.opti-pro.fr/opengraph-image.png',
-      logo: 'https://www.opti-pro.fr/logo.png',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.opti-pro.fr/logo.png',
+        width: 200,
+        height: 60,
+      },
+      telephone: '+33670259333',
       sameAs: [
         'https://www.linkedin.com/in/pierre-laurent-809410123',
       ],
