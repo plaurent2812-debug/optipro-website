@@ -31,6 +31,26 @@ function extractCustomerId(invoice: Record<string, unknown>): string | null {
   return null;
 }
 
+/**
+ * Tente de récupérer le pennylane_quote_id lié à une facture, pour matcher
+ * la facture au devis OptiPro correspondant.
+ */
+function extractQuoteId(invoice: Record<string, unknown>): string | null {
+  const directKeys = ['quote_id', 'estimate_id', 'source_quote_id'];
+  for (const key of directKeys) {
+    const v = invoice[key];
+    if (typeof v === 'string' && v.length > 0) return v;
+    if (typeof v === 'number') return String(v);
+  }
+  const quote = (invoice.quote ?? invoice.source_quote) as Record<string, unknown> | undefined;
+  if (quote && typeof quote === 'object') {
+    const qid = quote.id;
+    if (typeof qid === 'string' && qid.length > 0) return qid;
+    if (typeof qid === 'number') return String(qid);
+  }
+  return null;
+}
+
 function extractInvoiceId(invoice: Record<string, unknown>): string | null {
   const v = invoice.id;
   if (typeof v === 'string') return v;
@@ -134,6 +154,19 @@ export async function syncAllFromPennylaneAction() {
       }
     }
 
+    // Récupère les devis avec pennylane_quote_id pour matcher facture → devis
+    const { data: devisWithPennylane } = await supabase
+      .from('devis')
+      .select('id, pennylane_quote_id')
+      .not('pennylane_quote_id', 'is', null)
+
+    const devisMap = new Map<string, string>()
+    for (const d of devisWithPennylane ?? []) {
+      if (d.pennylane_quote_id) {
+        devisMap.set(String(d.pennylane_quote_id), d.id)
+      }
+    }
+
     // Récupère les factures déjà connues côté Supabase pour ne pas dupliquer
     const { data: existingFactures } = await supabase
       .from('factures')
@@ -156,11 +189,25 @@ export async function syncAllFromPennylaneAction() {
         const amountHt = extractAmountHt(inv)
         const dateEmission = extractDate(inv, 'date', 'invoice_date', 'issued_at', 'created_at')
         const dateEcheance = extractDate(inv, 'deadline', 'due_date', 'payment_due_date')
-        const datePaiement = extractDate(inv, 'paid_at', 'payment_date')
+        let datePaiement = extractDate(inv, 'paid_at', 'payment_date')
         const rawStatus = (inv.status as string) ?? 'pending'
         const statut = mapPennylaneInvoiceStatus(rawStatus) ?? 'envoyee'
         const customerId = extractCustomerId(inv)
         const clientId = customerId ? clientMap.get(customerId) ?? null : null
+        const quoteId = extractQuoteId(inv)
+        const devisId = quoteId ? devisMap.get(quoteId) ?? null : null
+
+        // Si la facture est marquée payée mais qu'on n'a pas la date de paiement
+        // depuis la liste, on récupère le détail pour avoir paid_at.
+        if (statut === 'payee' && !datePaiement) {
+          try {
+            const detail = await getPennylaneInvoice(invoiceId)
+            datePaiement = extractDate(detail as Record<string, unknown>, 'paid_at', 'payment_date', 'last_payment_date') ?? dateEmission
+          } catch {
+            // En dernier recours, on tombe sur la date d'émission pour ne pas perdre la facture du dashboard
+            datePaiement = dateEmission
+          }
+        }
 
         const existing = existingMap.get(invoiceId)
 
@@ -184,6 +231,7 @@ export async function syncAllFromPennylaneAction() {
             .insert({
               numero,
               client_id: clientId,
+              devis_id: devisId,
               statut,
               date_emission: dateEmission,
               date_echeance: dateEcheance,

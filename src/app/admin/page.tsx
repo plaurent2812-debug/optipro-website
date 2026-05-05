@@ -12,16 +12,23 @@ export default async function AdminDashboardPage() {
   // --- Récupération des KPIs ---
   
   // 1. Chiffre d'Affaires du mois (Factures payées)
+  // On filtre sur date_paiement si dispo, sinon date_emission (fallback)
+  // car Pennylane ne renvoie pas toujours paid_at dans la liste des factures.
   const now = new Date()
   const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0]
-  
+
   const { data: facturesPayees } = await supabase
     .from('factures')
-    .select('montant_ht')
+    .select('montant_ht, date_paiement, date_emission')
     .eq('statut', 'payee')
-    .gte('date_paiement', firstDayOfMonth)
 
-  const caMoisActuel = facturesPayees?.reduce((acc, f) => acc + (f.montant_ht || 0), 0) || 0
+  const caMoisActuel = (facturesPayees ?? []).reduce((acc, f) => {
+    const refDate = (f.date_paiement ?? f.date_emission ?? '').slice(0, 10)
+    if (refDate >= firstDayOfMonth) {
+      return acc + (Number(f.montant_ht) || 0)
+    }
+    return acc
+  }, 0)
 
   // 2. MRR (Abonnements actifs)
   const { data: abosActifs } = await supabase
