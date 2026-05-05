@@ -41,7 +41,6 @@ export default function Footer() {
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             {[
                                 { href: '/services', label: 'Services' },
-                                { href: '/realisations', label: 'Réalisations' },
                                 { href: '/blog', label: 'Blog' },
                                 { href: '/newsletter', label: 'Newsletter' },
                                 { href: '/a-propos', label: 'À propos' },

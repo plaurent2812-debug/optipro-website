@@ -6,7 +6,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './HomePage.module.css';
 import Button from '@/components/ui/Button';
-import ProjectCard from '@/components/ui/ProjectCard';
 import AuditMockup from '@/components/visuals/AuditMockup';
 import AnalyseMockup from '@/components/visuals/AnalyseMockup';
 import CreationMockup from '@/components/visuals/CreationMockup';
@@ -16,7 +15,6 @@ import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
 import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import Image from 'next/image';
-import { projects } from '@/data/projects';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -411,36 +409,6 @@ export default function HomePageClient() {
 
       <div className="section-divider" />
 
-      {/* ===== RÉALISATIONS ===== */}
-      <section data-reveal style={{ padding: '5rem 0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2
-              style={{
-                fontSize: '2rem',
-                fontWeight: 800,
-                color: 'var(--primary)',
-                marginBottom: '0.75rem',
-              }}
-            >
-              Quels résultats ont obtenu les clients d&apos;OptiPro ?
-            </h2>
-            <p style={{ color: 'var(--secondary)', fontSize: '1.05rem' }}>
-              Des solutions concrètes, des résultats mesurables.
-            </p>
-          </div>
-          {projects.map((p) => (
-            <div key={p.id} data-reveal-project>
-              <ProjectCard project={p} compact />
-            </div>
-          ))}
-          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <Button href="/realisations" variant="outline">
-              Voir les détails
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* ===== FONDATEUR ===== */}
       <section data-reveal style={{ padding: '5rem 0' }}>
