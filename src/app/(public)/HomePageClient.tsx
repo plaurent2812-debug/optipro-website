@@ -495,45 +495,31 @@ export default function HomePageClient() {
       {/* ===== FONDATEUR ===== */}
       <section data-reveal style={{ padding: '3rem 0 5rem' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'auto 1fr',
-            gap: '3rem',
-            alignItems: 'center',
-            maxWidth: '760px',
-            margin: '0 auto',
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            borderRadius: '16px',
-            padding: '2.5rem',
-          }}>
-            <div style={{ flexShrink: 0 }}>
+          <div className={styles.founderCard}>
+            <div className={styles.founderPhoto}>
               <Image
                 src="/pierre-laurent.png"
                 alt="Pierre Laurent, fondateur d'OptiPro"
                 width={120}
                 height={120}
-                style={{ borderRadius: '50%', objectFit: 'cover', display: 'block' }}
               />
             </div>
-            <div>
-              <p style={{ color: 'var(--muted)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
-                Votre interlocuteur
-              </p>
-              <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.75rem' }}>
+            <div className={styles.founderText}>
+              <p className={styles.founderEyebrow}>Votre interlocuteur</p>
+              <h2 className={styles.founderTitle}>
                 Pierre Laurent — Fondateur OptiPro
               </h2>
-              <p style={{ color: 'var(--secondary)', lineHeight: 1.7, fontSize: '0.97rem', marginBottom: '1rem' }}>
+              <p className={styles.founderBio}>
                 10 ans à piloter des flux tendus en exploitation logistique : déploiement complet d&apos;un ERP chez Eddifis, 8 500 références gérées chez DBS, 7 M€ de portefeuille ADV piloté chez Factory, dépôt événementiel chez GL Events Live. J&apos;ai quitté l&apos;exploitation pour fonder OptiPro et appliquer ces 10 ans de terrain à l&apos;IA opérationnelle. Je sais ce que coûte une erreur sur le terrain.
               </p>
-              <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
+              <p className={styles.founderNote}>
                 Vous parlerez toujours avec moi directement — du diagnostic à la livraison. Pas de sous-traitance, pas de commercial.
               </p>
               <a
                 href="https://www.linkedin.com/in/pierre-laurent-809410123"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'var(--accent)', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 600 }}
+                className={styles.founderLink}
               >
                 Voir le profil LinkedIn →
               </a>

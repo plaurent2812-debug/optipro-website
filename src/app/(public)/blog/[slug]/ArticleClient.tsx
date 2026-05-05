@@ -232,51 +232,19 @@ export default function ArticleClient({
             />
 
             {/* Bio auteur en fin d'article — amplifie l'E-E-A-T */}
-            <aside
-              style={{
-                marginTop: '3rem',
-                padding: '1.75rem',
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderLeft: '3px solid var(--accent)',
-                borderRadius: '12px',
-                display: 'grid',
-                gridTemplateColumns: '70px 1fr',
-                gap: '1.25rem',
-                alignItems: 'flex-start',
-              }}
-            >
-              <div
-                style={{
-                  width: '70px',
-                  height: '70px',
-                  borderRadius: '50%',
-                  background: 'var(--accent)',
-                  color: 'white',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 800,
-                  fontSize: '1.5rem',
-                }}
-                aria-hidden="true"
-              >
+            <aside className={styles.authorBio}>
+              <div className={styles.authorBioAvatar} aria-hidden="true">
                 PL
               </div>
-              <div>
-                <p style={{ fontWeight: 700, color: 'var(--primary)', marginBottom: '0.25rem', fontSize: '1.05rem' }}>
-                  Pierre Laurent
-                </p>
-                <p style={{ color: 'var(--secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '0.75rem' }}>
+              <div className={styles.authorBioText}>
+                <p className={styles.authorBioName}>Pierre Laurent</p>
+                <p className={styles.authorBioDesc}>
                   Fondateur d&apos;OptiPro · 10 ans en exploitation logistique (Toute la Nutrition,
                   DBS, Eddifis, Factory, GL Events Live). ERP déployé, 8 500 références gérées,
                   7 M€ ADV piloté. Aujourd&apos;hui consultant indépendant à Vence — j&apos;aide
                   les artisans, TPE et PME ops à reprendre le contrôle de leur temps.
                 </p>
-                <Link
-                  href="/a-propos"
-                  style={{ color: 'var(--accent)', fontSize: '0.9rem', fontWeight: 600 }}
-                >
+                <Link href="/a-propos" className={styles.authorBioLink}>
                   Mon parcours complet →
                 </Link>
               </div>

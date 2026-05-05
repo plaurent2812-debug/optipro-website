@@ -163,3 +163,91 @@
     align-items: stretch;
   }
 }
+
+/* ============================================
+   Section Fondateur / Votre interlocuteur
+   ============================================ */
+.founderCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+}
+
+.founderPhoto {
+  flex-shrink: 0;
+}
+
+.founderPhoto img {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.founderText {
+  min-width: 0;
+}
+
+.founderEyebrow {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.founderTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.founderBio {
+  color: var(--secondary);
+  line-height: 1.7;
+  font-size: 0.97rem;
+  margin-bottom: 1rem;
+}
+
+.founderNote {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.founderLink {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .founderCard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .founderPhoto {
+    margin: 0 auto;
+  }
+
+  .founderTitle {
+    font-size: 1.25rem;
+  }
+
+  .founderBio,
+  .founderNote {
+    text-align: left;
+  }
+}

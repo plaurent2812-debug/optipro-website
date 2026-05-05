@@ -29,12 +29,20 @@
   font-family: var(--font-body), 'Outfit', sans-serif;
   font-size: 0.9rem;
   color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0;
+  /* empêche tout débordement horizontal du breadcrumb */
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .breadcrumb a {
   color: var(--muted);
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .breadcrumb a:hover {
@@ -44,10 +52,25 @@
 .breadcrumbSep {
   margin: 0 0.5rem;
   color: var(--muted);
+  flex-shrink: 0;
 }
 
 .breadcrumbCurrent {
   color: var(--secondary);
+  /* tronquer si trop long pour rester sur une ligne */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  /* Sur mobile, on retire l'item "titre article" du breadcrumb : trop long */
+  .breadcrumbCurrent,
+  .breadcrumb .breadcrumbSep:last-of-type {
+    display: none;
+  }
 }
 
 /* Layout : article + sidebar */
@@ -109,12 +132,23 @@
 
 .title {
   font-family: var(--font-display), 'Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
   font-weight: 800;
   color: var(--primary);
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 1rem;
+  /* Évite tout débordement et coupe les mots très longs proprement */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
 }
 
 .author {
@@ -122,6 +156,9 @@
   align-items: center;
   gap: 0.75rem;
   margin-top: 1.25rem;
+  /* le bloc ne doit jamais dépasser le container parent */
+  max-width: 100%;
+  flex-wrap: nowrap;
 }
 
 .authorAvatar {
@@ -136,12 +173,100 @@
   font-family: var(--font-display), 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 1rem;
+  flex-shrink: 0;
 }
 
 .authorMeta {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  /* permet au texte de wrapper proprement plutôt que de pousser le parent */
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.authorName {
+  /* nom : reste sur une seule ligne, tronqué si vraiment trop long */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.authorRole {
+  /* rôle : peut wrapper en 2 lignes si nécessaire (mobile) */
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* Bio auteur en fin d'article (E-E-A-T) */
+.authorBio {
+  margin-top: 3rem;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.authorBioAvatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.authorBioText {
+  min-width: 0;
+}
+
+.authorBioName {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+}
+
+.authorBioDesc {
+  color: var(--secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.authorBioLink {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .authorBio {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .authorBioAvatar {
+    margin: 0 auto;
+  }
+
+  .authorBioDesc {
+    text-align: left;
+  }
 }
 
 .authorName {
