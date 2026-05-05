@@ -21,7 +21,7 @@ type TimelineItem = {
 
 const timeline: TimelineItem[] = [
   {
-    period: '2026 → aujourd\'hui',
+    period: 'Avril 2026 → aujourd\'hui',
     company: 'OptiPro',
     role: 'Fondateur — Conseil exploitation & IA opérationnelle',
     description:
@@ -29,7 +29,7 @@ const timeline: TimelineItem[] = [
     current: true,
   },
   {
-    period: 'Sept. 2025 → 2026',
+    period: 'Sept. 2025 → Avril 2026',
     company: 'GL Events Live',
     role: 'Responsable Exploitation logistique événementielle',
     description:
