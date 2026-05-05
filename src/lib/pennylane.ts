@@ -199,6 +199,50 @@ export async function getPennylaneInvoice(invoiceId: string) {
   return await response.json();
 }
 
+/**
+ * Liste TOUTES les factures clients de Pennylane (paginé).
+ * Pagination cursor-based : on suit page_size + cursor jusqu'à plus de pages.
+ * Renvoie un tableau aplati de toutes les factures.
+ */
+export async function listPennylaneInvoices(): Promise<Array<Record<string, unknown>>> {
+  const token = process.env.PENNYLANE_API_TOKEN;
+  if (!token) throw new Error("Clé API Pennylane manquante.");
+
+  const allInvoices: Array<Record<string, unknown>> = [];
+  let cursor: string | null = null;
+  let safetyCounter = 0;
+  const SAFETY_MAX_PAGES = 50; // garde-fou : 50 pages × 100 = 5 000 factures max
+
+  do {
+    const url = new URL('https://app.pennylane.com/api/external/v2/customer_invoices');
+    url.searchParams.set('page_size', '100');
+    if (cursor) url.searchParams.set('cursor', cursor);
+
+    const response = await fetch(url.toString(), {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(`Erreur API listInvoices (${response.status}): ${JSON.stringify(errorData)}`);
+    }
+
+    const data = await response.json();
+
+    // Pennylane V2 renvoie soit { items: [...], next_cursor: "..." } soit { customer_invoices: [...], ... }
+    const items: Array<Record<string, unknown>> = data.items ?? data.customer_invoices ?? data.data ?? [];
+    allInvoices.push(...items);
+
+    cursor = (data.next_cursor as string | null) ?? null;
+    safetyCounter++;
+  } while (cursor && safetyCounter < SAFETY_MAX_PAGES);
+
+  return allInvoices;
+}
+
 export function mapPennylaneInvoiceStatus(pennylaneStatus: string): string | null {
   return PENNYLANE_INVOICE_STATUS_MAP[pennylaneStatus] || null;
 }

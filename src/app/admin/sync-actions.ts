@@ -2,7 +2,72 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
-import { getPennylaneQuote, mapPennylaneQuoteStatus, getPennylaneInvoice, mapPennylaneInvoiceStatus } from '@/lib/pennylane'
+import {
+  getPennylaneQuote,
+  mapPennylaneQuoteStatus,
+  getPennylaneInvoice,
+  mapPennylaneInvoiceStatus,
+  listPennylaneInvoices,
+} from '@/lib/pennylane'
+
+/**
+ * Cherche dans une facture Pennylane les champs identifiant le client.
+ * Pennylane V2 expose plusieurs formes : customer.id, customer_id, company_customer_id, etc.
+ * On retourne la première chaîne non vide trouvée.
+ */
+function extractCustomerId(invoice: Record<string, unknown>): string | null {
+  const directKeys = ['customer_id', 'company_customer_id', 'individual_customer_id'];
+  for (const key of directKeys) {
+    const v = invoice[key];
+    if (typeof v === 'string' && v.length > 0) return v;
+    if (typeof v === 'number') return String(v);
+  }
+  const customer = invoice.customer as Record<string, unknown> | undefined;
+  if (customer && typeof customer === 'object') {
+    const cid = customer.id;
+    if (typeof cid === 'string' && cid.length > 0) return cid;
+    if (typeof cid === 'number') return String(cid);
+  }
+  return null;
+}
+
+function extractInvoiceId(invoice: Record<string, unknown>): string | null {
+  const v = invoice.id;
+  if (typeof v === 'string') return v;
+  if (typeof v === 'number') return String(v);
+  return null;
+}
+
+function extractInvoiceNumber(invoice: Record<string, unknown>): string | null {
+  const v = invoice.invoice_number ?? invoice.number ?? invoice.numero;
+  if (typeof v === 'string' && v.length > 0) return v;
+  return null;
+}
+
+function extractAmountHt(invoice: Record<string, unknown>): number | null {
+  const candidates = [
+    invoice.amount_excluding_taxes,
+    invoice.subtotal,
+    invoice.total_excluding_taxes,
+    invoice.amount,
+  ];
+  for (const c of candidates) {
+    if (typeof c === 'number') return c;
+    if (typeof c === 'string') {
+      const n = parseFloat(c);
+      if (!Number.isNaN(n)) return n;
+    }
+  }
+  return null;
+}
+
+function extractDate(invoice: Record<string, unknown>, ...keys: string[]): string | null {
+  for (const k of keys) {
+    const v = invoice[k];
+    if (typeof v === 'string' && v.length > 0) return v;
+  }
+  return null;
+}
 
 export async function syncAllFromPennylaneAction() {
   const supabase = await createClient()
@@ -12,12 +77,17 @@ export async function syncAllFromPennylaneAction() {
     return { error: 'Session expirée. Veuillez vous reconnecter.' }
   }
 
-  const results = { devis: 0, factures: 0, errors: [] as string[] }
+  const results = {
+    devis: 0,
+    factures: 0,
+    facturesNouvelles: 0,
+    errors: [] as string[],
+  }
 
-  // 1. Sync tous les devis ayant un pennylane_quote_id
+  // 1. Sync tous les devis ayant un pennylane_quote_id (statut)
   const { data: devisList } = await supabase
     .from('devis')
-    .select('id, numero, statut, pennylane_quote_id')
+    .select('id, numero, statut, pennylane_quote_id, client_id')
     .not('pennylane_quote_id', 'is', null)
     .neq('statut', 'archive')
 
@@ -34,13 +104,112 @@ export async function syncAllFromPennylaneAction() {
             .eq('id', devis.id)
           results.devis++
         }
-      } catch (err: any) {
-        results.errors.push(`Devis ${devis.numero}: ${err.message}`)
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Erreur inconnue'
+        results.errors.push(`Devis ${devis.numero}: ${msg}`)
       }
     }
   }
 
-  // 2. Sync toutes les factures ayant un pennylane_invoice_id
+  // 2. Pull TOUTES les factures Pennylane et upsert dans Supabase
+  let pennylaneInvoices: Array<Record<string, unknown>> = []
+  try {
+    pennylaneInvoices = await listPennylaneInvoices()
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : 'Erreur inconnue'
+    results.errors.push(`Pull Pennylane: ${msg}`)
+  }
+
+  if (pennylaneInvoices.length > 0) {
+    // Récupère les clients pour le matching pennylane_customer_id → client_id (uuid)
+    const { data: clientsList } = await supabase
+      .from('clients')
+      .select('id, pennylane_customer_id')
+      .not('pennylane_customer_id', 'is', null)
+
+    const clientMap = new Map<string, string>()
+    for (const c of clientsList ?? []) {
+      if (c.pennylane_customer_id) {
+        clientMap.set(String(c.pennylane_customer_id), c.id)
+      }
+    }
+
+    // Récupère les factures déjà connues côté Supabase pour ne pas dupliquer
+    const { data: existingFactures } = await supabase
+      .from('factures')
+      .select('id, statut, pennylane_invoice_id')
+      .not('pennylane_invoice_id', 'is', null)
+
+    const existingMap = new Map<string, { id: string; statut: string }>()
+    for (const f of existingFactures ?? []) {
+      if (f.pennylane_invoice_id) {
+        existingMap.set(String(f.pennylane_invoice_id), { id: f.id, statut: f.statut })
+      }
+    }
+
+    for (const inv of pennylaneInvoices) {
+      try {
+        const invoiceId = extractInvoiceId(inv)
+        if (!invoiceId) continue
+
+        const numero = extractInvoiceNumber(inv) ?? `PL-${invoiceId}`
+        const amountHt = extractAmountHt(inv)
+        const dateEmission = extractDate(inv, 'date', 'invoice_date', 'issued_at', 'created_at')
+        const dateEcheance = extractDate(inv, 'deadline', 'due_date', 'payment_due_date')
+        const datePaiement = extractDate(inv, 'paid_at', 'payment_date')
+        const rawStatus = (inv.status as string) ?? 'pending'
+        const statut = mapPennylaneInvoiceStatus(rawStatus) ?? 'envoyee'
+        const customerId = extractCustomerId(inv)
+        const clientId = customerId ? clientMap.get(customerId) ?? null : null
+
+        const existing = existingMap.get(invoiceId)
+
+        if (existing) {
+          // Update : seulement si le statut a changé
+          if (existing.statut !== statut) {
+            await supabase
+              .from('factures')
+              .update({
+                statut,
+                date_paiement: datePaiement,
+                montant_ht: amountHt,
+              })
+              .eq('id', existing.id)
+            results.factures++
+          }
+        } else {
+          // Insert nouvelle facture importée depuis Pennylane
+          const { error: insertError } = await supabase
+            .from('factures')
+            .insert({
+              numero,
+              client_id: clientId,
+              statut,
+              date_emission: dateEmission,
+              date_echeance: dateEcheance,
+              date_paiement: datePaiement,
+              montant_ht: amountHt,
+              pennylane_invoice_id: invoiceId,
+              notes: clientId
+                ? null
+                : `⚠ Client Pennylane ID ${customerId ?? 'inconnu'} non rattaché à un client OptiPro. Lier manuellement si besoin.`,
+            })
+
+          if (insertError) {
+            results.errors.push(`Import facture ${numero}: ${insertError.message}`)
+          } else {
+            results.facturesNouvelles++
+          }
+        }
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Erreur inconnue'
+        results.errors.push(`Facture Pennylane: ${msg}`)
+      }
+    }
+  }
+
+  // 3. Sync les factures qui ont un pennylane_invoice_id mais qui auraient pu rater l'étape 2
+  //    (ex : pagination tronquée). On garde la logique antérieure en filet de sécurité.
   const { data: facturesList } = await supabase
     .from('factures')
     .select('id, numero, statut, pennylane_invoice_id')
@@ -60,8 +229,9 @@ export async function syncAllFromPennylaneAction() {
             .eq('id', facture.id)
           results.factures++
         }
-      } catch (err: any) {
-        results.errors.push(`Facture ${facture.numero}: ${err.message}`)
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Erreur inconnue'
+        results.errors.push(`Facture ${facture.numero}: ${msg}`)
       }
     }
   }
@@ -70,9 +240,10 @@ export async function syncAllFromPennylaneAction() {
   revalidatePath('/admin/devis')
   revalidatePath('/admin/factures')
 
-  const parts = []
+  const parts: string[] = []
   if (results.devis > 0) parts.push(`${results.devis} devis`)
-  if (results.factures > 0) parts.push(`${results.factures} facture(s)`)
+  if (results.facturesNouvelles > 0) parts.push(`${results.facturesNouvelles} nouvelle(s) facture(s) importée(s)`)
+  if (results.factures > 0) parts.push(`${results.factures} facture(s) mise(s) à jour`)
 
   if (parts.length === 0 && results.errors.length === 0) {
     return { success: true, message: 'Tout est déjà à jour.' }
@@ -83,7 +254,11 @@ export async function syncAllFromPennylaneAction() {
     : ''
 
   if (results.errors.length > 0) {
-    return { success: true, message: `${message} ${results.errors.length} erreur(s).`, errors: results.errors }
+    return {
+      success: true,
+      message: `${message} ${results.errors.length} erreur(s).`,
+      errors: results.errors,
+    }
   }
 
   return { success: true, message }
