@@ -1,29 +1,70 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './HomePage.module.css';
 import Button from '@/components/ui/Button';
-import AuditMockup from '@/components/visuals/AuditMockup';
-import AnalyseMockup from '@/components/visuals/AnalyseMockup';
-import CreationMockup from '@/components/visuals/CreationMockup';
-import AutomationMockup from '@/components/visuals/AutomationMockup';
 import AuditCta from '@/components/ui/AuditCta';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
 import Image from 'next/image';
+
+// Mockups sous le fold : split chunk (chargés en parallèle après HeroAnimation)
+const AuditMockup = dynamic(() => import('@/components/visuals/AuditMockup'), {
+  loading: () => <div style={{ minHeight: '200px' }} />,
+});
+const AnalyseMockup = dynamic(() => import('@/components/visuals/AnalyseMockup'), {
+  loading: () => <div style={{ minHeight: '200px' }} />,
+});
+const CreationMockup = dynamic(() => import('@/components/visuals/CreationMockup'), {
+  loading: () => <div style={{ minHeight: '200px' }} />,
+});
+const AutomationMockup = dynamic(() => import('@/components/visuals/AutomationMockup'), {
+  loading: () => <div style={{ minHeight: '200px' }} />,
+});
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function HomePageClient() {
   const mainRef = useRef<HTMLElement>(null);
-  const [scrollY, setScrollY] = useState(0);
+  const decoRef1 = useRef<HTMLDivElement>(null);
+  const decoRef2 = useRef<HTMLDivElement>(null);
 
+  // Parallax via GSAP ScrollTrigger (compositor-only) au lieu de setState +
+  // re-render React à chaque pixel. Économie majeure de Style & Layout.
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    const ctx = gsap.context(() => {
+      if (decoRef1.current) {
+        gsap.to(decoRef1.current, {
+          y: () => window.innerHeight * 0.15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: decoRef1.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+      if (decoRef2.current) {
+        gsap.to(decoRef2.current, {
+          y: () => -window.innerHeight * 0.1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: decoRef2.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+    });
+    return () => ctx.revert();
   }, []);
 
   useGSAP(
@@ -185,32 +226,36 @@ export default function HomePageClient() {
       <section className={styles.hero}>
         <div className="container">
           {/* Decorative elements */}
-          <div style={{
-            position: 'absolute',
-            top: '15%',
-            right: '5%',
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            background: 'rgba(249, 115, 22, 0.03)',
-            filter: 'blur(60px)',
-            pointerEvents: 'none',
-            transform: `translateY(${scrollY * 0.15}px)`,
-            transition: 'transform 0.1s linear',
-          }} />
-          <div style={{
-            position: 'absolute',
-            bottom: '10%',
-            left: '-5%',
-            width: '200px',
-            height: '200px',
-            borderRadius: '50%',
-            background: 'rgba(249, 115, 22, 0.04)',
-            filter: 'blur(40px)',
-            pointerEvents: 'none',
-            transform: `translateY(${scrollY * -0.1}px)`,
-            transition: 'transform 0.1s linear',
-          }} />
+          <div
+            ref={decoRef1}
+            style={{
+              position: 'absolute',
+              top: '15%',
+              right: '5%',
+              width: '300px',
+              height: '300px',
+              borderRadius: '50%',
+              background: 'rgba(249, 115, 22, 0.03)',
+              filter: 'blur(60px)',
+              pointerEvents: 'none',
+              willChange: 'transform',
+            }}
+          />
+          <div
+            ref={decoRef2}
+            style={{
+              position: 'absolute',
+              bottom: '10%',
+              left: '-5%',
+              width: '200px',
+              height: '200px',
+              borderRadius: '50%',
+              background: 'rgba(249, 115, 22, 0.04)',
+              filter: 'blur(40px)',
+              pointerEvents: 'none',
+              willChange: 'transform',
+            }}
+          />
           <div className={styles.heroGrid}>
             <div className={styles.heroText}>
               <span className={styles.heroBadge}>
