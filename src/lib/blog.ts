@@ -574,6 +574,550 @@ export const articles: Article[] = [
 </div>
 `,
   },
+
+  // ────────────────────────────────────────────────────────────────
+  // Article 5 — Manifeste 2026 : repositionnement ops/exploitation
+  // ────────────────────────────────────────────────────────────────
+  {
+    slug: 'pourquoi-optipro-elargit-pme-logistique-transport-btp',
+    titre: "Pourquoi OptiPro élargit aux PME logistique, transport et BTP en 2026",
+    description:
+      "OptiPro reste accessible aux artisans et TPE — et ouvre un second axe : l'exploitation des PME logistique, transport et BTP. Pourquoi maintenant, et ce que ça change.",
+    datePublication: '2026-05-05',
+    tempsLecture: 4,
+    categorie: 'Manifeste',
+    motsCles: [
+      'OptiPro repositionnement',
+      'consultant exploitation logistique',
+      'IA opérationnelle PME',
+      'automatisation transport',
+      'consultant ops PME',
+    ],
+    contenu: `
+<p class="lead">OptiPro reste un atelier centré sur les TPE, les artisans et les indépendants. Mais à partir de 2026, j'ouvre un second axe : l'<strong>exploitation des PME logistique, transport et BTP</strong>. Pas par opportunisme — par cohérence avec ce que j'ai fait pendant 10 ans.</p>
+
+<h2>D'où ça vient</h2>
+
+<p>Avant OptiPro, j'ai été responsable logistique et exploitation pendant une décennie. Toute la Nutrition (400 commandes/jour), DBS Drive (8 500 références gérées), Eddifis (création complète d'une filiale, ERP EBP déployé personnellement, 80 k€/mois de CA), Factory pendant 5 ans (portefeuille ADV de 7 M€, projets entre 20 k€ et 1 M€, 15 à 20 sous-traitants supervisés au quotidien). Aujourd'hui chez GL Events Live, je pilote un dépôt événementiel et 6 personnes, avec des sous-traitants événementiel sur des délais ultra-courts.</p>
+
+<p>Quand j'ai lancé OptiPro en 2025, j'ai démarré sur ce que je connaissais aussi très bien : les artisans et les TPE. Parce que j'ai passé une partie de ces 10 ans à coordonner des plombiers, électriciens, chauffagistes, peintres. Et parce que c'est la cible la plus accessible quand on lance une activité de conseil.</p>
+
+<p>Mais à force de parler avec des dirigeants de PME logistique, transport, BTP — qui me connaissent par mon parcours — je me suis rendu compte d'un truc évident : <strong>j'ai un capital opérationnel rare dans le monde du conseil IA</strong>. La plupart des consultants IA n'ont jamais déployé un ERP, jamais coordonné 20 sous-traitants, jamais construit un fichier de KPIs hebdo qui ne casse pas. Moi si.</p>
+
+<h2>Ce qui change concrètement</h2>
+
+<p>OptiPro garde sa cible historique : <strong>artisans, TPE, indépendants</strong>. Pack Visibilité à 690€, Sheets Devis à 390€, Bot Telegram à 290€, formation 1h à 120€. Rien ne bouge.</p>
+
+<p>Ce qui s'ajoute : une <strong>quatrième catégorie d'offres "PME ops & exploitation"</strong>, pensée pour les dirigeants et responsables d'exploitation de PME logistique, transport et BTP :</p>
+
+<ul>
+  <li><strong>Audit ops</strong> — 1 200 € HT, 1 semaine. Diagnostic complet : flux, ERP/TMS/WMS, sous-traitants, reporting. Restitution écrite avec plan d'action chiffré.</li>
+  <li><strong>Automatisation reporting hebdo</strong> — 2 500 € HT, 2 semaines. Vos KPIs (taux de service, marge transport, retards, sous-traitance) consolidés automatiquement chaque lundi matin.</li>
+  <li><strong>Refonte process sous-traitants</strong> — sur devis, 4-8 semaines. Cadrage opérationnel et outillage pour piloter 10 à 50 sous-traitants : OS, suivi terrain, facturation.</li>
+  <li><strong>Accompagnement mensuel ops</strong> — 800 € HT/mois, engagement 6 mois. Un point hebdo, 4h d'évolutions/mois, support 4h ouvrées.</li>
+</ul>
+
+<h2>Ce qui ne change pas</h2>
+
+<p>Le ton terrain. Les ratés assumés. Pas de jargon dev. Pas de hype. Vous parlerez toujours avec moi directement — du diagnostic à la livraison. Pas de sous-traitance, pas de commercial, pas de "chargé de relation client". J'analyse, je conçois, je construis.</p>
+
+<p>Le blog OptiPro continue avec deux types d'articles : ceux pour les artisans/TPE (devis, fiche Google, relances) et ceux pour les responsables d'exploitation PME (reporting hebdo, sous-traitants, KPI ops). Vous filtrez par catégorie sur la page <a href="/blog">/blog</a>.</p>
+
+<h2>Pour qui c'est fait — et pour qui c'est pas</h2>
+
+<p><strong>C'est fait pour vous si</strong> vous dirigez ou pilotez l'exploitation d'une PME (transport, logistique, BTP, distribution, événementiel). Vos process tiennent par habitude. Votre ERP ne se parle pas avec le terrain. Vous passez 3h chaque lundi à monter un reporting que personne ne lit vraiment. Vous avez 10 à 50 sous-traitants pilotés à coups d'emails et d'Excel.</p>
+
+<p><strong>C'est pas fait pour vous si</strong> vous cherchez un consultant IA "transformation digitale" qui vend du LLM custom à 50 k€. OptiPro reste un atelier solo, pas un cabinet. Mes interventions sont chiffrées, livrables clairs, ROI démontrable. Pas de salaire-mission qui s'éternise.</p>
+
+<div class="callout">
+  <p><strong>Vous êtes responsable d'exploitation, directeur logistique ou dirigeant PME ?</strong></p>
+  <p>Le premier appel découverte est toujours gratuit (30 min, sans engagement). On parle de votre exploitation, pas de la mienne.</p>
+  <a href="/contact?cible=pme-ops" class="callout-link">Parler de mon exploitation →</a>
+</div>
+
+<p style="margin-top:2rem">— Pierre</p>
+`,
+  },
+
+  // ────────────────────────────────────────────────────────────────
+  // Article 6 — Reporting hebdo : 3h → 4 minutes (méthode)
+  // ────────────────────────────────────────────────────────────────
+  {
+    slug: 'reporting-hebdo-excel-3h-en-4-minutes',
+    titre: "Le reporting hebdo Excel que vous mettez 3h à faire — comment l'IA le fait en 4 minutes",
+    description:
+      "Lundi matin, le reporting transport ou logistique qui mange un après-midi entier. Le prompt exact, l'outil, et la mise en garde sur la confidentialité des données.",
+    datePublication: '2026-05-03',
+    tempsLecture: 8,
+    categorie: 'Logistique',
+    motsCles: [
+      'reporting hebdomadaire',
+      'automatisation Excel transport',
+      'IA reporting logistique',
+      'TMS export Excel',
+      'reporting PME logistique',
+    ],
+    contenu: `
+<p class="lead">Lundi matin. 8h15. Vous ouvrez votre boîte mail. Le directeur général veut son reporting hebdomadaire pour 11h. Vous savez ce qui vous attend : sortir l'export TMS, comparer avec l'export compta, recouper les volumes par client, calculer les marges par tournée, mettre tout ça dans le tableau habituel, formater les couleurs, écrire les trois lignes de commentaire.</p>
+
+<p>Trois heures. Plus si un transporteur a déclaré ses km avec deux jours de retard.</p>
+
+<p>Vous le faites parce qu'il faut le faire. Mais le mardi, le rapport est déjà périmé : il y a eu deux nouveaux affrètements lundi, une rupture chez un client, un litige carburant qui change la marge d'une tournée. Le rapport raconte la semaine d'avant. Pas la semaine en cours.</p>
+
+<p>Cet article décrit <strong>la méthode pour ramener ce reporting de 3h à environ 4-8 minutes</strong> avec un prompt et un fichier. Aucun outil exotique. Pas de code. Une seule règle de méthode.</p>
+
+<h2>Le piège : l'IA face au reporting</h2>
+
+<p>La première erreur, c'est de demander à ChatGPT <em>"fais-moi un reporting transport de la semaine"</em>. Vous obtenez un texte générique sur le reporting transport en général, qui ne sert à rien.</p>
+
+<p>La deuxième erreur, c'est de coller votre Excel et de dire <em>"analyse-moi ça"</em>. Vous obtenez une analyse vague, parfois fausse parce que l'IA hallucine sur des chiffres qu'elle ne sait pas lire correctement.</p>
+
+<p>La bonne approche tient en une phrase : <strong>on demande à l'IA de produire le tableau, pas de l'interpréter</strong>. Et on lui donne tout ce qu'il faut pour le produire — le bon contexte, les bons exports, la bonne structure attendue.</p>
+
+<h2>Le matériel à préparer (15 minutes, une seule fois)</h2>
+
+<p>Avant de pouvoir faire le reporting en 4 minutes la semaine prochaine, il faut 15 minutes pour préparer le terrain. Une seule fois. Après, c'est mécanique.</p>
+
+<p><strong>1. L'export TMS de la semaine.</strong> Format CSV. Colonnes minimales : numéro d'OT, date, client, transporteur, km parcourus, recette, coût d'achat. Si votre TMS sort plus, c'est mieux. Si il sort moins, on s'adapte (voir plus bas).</p>
+
+<p><strong>2. La structure du rapport attendu par le DG.</strong> Vous l'avez sous les yeux toutes les semaines. Ouvrez-le, copiez les en-têtes des colonnes, copiez la liste des clients par ordre habituel, copiez la zone de commentaire. Tout ça va devenir le <strong>template</strong>.</p>
+
+<p><strong>3. Une convention de nommage pour les fichiers.</strong> Toujours <code>export-tms-semaine-XX.csv</code> et <code>template-reporting.xlsx</code>. Ça évite de chercher 10 minutes dans Téléchargements.</p>
+
+<p>C'est tout. Pas de plug-in, pas d'API, pas de connecteur.</p>
+
+<h2>Le prompt exact (à copier-coller)</h2>
+
+<p>Voici le prompt à utiliser chaque lundi. Stockez-le dans une note Apple Notes pinglée ou un Bloc-notes Windows épinglé. Vous le copiez-collez, vous joignez les deux fichiers, vous envoyez.</p>
+
+<pre><code>Tu es l'assistant reporting de notre PME transport. Je te donne deux fichiers :
+
+1. export-tms-semaine-XX.csv : l'export brut de notre TMS pour la
+   semaine. Une ligne = un OT (ordre de transport).
+
+2. template-reporting.xlsx : la structure du rapport hebdomadaire
+   attendu par notre DG (en-têtes, clients par ordre, format).
+
+Ta mission :
+
+a) Génère le rapport rempli au format Excel, en respectant
+   EXACTEMENT la structure du template. Mêmes colonnes, mêmes
+   clients, même ordre, même format de cellule.
+
+b) Calcule pour chaque client :
+   - le CA (somme des recettes)
+   - le coût d'achat (somme des coûts transporteurs)
+   - la marge brute (CA - coût)
+   - le taux de marge (marge / CA, en %)
+   - le nombre d'OT
+   - les km totaux
+
+c) Compare avec la semaine précédente si je te fournis le rapport
+   de la semaine N-1 en pièce jointe. Si oui, ajoute une colonne
+   "Variation N-1" en % pour le CA et la marge.
+
+d) Écris-moi 3 phrases de commentaire à mettre en bas du rapport :
+   - Le client le plus rentable de la semaine et pourquoi
+   - Le point d'attention (variation négative, marge faible,
+     volume anormal)
+   - Une recommandation actionnable pour la semaine prochaine
+
+Contraintes IMPORTANTES :
+- Si une donnée est manquante dans l'export, écris "n/a" et
+  mentionne-le dans le commentaire. NE devine PAS.
+- Si tu détectes une incohérence (CA négatif, km à zéro avec
+  recette, doublon d'OT), signale-le-moi avant de finaliser le
+  rapport.
+- Garde TOUS les chiffres en euros, arrondis à l'euro près.
+  Pas de centimes.
+
+Livre :
+1. Le fichier Excel rempli, prêt à envoyer.
+2. Un récap de 5 lignes maximum dans le chat avec les chiffres clés.
+3. La liste des incohérences détectées (s'il y en a).</code></pre>
+
+<p>Ce prompt fait <strong>environ 600 mots</strong>. C'est volontaire. C'est ce qui fait la différence entre un résultat moyen et un résultat utilisable.</p>
+
+<h2>Le résultat, en ordre de grandeur</h2>
+
+<p>Ce que vous pouvez raisonnablement attendre :</p>
+
+<ul>
+  <li><strong>Avant</strong> : 2h30 à 3h selon la complexité, parfois plus si un transporteur a déclaré ses km en retard.</li>
+  <li><strong>Après</strong> : 4 à 8 minutes, dont l'essentiel à uploader les fichiers, vérifier le résultat et corriger 1 à 2 erreurs typiques (un client mal classé, un commentaire à reformuler dans le ton maison).</li>
+</ul>
+
+<p>Soit grosso modo <strong>2h30 récupérées chaque semaine</strong>. Sur 45 semaines de boulot, c'est ~110 heures par an. À 80 €/heure de coût chargé, ça représente ~9 000 € de temps qualifié récupéré annuellement. Pour 4 minutes de prompt et 15 minutes de prep une seule fois.</p>
+
+<p>Ces ordres de grandeur sont des estimations issues de la pratique sur des reportings comparables. Le gain réel dépend de la qualité de votre export TMS, de la rigueur du template, et de votre capacité à vérifier rapidement le rendu.</p>
+
+<h2>Mise en garde — confidentialité des données</h2>
+
+<p>Je ne peux pas conclure cet article sans cette section, et c'est la raison pour laquelle beaucoup de directeurs logistique hésitent à se lancer. À raison.</p>
+
+<p><strong>Ce que vous ne devez JAMAIS coller dans un prompt grand public :</strong></p>
+
+<ul>
+  <li>Les noms et prénoms de vos clients ou contacts internes.</li>
+  <li>Les numéros de téléphone, emails directs, identifiants commerciaux.</li>
+  <li>Les conditions tarifaires détaillées par client (vous ne voulez pas que ça parte dans un dataset d'entraînement).</li>
+  <li>Les données nominatives des chauffeurs (RGPD).</li>
+</ul>
+
+<p><strong>Trois solutions concrètes :</strong></p>
+
+<ol>
+  <li><strong>Anonymiser avant l'upload.</strong> Renommez <em>Carrefour Bordeaux</em> en <em>Client A</em>, <em>Société Transport Martin</em> en <em>Transporteur 12</em>. Une simple table de correspondance que vous gardez dans un fichier à part. Vous remettez les vrais noms à la fin.</li>
+  <li><strong>Utiliser un compte ChatGPT Team / Claude for Work.</strong> Les conditions diffèrent : pas de réutilisation des données pour l'entraînement, conservation maîtrisée, conformité RGPD documentée. Coût : ~25 €/mois/utilisateur. Pour un reporting qui vous fait gagner 100h/an, le calcul est vite fait.</li>
+  <li><strong>Pour les données ultra-sensibles, rester sur du chiffre agrégé.</strong> Vous pouvez très bien envoyer <em>"5 clients représentent 70 % du CA, marges respectives 12 %, 18 %, 22 %, 8 %, 15 %"</em> sans nommer. Le rapport reste utile.</li>
+</ol>
+
+<p>⚠ <strong>Ne contournez jamais la règle interne de votre entreprise.</strong> Si votre RSSI a interdit les outils IA grand public, demandez d'abord. Une bonne automatisation refusée par le DSI vaut moins qu'une automatisation médiocre validée.</p>
+
+<h2>Et si votre TMS sort un export mal foutu ?</h2>
+
+<p>C'est le cas le plus fréquent. Les TMS franco-français des années 2010 sortent du CSV avec des séparateurs aléatoires, des dates en JJ/MM/AAAA ou MM/JJ/AAAA selon les exports, des en-têtes en français accentué qui cassent l'encodage.</p>
+
+<p>Trois options :</p>
+
+<ul>
+  <li><strong>Une passe de nettoyage avec l'IA.</strong> Demandez-lui de normaliser le CSV avant de produire le rapport. Ajoutez en début de prompt : <em>"Si le séparateur est anormal ou les dates ambiguës, corrige avant de calculer et explique-moi ce que tu as fait."</em></li>
+  <li><strong>Un mini-script Python ou JavaScript généré par l'IA</strong>, lancé une fois pour transformer l'export brut en CSV propre. C'est ce qu'on fait souvent en intervention OptiPro — 30 minutes pour avoir un script qui tourne tout seul ensuite.</li>
+  <li><strong>Demander à votre éditeur TMS un export propre</strong>, en vous appuyant sur la structure attendue. Vous découvrirez parfois que l'option existe déjà et personne ne l'avait jamais cochée.</li>
+</ul>
+
+<div class="callout">
+  <p><strong>Vous gérez l'exploitation d'une PME transport, logistique ou BTP ?</strong></p>
+  <p>30 minutes d'audit gratuit, sans engagement. On regarde votre stack, vos process, on identifie 3 leviers concrets — reporting, sous-traitants, ou autres.</p>
+  <a href="/contact?cible=pme-ops" class="callout-link">Parler de mon exploitation →</a>
+</div>
+
+<p style="margin-top:2rem">Le tableau Excel hebdo n'est pas un sujet glamour. Mais c'est probablement le levier IA qui a le meilleur ratio temps-investi / temps-récupéré dans une PME logistique. Un dirigeant qui récupère 2 à 3 heures de temps qualifié par semaine, c'est un dirigeant qui peut enfin regarder ce qui compte vraiment : le développement commercial, la relation client, la stratégie. Pas la maintenance d'un fichier Excel.</p>
+
+<p>— Pierre</p>
+`,
+  },
+
+  // ────────────────────────────────────────────────────────────────
+  // Article 7 — 3 prompts artisan 2026
+  // ────────────────────────────────────────────────────────────────
+  {
+    slug: '3-prompts-qui-font-gagner-5h-par-semaine-artisan',
+    titre: "3 prompts qui font gagner 5h par semaine à un artisan en 2026",
+    description:
+      "Devis depuis 3 lignes de notes, relance facture impayée, réponse à un avis Google négatif. Trois prompts copiables, testés, avec les variantes pour s'adapter à votre métier.",
+    datePublication: '2026-05-02',
+    tempsLecture: 7,
+    categorie: 'Pour les artisans',
+    motsCles: [
+      'prompts artisan',
+      'IA pour artisan',
+      'devis automatique artisan',
+      'relance facture impayée',
+      'réponse avis Google',
+    ],
+    contenu: `
+<p class="lead">Vous êtes plombier, électricien, peintre, paysagiste, coiffeur indépendant, photographe, traiteur. Vous avez une vraie compétence métier, deux mains qui savent faire, et une boîte mail qui déborde le dimanche soir.</p>
+
+<p>Vous savez que l'IA peut vous aider. Vous avez peut-être ouvert un compte ChatGPT, posé deux questions, fermé l'onglet, et oublié.</p>
+
+<p>Cet article ne vous explique pas l'IA. Il vous donne <strong>trois prompts à copier-coller</strong> qui couvrent <strong>80 % de l'admin chronophage</strong> d'un artisan. Pas de théorie. Pas de jargon. Vous lisez, vous copiez, vous adaptez, vous gagnez quelques heures par semaine.</p>
+
+<h2>Ce que vous ne saviez peut-être pas</h2>
+
+<p>L'IA gratuite (version de base de ChatGPT, Claude, Gemini) suffit largement pour les trois prompts ci-dessous. Pas besoin d'abonnement payant pour commencer. La différence entre un résultat médiocre et un résultat utilisable, ce n'est pas l'outil — c'est <strong>la précision du prompt</strong>.</p>
+
+<p>Un bon prompt artisan, c'est 4 ingrédients :</p>
+<ol>
+  <li><strong>Qui vous êtes</strong> (votre métier, votre contexte).</li>
+  <li><strong>Ce que vous voulez</strong> (rédige, écris, propose).</li>
+  <li><strong>Le contexte précis</strong> (les notes, le message à traiter, la situation).</li>
+  <li><strong>Le format</strong> (longueur, ton, structure).</li>
+</ol>
+
+<p>Tous les prompts ci-dessous suivent cette recette. Une fois que vous l'avez comprise, vous pouvez créer les vôtres.</p>
+
+<h2>Prompt 1 — Le devis propre depuis 3 lignes de notes</h2>
+
+<p><strong>Quand l'utiliser :</strong> vous rentrez d'un rendez-vous client. Vous avez pris des notes rapides sur votre téléphone : <em>"salle de bain 6m², lavabo + étanchéité + faïence, 2 jours avec matos"</em>. Il faut transformer ça en devis professionnel pour pouvoir l'envoyer le soir même.</p>
+
+<pre><code>Tu es mon assistant administratif. Je suis [votre métier]. Je
+viens de finir un rendez-vous client. Voici mes notes brutes :
+
+[collez vos notes telles quelles, même mal écrites]
+
+Rédige-moi le texte d'un devis professionnel avec :
+- Une introduction courte et claire pour le client
+- Les prestations détaillées en plusieurs lignes (une ligne par
+  poste, format devis classique)
+- Une phrase de conclusion qui invite à valider
+
+Ton : direct, sérieux, mais humain. Pas de formule ampoulée
+("Madame, Monsieur, soucieux de répondre à vos attentes...").
+
+Si tu manques d'informations sur un point, pose-moi une question
+maximum avant de rédiger. Sinon, va directement au devis.
+
+Je ne te demande PAS les prix — je les mets moi-même. Donne juste
+le texte.</code></pre>
+
+<p><strong>Ce que vous obtenez en 30 secondes :</strong> un texte de devis propre. Vous le copiez dans votre logiciel de devis (ou Word), vous mettez les chiffres, vous envoyez. <strong>Gain typique : 20 à 30 minutes par devis.</strong></p>
+
+<p><strong>Variante express :</strong> si vos notes font 2 lignes, ajoutez à la fin : <em>"Pose-moi 3 questions maximum si tu manques d'infos."</em></p>
+
+<h2>Prompt 2 — La relance facture sans se mettre mal</h2>
+
+<p><strong>Quand l'utiliser :</strong> la facture a été envoyée il y a trois semaines. Rien. Vous n'osez pas relancer parce que vous n'aimez pas avoir l'air de courir après votre argent. Résultat : la facture dort, et vous, vous bouillez.</p>
+
+<pre><code>Je suis [votre métier]. J'ai envoyé une facture le [date] à un
+client, d'un montant de [X] € pour [prestation réalisée]. Elle
+devait être payée sous [délai standard, ex: 30 jours], on est
+aujourd'hui en retard de [X] jours.
+
+Écris-moi un email de relance :
+- Ton courtois, pas accusateur, pas non plus servile
+- Rappel clair de la facture (numéro, date, montant) et de son
+  échéance
+- Propose une solution si le client a un souci (paiement échelonné,
+  question sur la prestation à clarifier)
+- Fixe une date butoir explicite pour la suite (par exemple
+  "merci de m'indiquer avant le X")
+
+Garde ça court : 120 mots maximum. Ton "humain pro" — comme un
+artisan sérieux qui ne se laisse pas marcher dessus mais ne
+braque pas le client non plus.</code></pre>
+
+<p><strong>Ce que vous obtenez :</strong> un email pro, court, qui règle souvent le problème. Quand ça ne marche pas, vous savez pourquoi (le client a un souci, ou il faut passer à la deuxième relance).</p>
+
+<p><strong>Variante 2e relance :</strong> ajoutez <em>"Il s'agit d'une deuxième relance. Le ton doit rester poli mais plus ferme. Mentionne que sans réponse sous 7 jours, je transmets le dossier."</em></p>
+
+<p><strong>Variante mise en demeure :</strong> demandez le modèle officiel ; l'IA connaît la mise en forme légale française. Vérifiez quand même avec votre comptable avant d'envoyer.</p>
+
+<h2>Prompt 3 — La réponse à l'avis Google qui pique</h2>
+
+<p><strong>Quand l'utiliser :</strong> un client mécontent a laissé un avis 2 étoiles sur Google. Vous le lisez, ça vous agace. Vous avez deux mauvaises options : répondre du tac au tac (le futur client lit la conversation et se dit que vous êtes susceptible) ou ne pas répondre (les futurs clients pensent que vous vous en fichez).</p>
+
+<pre><code>Je suis [votre métier]. Un client vient de laisser cet avis
+négatif sur Google :
+
+"[copiez l'avis tel quel, fautes incluses]"
+
+Voici ce qui s'est REELLEMENT passé de mon côté :
+
+[décrivez en 3-4 phrases : le contexte, ce qui s'est mal passé
+côté client ET côté vous, ce que vous avez tenté pour résoudre.
+Sois honnête, ne minimise pas vos torts s'il y en a, mais ne
+t'excuse pas pour des fautes que tu n'as pas commises]
+
+Écris-moi une réponse publique à cet avis. Elle doit :
+- Rester calme et professionnelle
+- Reconnaître le ressenti du client SANS m'excuser d'une faute
+  que je n'ai pas commise
+- Proposer une résolution concrète OU un contact en privé pour
+  avancer
+- Faire bonne impression sur les FUTURS lecteurs de mon profil
+  (c'est eux le vrai public, pas le client mécontent)
+
+Donne-moi 3 variantes :
+- Version 1 : la plus conciliante (si le tort est partagé)
+- Version 2 : neutre et factuelle (si le client exagère)
+- Version 3 : ferme mais polie (si le client est de mauvaise foi)</code></pre>
+
+<p><strong>Ce que vous obtenez :</strong> trois versions. Vous choisissez celle qui correspond à la réalité, vous ajustez 2-3 mots pour que ça vous ressemble, vous postez. <strong>Gain : 20 minutes de réflexion stressante en moins, et un profil Google qui reste pro.</strong></p>
+
+<p><strong>Variante avis positif :</strong> <em>"Rédige 5 réponses courtes et chaleureuses à des avis 5 étoiles, sans que ça sonne copier-coller. Variez les formulations."</em></p>
+
+<h2>Le piège : ce que l'IA ne sait PAS faire</h2>
+
+<p>Trois trucs à garder en tête. C'est ce qui sépare les artisans qui exploitent vraiment l'IA de ceux qui se cassent les dents.</p>
+
+<p><strong>1. L'IA ne connaît pas votre marché local.</strong> Elle ne sait pas qu'à Vence un devis salle de bain de 6m² se chiffre différemment qu'à Paris. Pour les chiffres, c'est vous. Toujours.</p>
+
+<p><strong>2. L'IA ne connaît pas votre personnalité.</strong> Si vous avez un humour particulier, une façon de parler à vos clients, l'IA va sortir des textes plus lisses, plus génériques. Il faut les <strong>relire et les ajuster</strong> — toujours. C'est vous le patron.</p>
+
+<p><strong>3. L'IA peut se tromper avec assurance.</strong> Pour les normes techniques, les taux de TVA, les évolutions réglementaires — vérifiez toujours. L'IA ment parfois sans le savoir. Demandez-lui ses sources si c'est un sujet sensible.</p>
+
+<p>La bonne image : l'IA est un <strong>stagiaire ultra-rapide</strong>. Il écrit vite, il propose plein d'idées, il ne fatigue pas. Mais il ne connaît ni votre métier ni vos clients. C'est vous le boss.</p>
+
+<div class="callout">
+  <p><strong>Vous voulez 10 prompts de plus, adaptés à votre métier précis ?</strong></p>
+  <p>Le diagnostic gratuit OptiPro liste les tâches admin que l'IA peut absorber dans votre quotidien — par métier (plombier, électricien, paysagiste, coiffeur, photographe, traiteur, etc.) — avec les prompts complets et les variantes.</p>
+  <a href="/contact?cible=artisans" class="callout-link">Demander mon diagnostic gratuit →</a>
+</div>
+
+<p style="margin-top:2rem">— Pierre</p>
+`,
+  },
+
+  // ────────────────────────────────────────────────────────────────
+  // Article 8 — Démarrer avec l'IA quand on n'est pas tech
+  // ────────────────────────────────────────────────────────────────
+  {
+    slug: 'ia-pour-artisan-par-ou-commencer-quand-on-est-pas-tech',
+    titre: "L'IA pour un artisan ou un entrepreneur solo : par où commencer quand on n'est pas tech",
+    description:
+      "Pas besoin de coder. Pas besoin de comprendre les LLM. Juste 3 usages simples, les prompts exacts, et 30 minutes pour démarrer aujourd'hui.",
+    datePublication: '2026-04-20',
+    tempsLecture: 8,
+    categorie: 'Pour les artisans',
+    motsCles: [
+      'IA artisan débutant',
+      'commencer avec ChatGPT artisan',
+      'IA TPE indépendant',
+      'prompts artisan facile',
+      'IA pour entrepreneur solo',
+    ],
+    contenu: `
+<p class="lead">Lundi matin. 7h30. Vous ouvrez votre boîte mail. Trois demandes de devis à faire, une relance de facture qui traîne depuis trois semaines, un avis Google moyen auquel vous n'avez pas répondu. Et votre journée est déjà bouclée — un rendez-vous client à 9h, des dossiers à avancer, un prestataire à gérer.</p>
+
+<p>Vous savez qu'il faudrait vous occuper de toute cette pile admin. Vous savez aussi qu'à la fin de la journée, vous serez trop crevé pour le faire.</p>
+
+<p>Ce n'est pas un problème de compétence. Ce n'est pas un problème de motivation. <strong>C'est un problème de temps.</strong></p>
+
+<p>Et c'est exactement là que l'IA devient utile.</p>
+
+<p>Que vous soyez artisan qui sort des chantiers, commerçant avec une boutique à tenir, ou dirigeant d'une TPE qui court d'une réunion à l'autre — le problème est le même. L'admin mange le temps. L'IA peut en rendre une bonne partie.</p>
+
+<h2>"L'IA, c'est pas pour moi, je suis pas tech"</h2>
+
+<p>Si vous pensez ça, je comprends. C'est exactement ce que je me disais il y a encore quelques années.</p>
+
+<p>Alors mettons une chose au clair.</p>
+
+<p>Je ne suis pas ingénieur. Je n'ai pas fait d'école d'informatique. J'ai passé 10 ans à piloter des flux logistiques — je connais surtout les Excel, les bons de livraison et les clients qui râlent quand une commande est en retard.</p>
+
+<p>Et pourtant, j'utilise l'IA tous les jours. Pour mon boulot, pour ma vie perso, pour presque tout.</p>
+
+<p><strong>La seule compétence qu'il faut pour démarrer, c'est de savoir écrire un message clair en français.</strong></p>
+
+<p>Pas de code. Pas de formule. Pas de logiciel compliqué.</p>
+
+<p>Vous savez faire ça. Vous le faites déjà quand vous écrivez à un client.</p>
+
+<h2>3 usages concrets qui vont vous faire gagner du temps</h2>
+
+<p>Je vais vous donner <strong>trois prompts exacts</strong>. Vous les copiez, vous les collez dans ChatGPT ou Claude, vous adaptez avec votre contexte. C'est tout.</p>
+
+<h3>Usage n°1 — Transformer 3 lignes de notes en un devis propre</h3>
+
+<p><strong>Le problème :</strong> vous rentrez d'un rendez-vous (client, prospect, fournisseur), vous avez pris des notes rapides sur votre téléphone. Un artisan notera <em>"salle de bain 6m², remplacer lavabo, refaire étanchéité, 2 jours avec matos"</em>. Un consultant notera <em>"accompagnement 3 mois, 2 ateliers/mois, livrable final en PDF"</em>. Dans les deux cas, il faut transformer ces notes en devis professionnel. Normalement, ça prend 30 à 45 minutes.</p>
+
+<pre><code>Tu es mon assistant administratif. Je suis [votre métier], je
+viens de finir un rendez-vous client. Voici mes notes :
+
+[collez vos notes brutes]
+
+Rédige-moi un devis professionnel avec :
+- Une introduction courte et claire pour le client
+- Les prestations détaillées en plusieurs lignes
+- Une phrase de conclusion qui invite à valider
+
+Ton : direct, sérieux, mais humain. Pas de formule ampoulée.</code></pre>
+
+<p><strong>Ce que vous obtenez en 30 secondes :</strong> un texte de devis propre, que vous n'avez plus qu'à mettre en forme et à chiffrer. <strong>Gain : 20 à 30 minutes par devis.</strong></p>
+
+<h3>Usage n°2 — Répondre à un avis Google négatif sans perdre son sang-froid</h3>
+
+<p><strong>Le problème :</strong> un client mécontent a laissé un avis 2 étoiles. Vous le lisez, ça vous agace, vous avez envie de répondre du tac au tac. Ou pire : vous ne répondez pas du tout, par peur de dire quelque chose de travers. Les deux sont de mauvaises solutions — les prochains clients qui cherchent votre entreprise vont lire cet avis.</p>
+
+<pre><code>Je suis [votre métier]. Un client vient de laisser cet avis
+négatif sur Google :
+
+"[copiez l'avis tel quel]"
+
+Voici ce qui s'est passé de mon côté :
+[décrivez en 3-4 phrases ce qui s'est réellement passé]
+
+Écris-moi une réponse publique à cet avis. Elle doit :
+- Rester calme et professionnelle
+- Reconnaître le ressenti du client sans m'excuser d'une faute
+  que je n'ai pas commise
+- Proposer une résolution concrète ou un contact en privé
+- Faire bonne impression sur les futurs lecteurs de mon profil
+
+Trois variantes, du plus conciliant au plus factuel.</code></pre>
+
+<p><strong>Ce que vous obtenez :</strong> trois versions, vous choisissez celle qui vous ressemble. <strong>Gain : 20 minutes de stress et un profil Google qui reste pro.</strong></p>
+
+<h3>Usage n°3 — Relancer un client qui ne paie pas, sans se mettre mal</h3>
+
+<p><strong>Le problème :</strong> la facture a été envoyée il y a trois semaines. Rien. Vous n'osez pas relancer par peur de passer pour celui qui court après son argent. Ou vous relancez par SMS sur le pouce et ça passe mal. Résultat : soit vous n'êtes pas payé, soit vous perdez le client.</p>
+
+<pre><code>Je suis [votre métier]. J'ai envoyé une facture le [date] à
+un client, d'un montant de [X]€ pour [prestation réalisée].
+Elle devait être payée sous [délai], on est aujourd'hui
+en retard de [X] jours.
+
+Écris-moi un email de relance :
+- Ton courtois, pas accusateur
+- Rappel clair de la facture et de son échéance
+- Propose une solution si le client a un souci (paiement
+  échelonné, question sur la prestation)
+- Fixe une date butoir pour la suite
+
+Garde ça court : 120 mots max.</code></pre>
+
+<p><strong>Ce que vous obtenez :</strong> un email pro, court, qui règle souvent le problème. <strong>Gain : finies les relances oubliées, et vous êtes payé plus régulièrement.</strong></p>
+
+<h2>L'IA peut aussi vous aider à trouver des clients</h2>
+
+<p>Les trois usages ci-dessus font <strong>gagner du temps</strong>. Mais l'IA peut faire mieux : vous aider à <strong>être visible</strong>.</p>
+
+<p>Un artisan qui ne communique pas, c'est un artisan invisible. Un consultant qui n'a pas de présence en ligne, c'est quelqu'un qu'on oublie entre deux missions. Dans les deux cas, c'est perdre des clients qu'on aurait pu avoir.</p>
+
+<p>Voici quatre trucs concrets :</p>
+
+<p><strong>Rédiger votre fiche Google Business.</strong> La plupart des fiches que je vois sont mal rédigées, vides, ou ressemblent à celles de 50 autres concurrents. Demandez à l'IA de vous rédiger une description de 300 caractères qui met en avant ce qui vous différencie. Précisez : votre métier, votre zone d'intervention, votre spécialité.</p>
+
+<p><strong>Écrire un post réseau social après un chantier, une mission, un livrable.</strong> Vous avez une belle photo avant/après ? Un témoignage client par message ? L'IA peut transformer <em>"on a refait la salle de bain de Mme Durand, elle est contente"</em> ou <em>"j'ai livré la stratégie à X, ils vont implémenter lundi"</em> en un post qui donne envie. En deux minutes.</p>
+
+<p><strong>Créer des idées de posts régulières.</strong> Demandez à l'IA : <em>"donne-moi 10 idées de posts que je peux publier dans les 3 prochains mois, adaptés à un [votre métier] basé à [votre ville]."</em> Vous avez votre planning éditorial. Fini le "je sais pas quoi poster".</p>
+
+<p><strong>Répondre aux demandes depuis votre mobile.</strong> Un prospect vous écrit un message un peu long sur Messenger, WhatsApp ou LinkedIn ? Vous n'avez pas le temps de formuler une réponse propre entre deux rendez-vous ? Copiez son message, demandez une réponse courte et pro à l'IA, adaptez en 30 secondes. Le prospect reçoit une vraie réponse au lieu d'un "ok je vous rappelle".</p>
+
+<h2>Ce que l'IA ne peut PAS faire (et c'est important)</h2>
+
+<p>Je ne vais pas vous vendre du rêve. L'IA a des limites. Voici ce qu'elle <strong>ne sait pas faire</strong>, et qu'il faut garder en tête.</p>
+
+<p><strong>Elle ne connaît pas votre marché local.</strong> Elle ne sait pas que dans votre quartier, un devis de rénovation complète se chiffre différemment qu'à Paris. Elle ne connaît pas non plus les tarifs pratiqués dans votre secteur de conseil. Elle peut vous donner un modèle, mais les chiffres, c'est vous qui les mettez.</p>
+
+<p><strong>Elle ne connaît pas votre personnalité.</strong> Si vous avez un ton particulier, un humour, une façon de parler à vos clients, l'IA va sortir des textes plus lisses, plus génériques. Il faut les relire et les adapter. Toujours.</p>
+
+<p><strong>Elle n'est pas toujours à jour.</strong> Pour les réglementations, les taux de TVA, les normes techniques, les évolutions juridiques, vérifiez toujours. L'IA peut se tromper. Elle le fait même avec beaucoup d'assurance, ce qui est sournois.</p>
+
+<p><strong>Elle ne remplace pas votre savoir-faire.</strong> Un plombier qui ferait rédiger un diagnostic d'installation par une IA sans avoir vu le chantier, c'est un plombier qui court à la catastrophe. Un consultant qui livrerait à son client un rapport généré sans réflexion propre, c'est la même chose. L'IA gère l'administratif, la communication, la paperasse. Pas le métier.</p>
+
+<p>La bonne image, c'est de penser à l'IA comme un <strong>stagiaire ultra-rapide</strong> : il écrit vite, il propose plein d'idées, mais c'est vous le patron. Vous validez. Vous coupez. Vous ajustez.</p>
+
+<h2>Par où commencer concrètement — 30 minutes, aujourd'hui</h2>
+
+<p>Si vous lisez cet article à 10h, vous pouvez avoir votre premier prompt utile envoyé à 10h30.</p>
+
+<p>Voici les 4 étapes :</p>
+
+<p><strong>1. Créer un compte gratuit.</strong> ChatGPT sur chatgpt.com ou Claude sur claude.ai. Les deux fonctionnent, choisissez celui que vous voulez. La version gratuite suffit pour commencer.</p>
+
+<p><strong>2. Copier-coller un des 3 prompts</strong> que je vous ai donnés plus haut. Adaptez les crochets (votre métier, vos notes, votre situation).</p>
+
+<p><strong>3. Lisez ce que ça vous sort.</strong> Ne prenez pas tel quel. Demandez-vous : <em>"est-ce que c'est comme ça que je m'exprimerais ?"</em> Si non, demandez à l'IA de reformuler plus direct, plus simple, ou plus dans votre style.</p>
+
+<p><strong>4. Gardez ce qui vous ressemble. Jetez le reste.</strong> C'est vous qui validez, toujours.</p>
+
+<p>Voilà. Vous avez commencé.</p>
+
+<div class="callout">
+  <p><strong>Vous voulez aller plus vite ?</strong></p>
+  <p>30 minutes d'audit gratuit avec moi : on regarde votre métier, vos process, et on identifie 3 prompts ou outils concrets adaptés à votre activité. Sans engagement.</p>
+  <a href="/contact?cible=artisans" class="callout-link">Demander mon audit gratuit →</a>
+</div>
+
+<p style="margin-top:2rem">L'IA ne remplacera pas votre savoir-faire. Mais elle peut vous libérer du temps pour le pratiquer, pour développer votre activité, et pour rentrer chez vous plus tôt le soir.</p>
+
+<p>Ça vaut peut-être le coup d'essayer 30 minutes.</p>
+
+<p>— Pierre</p>
+`,
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {
