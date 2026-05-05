@@ -31,6 +31,30 @@ export default function NewAuditPage() {
         </div>
       </div>
 
+      {/* Disclaimer cible */}
+      <div
+        style={{
+          background: '#FEF3C7',
+          border: '1px solid #FCD34D',
+          borderRadius: '8px',
+          padding: '1rem 1.25rem',
+          marginBottom: '1.5rem',
+          fontSize: '0.9rem',
+          color: '#92400E',
+          lineHeight: 1.6,
+        }}
+      >
+        <strong style={{ display: 'block', marginBottom: '0.4rem' }}>
+          ⚠ Audit calibré pour artisans, TPE et indépendants
+        </strong>
+        Cette grille évalue 6 piliers (outils, process, communication, admin, présence digitale,
+        automatisation) avec des questions adaptées aux structures de moins de 10 personnes.
+        <br />
+        <strong>Pour une PME logistique, transport ou BTP</strong> : utilisez plutôt l&apos;option
+        &laquo;&nbsp;Audit ops sur mesure&nbsp;&raquo; ci-dessous, ou faites un audit hors-OptiPro
+        et créez juste une trace ici.
+      </div>
+
       <div className={styles.card} style={{ padding: '2rem' }}>
         {state?.error && (
           <div className={styles.errorBanner} style={{ marginBottom: '1.5rem' }}>
@@ -158,14 +182,29 @@ export default function NewAuditPage() {
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={isPending}
-              className={styles.primaryBtn}
-              style={{ marginTop: '0.5rem', justifyContent: 'center' }}
-            >
-              {isPending ? 'Création...' : '🔍 Lancer l\'audit'}
-            </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
+              <button
+                type="submit"
+                name="type_audit"
+                value="tpe"
+                disabled={isPending}
+                className={styles.primaryBtn}
+                style={{ justifyContent: 'center' }}
+              >
+                {isPending ? 'Création...' : '🔍 Lancer l\'audit standard (artisan / TPE)'}
+              </button>
+              <button
+                type="submit"
+                name="type_audit"
+                value="pme_ops_libre"
+                disabled={isPending}
+                className={styles.secondaryBtn}
+                style={{ justifyContent: 'center' }}
+                title="Crée juste une trace dans OptiPro. À utiliser quand vous faites l'audit hors-grille (PME ops, transport, BTP)."
+              >
+                {isPending ? '…' : '📦 Audit ops sur mesure (PME) — pas de grille, juste une trace'}
+              </button>
+            </div>
           </div>
         </form>
       </div>

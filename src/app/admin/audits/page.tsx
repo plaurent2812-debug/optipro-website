@@ -56,11 +56,22 @@ export default async function AuditsPage() {
                   {audits?.map((audit) => {
                     const level = getScoreLevel(audit.score_global || 0)
                     const client = audit.clients as any
+                    const isOpsLibre = audit.type_audit === 'pme_ops_libre'
                     return (
                       <tr key={audit.id}>
                         <td>
-                          <div className={styles.clientName}>
-                            {client?.prenom} {client?.nom}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <div className={styles.clientName}>
+                              {client?.prenom} {client?.nom}
+                            </div>
+                            {isOpsLibre && (
+                              <span
+                                className={styles.badge}
+                                style={{ background: '#FEF3C7', color: '#92400E', border: '1px solid #FCD34D', fontSize: '0.7rem' }}
+                              >
+                                📦 Ops libre
+                              </span>
+                            )}
                           </div>
                           {client?.entreprise && (
                             <div className={styles.clientCompany}>{client.entreprise}</div>
@@ -68,7 +79,9 @@ export default async function AuditsPage() {
                         </td>
                         <td>{formatDate(audit.date_audit)}</td>
                         <td>
-                          {audit.statut !== 'en_cours' ? (
+                          {isOpsLibre ? (
+                            <span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>—</span>
+                          ) : audit.statut !== 'en_cours' ? (
                             <div style={{
                               display: 'inline-flex',
                               alignItems: 'center',
@@ -87,7 +100,7 @@ export default async function AuditsPage() {
                           )}
                         </td>
                         <td>
-                          {audit.heures_recuperables_semaine > 0 ? (
+                          {!isOpsLibre && audit.heures_recuperables_semaine > 0 ? (
                             <span style={{ fontWeight: 600, color: '#059669' }}>
                               {audit.heures_recuperables_semaine}h/sem
                             </span>
@@ -101,7 +114,7 @@ export default async function AuditsPage() {
                           </span>
                         </td>
                         <td className={styles.actionsBox}>
-                          {audit.statut === 'en_cours' ? (
+                          {!isOpsLibre && audit.statut === 'en_cours' ? (
                             <Link href={`/admin/audits/${audit.id}/conduire`} className={styles.actionBtn}>
                               Continuer
                             </Link>

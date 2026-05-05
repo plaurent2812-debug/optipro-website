@@ -20,6 +20,8 @@ export async function createAuditAction(prevState: unknown, formData: FormData) 
     return { error: 'Session expirée. Veuillez vous reconnecter.' }
   }
 
+  const typeAudit = (formData.get('type_audit') as string) === 'pme_ops_libre' ? 'pme_ops_libre' : 'tpe'
+
   const rawData = {
     client_id: formData.get('client_id') as string || null,
     secteur: formData.get('secteur') as string || null,
@@ -27,7 +29,8 @@ export async function createAuditAction(prevState: unknown, formData: FormData) 
     ca_annuel: formData.get('ca_annuel') as string || null,
     notes_generales: formData.get('notes_generales') as string || null,
     date_audit: new Date().toISOString().split('T')[0],
-    statut: 'en_cours',
+    statut: typeAudit === 'pme_ops_libre' ? 'termine' : 'en_cours',
+    type_audit: typeAudit,
   }
 
   const { data, error } = await supabase
@@ -42,7 +45,30 @@ export async function createAuditAction(prevState: unknown, formData: FormData) 
   }
 
   revalidatePath('/admin/audits')
+  // Audit ops libre : pas de wizard, on redirige direct vers la fiche audit
+  if (typeAudit === 'pme_ops_libre') {
+    redirect(`/admin/audits/${data.id}`)
+  }
   redirect(`/admin/audits/${data.id}/conduire`)
+}
+
+// ── Audit ops libre : sauvegarde des notes ──────────────
+export async function updateAuditNotesAction(auditId: string, notes: string) {
+  const supabase = await createClient()
+
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  if (authError || !user) return { error: 'Session expirée.' }
+
+  const { error } = await supabase
+    .from('audits')
+    .update({ notes_generales: notes, updated_at: new Date().toISOString() })
+    .eq('id', auditId)
+
+  if (error) return { error: error.message }
+
+  revalidatePath(`/admin/audits/${auditId}`)
+  revalidatePath('/admin/audits')
+  return { success: true }
 }
 
 // ── Sauvegarder une réponse (auto-save) ──────────────────

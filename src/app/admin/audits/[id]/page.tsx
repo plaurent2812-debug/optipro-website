@@ -1,9 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { formatDate } from '@/lib/utils'
-import { getScoreLevel, PILIER_LABELS, PILIER_COLORS, AUDIT_PILIERS, type AuditPilierKey } from '@/data/audit-grid'
+import { getScoreLevel, type AuditPilierKey } from '@/data/audit-grid'
 import AuditResultsClient from './AuditResultsClient'
+import AuditOpsLibreView from './AuditOpsLibreView'
 
 export const dynamic = 'force-dynamic'
 
@@ -25,7 +24,12 @@ export default async function AuditDetailPage({ params }: Props) {
     notFound()
   }
 
-  // If still in progress, redirect to wizard
+  // Audit ops libre : pas de grille, vue simplifiée
+  if (audit.type_audit === 'pme_ops_libre') {
+    return <AuditOpsLibreView audit={audit} client={audit.clients} />
+  }
+
+  // If still in progress, redirect to wizard (audit TPE classique)
   if (audit.statut === 'en_cours') {
     const { redirect } = await import('next/navigation')
     redirect(`/admin/audits/${id}/conduire`)
