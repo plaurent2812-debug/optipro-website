@@ -8,8 +8,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './HomePage.module.css';
 import Button from '@/components/ui/Button';
 import AuditCta from '@/components/ui/AuditCta';
-import HeroAnimation from '@/components/visuals/HeroAnimation';
 import Image from 'next/image';
+
+// HeroAnimation est lourd (~274 lignes + GSAP interne avec animations width)
+// → dynamic import avec placeholder de même hauteur pour éviter CLS.
+const HeroAnimation = dynamic(() => import('@/components/visuals/HeroAnimation'), {
+  loading: () => <div style={{ width: '100%', aspectRatio: '4 / 3', maxWidth: '420px' }} />,
+});
 
 // Mockups sous le fold : split chunk (chargés en parallèle après HeroAnimation)
 const AuditMockup = dynamic(() => import('@/components/visuals/AuditMockup'), {
@@ -84,13 +89,12 @@ export default function HomePageClient() {
           const reduced = conditions.motionReduced;
 
           // ========= HERO INTRO TIMELINE =========
+          // CRITICAL : NE PAS toucher heroSub (élément LCP) — il doit rester
+          // visible immédiatement pour que LCP soit < 2.5s sur mobile.
+          // On anime uniquement les éléments NON-LCP (badge, ctas, visual).
           const heroBadge = mainRef.current?.querySelector(
             `.${styles.heroBadge}`,
           );
-          const heroTitle = mainRef.current?.querySelector(
-            `.${styles.heroTitle}`,
-          );
-          const heroSub = mainRef.current?.querySelector(`.${styles.heroSub}`);
           const heroCtas = mainRef.current?.querySelector(
             `.${styles.heroCtas}`,
           );
@@ -98,14 +102,14 @@ export default function HomePageClient() {
             `.${styles.heroVisual}`,
           );
 
-          const heroEls = [heroBadge, heroTitle, heroSub, heroCtas].filter(
+          const heroEls = [heroBadge, heroCtas].filter(
             (el): el is Element => el != null,
           );
 
-          if (heroEls.length > 0) {
+          if (heroEls.length > 0 && !reduced) {
             gsap.set(heroEls, {
               opacity: 0,
-              y: reduced ? 0 : 20,
+              y: 20,
               willChange: 'transform, opacity',
             });
 
@@ -124,8 +128,8 @@ export default function HomePageClient() {
             tl.to(heroEls, {
               opacity: 1,
               y: 0,
-              duration: 0.6,
-              stagger: 0.1,
+              duration: 0.5,
+              stagger: 0.08,
             });
 
             if (heroVisual) {
