@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Article } from '@/lib/blog';
 import { formatDateFr } from '@/lib/blog';
+import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import styles from './article.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -225,6 +226,15 @@ export default function ArticleClient({
               className={styles.body}
               dangerouslySetInnerHTML={articleHtml}
             />
+
+            <div style={{ marginTop: '3rem', marginBottom: '2rem' }}>
+              <NewsletterForm
+                source="article-end"
+                variant="card"
+                title="Newsletter Ops & IA"
+                description="Si cet article vous a été utile, le prochain arrive jeudi prochain. Un cas terrain, un prompt, une mise en garde. 5 min de lecture, désinscription en 1 clic."
+              />
+            </div>
 
             <div className={styles.backToBlog}>
               <Link href="/blog" className={styles.backLink}>

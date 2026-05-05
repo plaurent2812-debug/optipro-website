@@ -14,6 +14,7 @@ import AutomationMockup from '@/components/visuals/AutomationMockup';
 import AuditCta from '@/components/ui/AuditCta';
 import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
+import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import Image from 'next/image';
 import { projects } from '@/data/projects';
 
@@ -499,9 +500,21 @@ export default function HomePageClient() {
       </section>
 
       {/* ===== TEASING OPTIBOARD ===== */}
-      <section data-reveal style={{ padding: '3rem 0 5rem' }}>
+      <section data-reveal style={{ padding: '3rem 0 4rem' }}>
         <div className="container">
           <OptiboardTeaser />
+        </div>
+      </section>
+
+      {/* ===== NEWSLETTER ===== */}
+      <section data-reveal style={{ padding: '3rem 0 5rem' }}>
+        <div className="container">
+          <NewsletterForm
+            source="home"
+            variant="card"
+            title="Newsletter Ops & IA — un email par jeudi"
+            description="Un cas terrain. Un prompt testé. Une mise en garde. Pour artisans, TPE et PME logistique/transport/BTP. Lisible en 5 minutes, désinscription en 1 clic."
+          />
         </div>
       </section>
     </main>

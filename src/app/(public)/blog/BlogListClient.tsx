@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Article } from '@/lib/blog';
 import { formatDateFr } from '@/lib/blog';
+import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import styles from './blog-list.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -154,6 +155,16 @@ export default function BlogListClient({ articles }: BlogListClientProps) {
                 <span className={styles.cardCta}>Lire l&apos;article →</span>
               </Link>
             ))}
+          </div>
+
+          {/* Newsletter */}
+          <div style={{ marginTop: '4rem', paddingTop: '3rem', borderTop: '1px solid var(--border)' }}>
+            <NewsletterForm
+              source="blog-footer"
+              variant="card"
+              title="Newsletter Ops & IA"
+              description="Chaque jeudi : un cas terrain, un prompt testé, une mise en garde. Lisible en 5 minutes. Désinscription en 1 clic."
+            />
           </div>
 
           {/* Bottom CTA */}
