@@ -246,10 +246,11 @@ export default function ArticleClient({
           {/* Sidebar */}
           <aside className={styles.sidebar}>
             <div className={`${styles.sidebarBox} ${styles.sidebarBoxAccent}`}>
-              <h3 className={styles.sidebarTitle}>Audit gratuit (30 min)</h3>
+              <h3 className={styles.sidebarTitle}>Premier appel — 30 min</h3>
               <p className={styles.sidebarText}>
-                Un échange honnête pour identifier vos points de friction et les
-                outils prioritaires à mettre en place. Sans engagement.
+                Vous me décrivez votre situation, je vous dis honnêtement si je peux
+                vous être utile et comment. Si oui, on enchaîne sur un vrai audit.
+                Si non, je vous oriente. Gratuit, sans engagement.
               </p>
               <Link href="/contact" className={styles.sidebarButton}>
                 Réserver →

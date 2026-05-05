@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import ContactPageClient from './ContactPageClient';
 
 export const metadata: Metadata = {
-  title: 'Contact — Demandez votre audit gratuit',
+  title: 'Contact — Réserver un premier appel',
   description:
-    'Contactez OptiPro pour un audit gratuit de vos outils et process. Pierre Laurent vous recontacte sous 24h. Basé à Vence (06).',
+    "Premier appel de 30 min gratuit pour parler de votre situation. Pierre Laurent vous recontacte sous 24h. Basé à Vence (06).",
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contactez OptiPro — Audit gratuit',
+    title: 'Contactez OptiPro — Premier appel gratuit',
     description:
-      'Demandez votre audit gratuit. Réponse garantie sous 24h.',
+      "30 min pour parler de votre situation. Réponse sous 24h.",
   },
 };
 

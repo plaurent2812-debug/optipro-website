@@ -4,7 +4,7 @@ import HomePageClient from './HomePageClient';
 export const metadata: Metadata = {
   title: 'OptiPro — Conseil & développement sur mesure | Vence',
   description:
-    'Audit gratuit, création de sites web et applications sur mesure, automatisation — OptiPro accompagne artisans, TPE et indépendants à Vence et en région PACA.',
+    "Création de sites web, automatisation, conseil exploitation — OptiPro accompagne artisans, TPE et PME logistique/transport/BTP. Basé à Vence, PACA. Premier appel gratuit.",
   alternates: {
     canonical: '/',
   },

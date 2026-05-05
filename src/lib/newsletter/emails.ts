@@ -132,8 +132,9 @@ export function magnetDeliveryEmail(
       <li>Mesurez le gain réel sur <strong>votre</strong> cas — pas l'estimation marketing.</li>
     </ul>
     <p style="${baseStyle} font-size:14px; color:${DARK}; margin:16px 0 0;">
-      Et si vous voulez creuser votre cas spécifique : 30 minutes d'audit gratuit
-      avec moi, sans engagement. Répondez juste à cet email.
+      Et si vous voulez creuser votre cas spécifique : 30 minutes au téléphone
+      avec moi, gratuit, sans engagement. Vous me décrivez votre situation, je
+      vous dis honnêtement si je peux vous être utile. Répondez juste à cet email.
     </p>
     <p style="${baseStyle} font-size:14px; color:${DARK}; margin:24px 0 0;">— Pierre</p>
     <p style="${baseStyle} font-size:11px; color:${MUTED}; margin:24px 0 0; padding-top:16px; border-top:1px solid ${BORDER};">

@@ -173,12 +173,12 @@ export default function BlogListClient({ articles }: BlogListClientProps) {
               Besoin d&apos;aide sur votre cas ?
             </h2>
             <p className={styles.bottomCtaText}>
-              Chaque artisan a sa réalité. En 30 minutes d&apos;échange gratuit,
-              je vous donne un avis honnête sur vos outils, vos process et les
-              prochaines étapes pour gagner du temps.
+              30 minutes au téléphone pour parler de votre situation. Je vous dis
+              honnêtement si je peux vous être utile et comment. Si oui, on
+              enchaîne sur un vrai audit. Si non, je vous oriente. Sans engagement.
             </p>
             <Link href="/contact" className={styles.bottomCtaButton}>
-              Réserver mon audit gratuit →
+              Réserver un premier appel →
             </Link>
           </div>
         </div>

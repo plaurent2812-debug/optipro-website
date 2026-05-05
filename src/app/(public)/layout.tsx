@@ -30,7 +30,7 @@ const jsonLd = {
       '@id': 'https://www.opti-pro.fr/#organization',
       name: 'OptiPro',
       description:
-        'Conseil & développement sur mesure pour artisans, TPE et indépendants. Audit gratuit, création de sites web et applications, automatisation.',
+        'Conseil & développement sur mesure pour artisans, TPE et indépendants. Premier appel gratuit, création de sites web et applications, automatisation.',
       url: 'https://www.opti-pro.fr',
       email: 'p.laurent@opti-pro.fr',
       address: {

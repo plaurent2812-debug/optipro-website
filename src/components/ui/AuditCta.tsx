@@ -89,14 +89,15 @@ export default function AuditCta() {
         pointerEvents: 'none',
       }} />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <h2>Commencez par un audit</h2>
+        <h2>Parlons de votre situation</h2>
         <p>
-          On regarde ensemble vos outils et vos process. Vous repartez avec un
-          diagnostic clair et des recommandations concrètes.
+          30 minutes au téléphone (ou en visio). Vous me décrivez votre contexte,
+          je vous dis honnêtement si je peux vous être utile et comment. Si oui,
+          on enchaîne sur un vrai audit. Si non, je vous oriente.
         </p>
-        <p className="audit-cta-note">100% gratuit et sans engagement</p>
+        <p className="audit-cta-note">Premier appel gratuit · sans engagement</p>
         <Button href="/contact" variant="primary">
-          Démarrer mon audit gratuit
+          Réserver un premier appel
         </Button>
       </div>
     </div>

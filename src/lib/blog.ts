@@ -148,8 +148,8 @@ export const articles: Article[] = [
 
 <div class="callout">
   <p><strong>Vous voulez gagner du temps sans vous tromper d'outil ?</strong></p>
-  <p>Je propose un audit gratuit de 30 minutes pour les artisans : on regarde votre situation actuelle (volume de devis, outils, points de friction), et je vous indique l'outil le plus adapté à votre cas. Pas de blabla commercial, juste du concret.</p>
-  <a href="/contact" class="callout-link">Réserver mon audit gratuit →</a>
+  <p>Je propose un premier appel de 30 minutes, gratuit et sans engagement : vous me décrivez votre situation (volume de devis, outils actuels, points de friction), je vous indique l'outil le plus adapté à votre cas. Si on peut bosser ensemble, on enchaîne. Sinon, je vous oriente.</p>
+  <a href="/contact" class="callout-link">Réserver un premier appel →</a>
 </div>
 `,
   },
@@ -251,8 +251,8 @@ export const articles: Article[] = [
 
 <div class="callout">
   <p><strong>Vous voulez savoir lesquels de ces outils vous coûtent le plus cher ?</strong></p>
-  <p>Je propose un audit gratuit de 30 minutes : on identifie ensemble les 2 ou 3 outils prioritaires à remplacer dans votre cas, avec un plan d'action concret. Sans engagement.</p>
-  <a href="/contact" class="callout-link">Réserver mon audit gratuit →</a>
+  <p>Premier appel de 30 minutes, gratuit, sans engagement : vous me décrivez votre situation, on identifie ensemble les 2 ou 3 outils prioritaires à remplacer dans votre cas. Si je peux vous être utile, on enchaîne sur un vrai audit. Sinon, je vous oriente.</p>
+  <a href="/contact" class="callout-link">Réserver un premier appel →</a>
 </div>
 `,
   },
@@ -433,8 +433,8 @@ export const articles: Article[] = [
 
 <div class="callout">
   <p><strong>Vous hésitez sur le bon budget pour votre site ?</strong></p>
-  <p>Audit gratuit de 30 minutes : on regarde votre activité, votre concurrence locale, vos objectifs, et je vous donne une fourchette honnête du budget nécessaire — sans pression de vente.</p>
-  <a href="/contact" class="callout-link">Réserver mon audit gratuit →</a>
+  <p>Premier appel de 30 minutes, gratuit : vous me décrivez votre activité, votre concurrence locale, vos objectifs, et je vous donne une fourchette honnête du budget nécessaire — sans pression de vente.</p>
+  <a href="/contact" class="callout-link">Réserver un premier appel →</a>
 </div>
 `,
   },
@@ -569,8 +569,8 @@ export const articles: Article[] = [
 
 <div class="callout">
   <p><strong>Vous voulez accélérer la mise en place ?</strong></p>
-  <p>Je propose un audit gratuit de 30 minutes pour identifier l'outil le plus adapté à votre activité, et un accompagnement de paramétrage si besoin. L'objectif : que vous soyez opérationnel en 2 semaines, pas en 2 mois.</p>
-  <a href="/contact" class="callout-link">Réserver mon audit gratuit →</a>
+  <p>Premier appel de 30 minutes, gratuit, pour identifier l'outil le plus adapté à votre activité. Si vous voulez un accompagnement de paramétrage, on cadre ça ensemble. L'objectif : que vous soyez opérationnel en 2 semaines, pas en 2 mois.</p>
+  <a href="/contact" class="callout-link">Réserver un premier appel →</a>
 </div>
 `,
   },
@@ -788,7 +788,7 @@ Livre :
 
 <div class="callout">
   <p><strong>Vous gérez l'exploitation d'une PME transport, logistique ou BTP ?</strong></p>
-  <p>30 minutes d'audit gratuit, sans engagement. On regarde votre stack, vos process, on identifie 3 leviers concrets — reporting, sous-traitants, ou autres.</p>
+  <p>30 minutes au téléphone, gratuit, sans engagement. Vous me décrivez votre stack et vos process, je vous donne 3 leviers concrets sur lesquels vous pourriez gagner du temps — reporting, sous-traitants, ou autres. Si on peut bosser ensemble derrière, on cadre. Sinon, vous repartez avec les pistes.</p>
   <a href="/contact?cible=pme-ops" class="callout-link">Parler de mon exploitation →</a>
 </div>
 
@@ -1107,8 +1107,8 @@ Garde ça court : 120 mots max.</code></pre>
 
 <div class="callout">
   <p><strong>Vous voulez aller plus vite ?</strong></p>
-  <p>30 minutes d'audit gratuit avec moi : on regarde votre métier, vos process, et on identifie 3 prompts ou outils concrets adaptés à votre activité. Sans engagement.</p>
-  <a href="/contact?cible=artisans" class="callout-link">Demander mon audit gratuit →</a>
+  <p>30 minutes au téléphone avec moi, gratuit, sans engagement : vous me décrivez votre métier et vos process, je vous propose 3 prompts ou outils concrets adaptés à votre activité. Pas de blabla commercial, juste du concret.</p>
+  <a href="/contact?cible=artisans" class="callout-link">Réserver un premier appel →</a>
 </div>
 
 <p style="margin-top:2rem">L'IA ne remplacera pas votre savoir-faire. Mais elle peut vous libérer du temps pour le pratiquer, pour développer votre activité, et pour rentrer chez vous plus tôt le soir.</p>

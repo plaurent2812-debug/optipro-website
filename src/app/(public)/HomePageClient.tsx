@@ -232,7 +232,7 @@ export default function HomePageClient() {
               </p>
               <div className={styles.heroCtas}>
                 <Button href="/contact" variant="primary">
-                  Démarrer mon audit gratuit
+                  Premier appel — gratuit
                 </Button>
                 <Button href="/services" variant="outline">
                   Voir les services

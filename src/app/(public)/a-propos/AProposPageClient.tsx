@@ -82,7 +82,7 @@ const valeurs = [
     icon: '\u{1F4CA}',
     title: 'Résultats mesurables',
     description:
-      "Audit gratuit, chiffres concrets, ROI visible. On part des heures que vous perdez chaque semaine et on les transforme en heures récupérées.",
+      "Premier appel sans engagement, chiffres concrets, ROI visible. On part des heures que vous perdez chaque semaine et on les transforme en heures récupérées.",
   },
 ];
 
@@ -510,14 +510,15 @@ export default function AProposPageClient() {
         <div className={styles.ctaBg} aria-hidden="true" />
         <div className="container">
           <div className={styles.ctaInner}>
-            <h2 className={styles.ctaTitle}>On commence par un audit gratuit.</h2>
+            <h2 className={styles.ctaTitle}>On commence par un appel.</h2>
             <p className={styles.ctaText}>
-              30 minutes pour faire le point sur vos outils et vos process. Sans
-              engagement. Sans jargon.
+              30 minutes au téléphone pour parler de votre situation. Si je peux
+              vous être utile, on enchaîne. Sinon, je vous oriente. Gratuit, sans
+              engagement, sans jargon.
             </p>
             <div className={styles.ctaActions}>
               <Button href="/contact" variant="primary">
-                Démarrer mon audit gratuit
+                Réserver un premier appel
               </Button>
               <Link href="/services" className={styles.ctaLink}>
                 Voir les services →

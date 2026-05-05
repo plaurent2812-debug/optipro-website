@@ -89,7 +89,7 @@ export default function LandingPage({
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button href="/contact" variant="primary">
-              Démarrer mon audit gratuit
+              Premier appel — gratuit
             </Button>
             <a
               href="tel:+33670259333"

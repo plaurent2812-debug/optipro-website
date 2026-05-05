@@ -117,7 +117,7 @@ export default function PlombierPage() {
         },
         {
           step: '2',
-          title: 'Audit gratuit de votre présence en ligne',
+          title: 'Premier appel gratuit (30 min)',
           description: "Je vérifie votre fiche Google Business actuelle (si elle existe), votre référencement local et votre processus de devis. Vous recevez un état des lieux écrit en 48h.",
         },
         {

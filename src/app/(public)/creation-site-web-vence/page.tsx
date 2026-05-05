@@ -4,14 +4,14 @@ import LandingPage from '@/components/seo/LandingPage';
 export const metadata: Metadata = {
   title: 'Création de site web à Vence — Artisans, TPE, indépendants',
   description:
-    "Création de site web professionnel à Vence et sur la Côte d'Azur. Sites artisans dès 690€, livrés en 3-5 jours. Audit gratuit par Pierre Laurent, basé à Vence (06).",
+    "Création de site web professionnel à Vence et sur la Côte d'Azur. Sites artisans dès 690€, livrés en 3-5 jours. Premier appel gratuit par Pierre Laurent, basé à Vence (06).",
   alternates: {
     canonical: '/creation-site-web-vence',
   },
   openGraph: {
     title: 'Création de site web à Vence — OptiPro',
     description:
-      'Sites web sur mesure pour artisans et TPE de la Côte d&apos;Azur. Livraison rapide, prix affichés, audit gratuit.',
+      'Sites web sur mesure pour artisans et TPE de la Côte d&apos;Azur. Livraison rapide, prix affichés, premier appel gratuit.',
     url: 'https://www.opti-pro.fr/creation-site-web-vence',
     type: 'website',
   },
@@ -82,7 +82,7 @@ const jsonLd = {
         },
         {
           '@type': 'Question',
-          name: 'L&apos;audit est-il vraiment gratuit ?',
+          name: 'Le premier appel est-il vraiment gratuit ?',
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'Oui. Chaque mission démarre par un appel découverte gratuit de 30 minutes, sans engagement. Pour les projets complexes, un audit approfondi à 490€ HT peut être proposé — il est intégralement déduit du devis si la mission est signée.',
@@ -166,7 +166,7 @@ export default function CreationSiteWebVencePage() {
           answer: "Oui. OptiPro est basé à Vence (06140). Les rendez-vous en présentiel sont possibles sur Vence, Nice, Antibes, Cannes, Grasse et toute la Côte d'Azur. Le travail à distance est possible partout en France.",
         },
         {
-          question: "L'audit est-il vraiment gratuit ?",
+          question: "Le premier appel est-il vraiment gratuit ?",
           answer: "Oui. Chaque mission démarre par un appel découverte gratuit de 30 minutes, sans engagement. Pour les projets complexes, un audit approfondi à 490€ HT peut être proposé — il est intégralement déduit du devis si la mission est signée.",
         },
         {

@@ -83,7 +83,7 @@ export default function Header() {
                         variant="primary"
                         style={{ marginLeft: '0.75rem', fontSize: '0.9rem', padding: '0.6rem 1.25rem' }}
                     >
-                        Démarrer mon audit gratuit
+                        Premier appel — gratuit
                     </Button>
                 </nav>
 
@@ -188,7 +188,7 @@ export default function Header() {
             })}
             <div style={{ marginTop: '1rem' }}>
                 <Button href="/contact" variant="primary" style={{ width: '100%', textAlign: 'center' }} onClick={closeMenu}>
-                    Démarrer mon audit gratuit
+                    Premier appel — gratuit
                 </Button>
             </div>
         </div>
