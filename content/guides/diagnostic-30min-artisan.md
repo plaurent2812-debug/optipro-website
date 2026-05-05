@@ -275,7 +275,7 @@ L'objectif est de préserver ma réputation auprès de mes futurs clients.
 
 **Pour aller plus loin :** chaque jeudi dans la newsletter Ops & IA, un cas terrain avec le prompt complet. Si votre cas ne figure pas dans ce guide, écrivez-moi — certains retours de lecteurs deviennent les sujets de la semaine suivante.
 
-**Si vous voulez aller encore plus vite :** OptiPro propose un Pack Visibilité à 690 € HT (fiche Google + site 1 page + formation, livré en 3-5 jours), un fichier Sheets Devis à 390 € HT, ou un Bot Telegram Notifs à 290 € HT. Voir [opti-pro.fr/services](https://www.opti-pro.fr/services).
+**Si vous voulez aller encore plus vite :** OptiPro propose un Pack Visibilité à 890 € HT (fiche Google + site 1 page + formation, livré en 3-5 jours) et un Site vitrine pro à partir de 2 400 € HT (3-5 pages, design unique, SEO local). Voir [opti-pro.fr/services](https://www.opti-pro.fr/services).
 
 ---
 

@@ -56,7 +56,7 @@ const jsonLd = {
           name: 'Combien coûte un site web pour un plombier ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Le Pack Visibilité OptiPro à 690€ HT inclut un site 1 page, votre fiche Google Business optimisée et une formation. C&apos;est suffisant pour la majorité des plombiers indépendants. Pour un site multi-pages avec présentation des services, comptez à partir de 2 400€ HT.',
+            text: 'Le Pack Visibilité OptiPro à 690€ HT inclut un site 1 page, votre fiche Google Business optimisée et une formation. C&apos;est suffisant pour la majorité des plombiers indépendants. Pour un site multi-pages avec présentation des services, comptez à partir de 2 900€ HT.',
           },
         },
         {
@@ -64,7 +64,7 @@ const jsonLd = {
           name: 'Comment automatiser mes devis et factures ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OptiPro propose un fichier Sheets prêt à l&apos;emploi (390€ HT) avec calcul automatique HT/TVA/TTC, suivi des paiements, et numérotation automatique. Pour aller plus loin, un Bot Telegram (290€ HT) vous notifie en temps réel à chaque demande de devis ou paiement reçu.',
+            text: 'Pour la facturation, je recommande directement des outils SaaS éprouvés (Pennylane, Indy, Henrri) — pas la peine de réinventer la roue. Si votre besoin est plus spécifique (devis avec calculs métier complexes, intégration à un ERP, etc.), je le construis sur mesure dans le cadre d&apos;un site professionnel ou d&apos;une mission ops dédiée.',
           },
         },
         {
@@ -138,11 +138,11 @@ export default function PlombierPage() {
         },
         {
           question: 'Combien coûte un site web pour un plombier ?',
-          answer: "Le Pack Visibilité à 690€ HT inclut un site 1 page, votre fiche Google Business optimisée et une formation. C'est suffisant pour la majorité des plombiers indépendants. Pour un site multi-pages avec présentation des services, comptez à partir de 2 400€ HT.",
+          answer: "Le Pack Visibilité à 690€ HT inclut un site 1 page, votre fiche Google Business optimisée et une formation. C'est suffisant pour la majorité des plombiers indépendants. Pour un site multi-pages avec présentation des services, comptez à partir de 2 900€ HT.",
         },
         {
           question: 'Comment automatiser mes devis et factures ?',
-          answer: "OptiPro propose un fichier Sheets prêt à l'emploi (390€ HT) avec calcul automatique HT/TVA/TTC, suivi des paiements et numérotation automatique. Pour aller plus loin, un Bot Telegram (290€ HT) vous notifie en temps réel à chaque demande de devis ou paiement reçu.",
+          answer: "Pour la facturation, je recommande directement des outils SaaS éprouvés (Pennylane, Indy, Henrri) — pas la peine de réinventer la roue. Si votre besoin est plus spécifique (devis avec calculs métier complexes, intégration à un ERP, etc.), je le construis sur mesure dans le cadre d'un site professionnel ou d'une mission ops dédiée.",
         },
         {
           question: 'Travaillez-vous avec des plombiers en dehors de la PACA ?',

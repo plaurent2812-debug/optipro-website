@@ -60,11 +60,10 @@ export default function OffersSection() {
 
               <div className={styles.offersGrid}>
                 {cat.offers.map((offer) => {
-                  const isAudit = offer.id === 'audit';
                   return (
                     <article
                       key={offer.id}
-                      className={`${styles.offerCard} ${isAudit ? styles.offerHighlight : ''}`}
+                      className={styles.offerCard}
                     >
                       <h4 className={styles.offerName}>{offer.name}</h4>
                       <p className={styles.offerDescription}>{offer.description}</p>
@@ -79,6 +78,35 @@ export default function OffersSection() {
                           <li key={f}>{f}</li>
                         ))}
                       </ul>
+                      {offer.options && offer.options.length > 0 && (
+                        <div style={{
+                          marginTop: '1rem',
+                          paddingTop: '1rem',
+                          borderTop: '1px dashed var(--border)',
+                        }}>
+                          <p style={{
+                            fontSize: '0.75rem',
+                            color: 'var(--muted)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.08em',
+                            fontWeight: 700,
+                            marginBottom: '0.5rem',
+                          }}>
+                            Option
+                          </p>
+                          {offer.options.map((opt) => (
+                            <div key={opt.name} style={{ marginBottom: '0.5rem' }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.5rem', alignItems: 'baseline' }}>
+                                <strong style={{ fontSize: '0.9rem', color: 'var(--primary)' }}>{opt.name}</strong>
+                                <span style={{ fontSize: '0.85rem', color: 'var(--accent)', fontWeight: 700, whiteSpace: 'nowrap' }}>{opt.price}</span>
+                              </div>
+                              {opt.description && (
+                                <p style={{ fontSize: '0.85rem', color: 'var(--secondary)', marginTop: '0.25rem', lineHeight: 1.5 }}>{opt.description}</p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </article>
                   );
                 })}

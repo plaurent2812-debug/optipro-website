@@ -61,7 +61,7 @@ const jsonLd = {
           name: 'Combien coûte un site web pour un artisan à Vence ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Le Pack Visibilité OptiPro démarre à 690€ HT pour un site 1 page (présentation, contact, horaires) avec fiche Google Business optimisée et formation incluse. Les sites professionnels 3-5 pages démarrent à 2 400€ HT. Tous les prix sont affichés publiquement sur la page Services.',
+            text: 'Le Pack Visibilité OptiPro démarre à 690€ HT pour un site 1 page (présentation, contact, horaires) avec fiche Google Business optimisée et formation incluse. Les sites professionnels 3-5 pages démarrent à 2 900€ HT. Tous les prix sont affichés publiquement sur la page Services.',
           },
         },
         {
@@ -85,7 +85,7 @@ const jsonLd = {
           name: 'Le premier appel est-il vraiment gratuit ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. Chaque mission démarre par un appel découverte gratuit de 30 minutes, sans engagement. Pour les projets complexes, un audit approfondi à 490€ HT peut être proposé — il est intégralement déduit du devis si la mission est signée.',
+            text: 'Oui. Chaque mission démarre par un appel découverte gratuit de 30 minutes, sans engagement. Pour les projets complexes, un audit approfondi à 590€ HT peut être proposé — il est intégralement déduit du devis si la mission est signée.',
           },
         },
         {
@@ -155,7 +155,7 @@ export default function CreationSiteWebVencePage() {
       faq={[
         {
           question: 'Combien coûte un site web pour un artisan à Vence ?',
-          answer: 'Le Pack Visibilité OptiPro démarre à 690€ HT pour un site 1 page avec fiche Google Business et formation incluse. Les sites professionnels 3-5 pages démarrent à 2 400€ HT. Tous les prix sont affichés publiquement.',
+          answer: 'Le Pack Visibilité OptiPro démarre à 690€ HT pour un site 1 page avec fiche Google Business et formation incluse. Les sites professionnels 3-5 pages démarrent à 2 900€ HT. Tous les prix sont affichés publiquement.',
         },
         {
           question: 'Combien de temps faut-il pour créer un site ?',
@@ -167,7 +167,7 @@ export default function CreationSiteWebVencePage() {
         },
         {
           question: "Le premier appel est-il vraiment gratuit ?",
-          answer: "Oui. Chaque mission démarre par un appel découverte gratuit de 30 minutes, sans engagement. Pour les projets complexes, un audit approfondi à 490€ HT peut être proposé — il est intégralement déduit du devis si la mission est signée.",
+          answer: "Oui. Chaque mission démarre par un appel découverte gratuit de 30 minutes, sans engagement. Pour les projets complexes, un audit approfondi à 590€ HT peut être proposé — il est intégralement déduit du devis si la mission est signée.",
         },
         {
           question: 'Faites-vous de la sous-traitance ?',

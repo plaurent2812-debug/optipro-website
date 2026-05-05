@@ -42,10 +42,10 @@ const cibleConfigs: Record<Cible, CibleConfig> = {
         showBudget: true,
         showUrgence: true,
         ctaLabel: 'Parler de mon exploitation — Pierre me recontacte sous 24h',
-        footnote: 'Premier appel de 30 min gratuit. Audit ops complet à 1 200€ HT (1 semaine, livrable écrit).',
+        footnote: 'Premier appel de 30 min gratuit. Audit ops complet à 1 500€ HT (1 semaine, livrable écrit).',
     },
     projets: {
-        intro: 'Pour les projets complexes, un audit approfondi (490€ HT, déduit si mission signée) garantit un devis précis. Décrivez votre projet.',
+        intro: 'Pour les projets complexes, un audit approfondi (590€ HT, déduit si mission signée) garantit un devis précis. Décrivez votre projet.',
         projectLabel: 'Présentez votre projet',
         projectPlaceholder: 'Ex : je veux un site complet avec espace client et catalogue, une web app métier, une intégration complète avec ma compta...',
         showBudget: true,
@@ -54,7 +54,7 @@ const cibleConfigs: Record<Cible, CibleConfig> = {
         footnote: 'Premier échange de 30 min offert pour évaluer la pertinence de l\'audit approfondi.',
     },
     abonnement: {
-        intro: 'Vous êtes déjà client ou vous envisagez l\'abonnement Suivi & Évolution (180€/mois HT). Dites-moi comment je peux vous accompagner.',
+        intro: 'Vous êtes déjà client ou vous envisagez l\'abonnement Suivi & Évolution (220€/mois HT). Dites-moi comment je peux vous accompagner.',
         projectLabel: 'Ce que vous souhaitez mettre en place ou faire évoluer',
         projectPlaceholder: 'Ex : je veux un suivi régulier de mon site, des évolutions mensuelles, un support prioritaire...',
         showBudget: false,

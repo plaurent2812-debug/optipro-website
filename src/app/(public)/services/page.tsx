@@ -56,15 +56,15 @@ const faqJsonLd = {
       name: 'Les prix sont-ils affichés ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Oui pour les petites prestations catalogue (Pack Visibilité, Sheets automatisés, Bots Telegram, formations). Pour les projets complexes, un audit approfondi est facturé avant tout devis — il est déduit du devis final si la mission est signée.",
+        text: "Oui pour les offres artisans (Pack Visibilité 890€ HT, Site vitrine pro dès 2 400€ HT). Pour les missions PME ops et projets sur mesure, le prix exact dépend de la complexité réelle — j'affiche un point de départ (\"à partir de X€\") et le devis précis est cadré après le premier appel découverte gratuit.",
       },
     },
     {
       '@type': 'Question',
-      name: 'Pourquoi facturer un audit avant un gros projet ?',
+      name: 'Comment se passe un projet PME ops ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Parce qu'un devis fiable demande un vrai travail d'analyse. L'audit approfondi (490€ HT) garantit que le devis final est précis, et qu'OptiPro peut tenir ses engagements de délai et de qualité. Cet audit est intégralement déduit si la mission est signée.",
+        text: "Premier appel découverte gratuit (30 min). Si on peut bosser ensemble, on enchaîne sur un audit ops complet (à partir de 1 500€ HT, 1 semaine, livrable écrit). À partir de cet audit, je vous remets un devis précis pour la suite (automatisation reporting, refonte process sous-traitants, etc.).",
       },
     },
     {
@@ -72,7 +72,7 @@ const faqJsonLd = {
       name: 'Travaillez-vous uniquement à Vence ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Non, OptiPro accompagne des clients partout en France. Basé à Vence (06), Pierre travaille aussi bien en local que 100% à distance.',
+        text: 'Non, OptiPro accompagne des clients partout en France. Basé à Vence (06), Pierre travaille aussi bien en local (présentiel sur la Côte d\'Azur) qu\'à 100% à distance.',
       },
     },
     {
@@ -80,7 +80,7 @@ const faqJsonLd = {
       name: 'Quels types de clients accompagnez-vous ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "OptiPro accompagne artisans indépendants, TPE structurées et porteurs de projets de transformation digitale. Chaque cible a ses propres formules, avec des niveaux de complexité et de tarification adaptés.",
+        text: "Deux cibles principales. (1) Artisans, indépendants et TPE qui veulent une présence en ligne sérieuse (Pack Visibilité, Site vitrine pro). (2) PME logistique, transport, BTP, distribution qui veulent structurer leur exploitation (audit ops, automatisation reporting, refonte process sous-traitants).",
       },
     },
     {
@@ -88,7 +88,7 @@ const faqJsonLd = {
       name: 'Est-ce que je garde la main sur mes outils après le projet ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Oui. Chaque projet inclut une formation et une documentation. Vous êtes autonome sur vos outils. Pour ceux qui veulent un suivi continu, l'abonnement Suivi & Évolution à 180€/mois HT couvre maintenance et 1h d'évolution mensuelle.",
+        text: "Oui. Chaque projet inclut une formation et une documentation. Vous êtes autonome sur vos outils. Pour ceux qui veulent juste de la sérénité technique, je propose une maintenance technique à 90€/mois HT (hébergement, mises à jour, sécurité, support 48h). Les évolutions ponctuelles sont facturées à 80€/h HT au cas par cas.",
       },
     },
   ],

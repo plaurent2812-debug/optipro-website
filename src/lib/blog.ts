@@ -608,16 +608,17 @@ export const articles: Article[] = [
 
 <h2>Ce qui change concrètement</h2>
 
-<p>OptiPro garde sa cible historique : <strong>artisans, TPE, indépendants</strong>. Pack Visibilité à 690€, Sheets Devis à 390€, Bot Telegram à 290€, formation 1h à 120€. Rien ne bouge.</p>
+<p>OptiPro garde sa cible historique : <strong>artisans, TPE, indépendants</strong>. Pack Visibilité à 890€, Site vitrine pro à partir de 2 400€. Une offre serrée et claire, sans 15 produits qui se ressemblent.</p>
 
-<p>Ce qui s'ajoute : une <strong>quatrième catégorie d'offres "PME ops & exploitation"</strong>, pensée pour les dirigeants et responsables d'exploitation de PME logistique, transport et BTP :</p>
+<p>Ce qui s'ajoute : une <strong>nouvelle catégorie "PME ops & exploitation"</strong>, pensée pour les dirigeants et responsables d'exploitation de PME logistique, transport et BTP :</p>
 
 <ul>
-  <li><strong>Audit ops</strong> — 1 200 € HT, 1 semaine. Diagnostic complet : flux, ERP/TMS/WMS, sous-traitants, reporting. Restitution écrite avec plan d'action chiffré.</li>
-  <li><strong>Automatisation reporting hebdo</strong> — 2 500 € HT, 2 semaines. Vos KPIs (taux de service, marge transport, retards, sous-traitance) consolidés automatiquement chaque lundi matin.</li>
+  <li><strong>Audit ops</strong> — à partir de 1 500 € HT, 1 semaine. Diagnostic complet : flux, ERP/TMS/WMS, sous-traitants, reporting. Restitution écrite avec plan d'action chiffré.</li>
+  <li><strong>Automatisation reporting hebdo</strong> — à partir de 3 500 € HT, 2-3 semaines. Vos KPIs (taux de service, marge transport, retards, sous-traitance) consolidés automatiquement chaque lundi matin.</li>
   <li><strong>Refonte process sous-traitants</strong> — sur devis, 4-8 semaines. Cadrage opérationnel et outillage pour piloter 10 à 50 sous-traitants : OS, suivi terrain, facturation.</li>
-  <li><strong>Accompagnement mensuel ops</strong> — 800 € HT/mois, engagement 6 mois. Un point hebdo, 4h d'évolutions/mois, support 4h ouvrées.</li>
 </ul>
+
+<p>Pour les sites complexes (catalogue, espace client, intégrations API, web app métier), une troisième catégorie <strong>"Projets sur mesure"</strong> propose un site complet à partir de 6 500 € HT et la web app sur devis selon le cahier des charges.</p>
 
 <h2>Ce qui ne change pas</h2>
 

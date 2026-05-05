@@ -56,7 +56,7 @@ const jsonLd = {
           name: 'Combien coûte un site web pour un restaurant ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Pour un site complet (présentation, menu, photos, réservation, avis Google intégrés), comptez à partir de 2 400€ HT. Pour démarrer rapidement avec une présence pro, le Pack Visibilité à 690€ HT couvre site 1 page + fiche Google Business optimisée. Tous les prix sont affichés publiquement.',
+            text: 'Pour un site complet (présentation, menu, photos, réservation, avis Google intégrés), comptez à partir de 2 900€ HT. Pour démarrer rapidement avec une présence pro, le Pack Visibilité à 690€ HT couvre site 1 page + fiche Google Business optimisée. Tous les prix sont affichés publiquement.',
           },
         },
         {
@@ -98,7 +98,7 @@ export default function RestaurateurPage() {
       }}
       featuredOffer={{
         name: 'Site professionnel restaurateur',
-        price: 'à partir de 2 400 € HT',
+        price: 'à partir de 2 900 € HT',
         delay: '2-3 semaines',
         description: "Un site rapide sur mobile, mis à jour facilement, qui montre vos plats, votre équipe et capte des réservations directement.",
         features: [
@@ -138,7 +138,7 @@ export default function RestaurateurPage() {
         },
         {
           question: 'Combien coûte un site web pour un restaurant ?',
-          answer: "Pour un site complet (présentation, menu, photos, réservation, avis intégrés), comptez à partir de 2 400€ HT. Pour démarrer rapidement, le Pack Visibilité à 690€ HT couvre site 1 page + fiche Google Business. Tous les prix sont affichés.",
+          answer: "Pour un site complet (présentation, menu, photos, réservation, avis intégrés), comptez à partir de 2 900€ HT. Pour démarrer rapidement, le Pack Visibilité à 690€ HT couvre site 1 page + fiche Google Business. Tous les prix sont affichés.",
         },
         {
           question: 'Comment gérer les avis Google pour mon restaurant ?',

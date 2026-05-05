@@ -181,7 +181,7 @@ Vous avez lu les 10 process. Maintenant :
 
 **Étape 3 — Venez en parler.** Chaque jeudi dans la newsletter Ops & IA, je publie un cas terrain avec le prompt complet. Si votre cas ne figure pas dans la liste, écrivez-moi — certains cas deviennent des newsletters.
 
-**Si vous voulez aller plus vite :** l'audit OptiPro est un diagnostic ops (1 200 € HT, 1 semaine) où on passe en revue votre stack actuelle, vos flux, vos sous-traitants et votre reporting. On identifie ensemble les 3 leviers les plus rentables pour votre configuration spécifique. Possibilité d'un appel découverte de 30 min gratuit pour évaluer si c'est le bon moment.
+**Si vous voulez aller plus vite :** l'audit OptiPro est un diagnostic ops (à partir de 1 500 € HT, 1 semaine, sur devis selon volumétrie) où on passe en revue votre stack actuelle, vos flux, vos sous-traitants et votre reporting. On identifie ensemble les 3 leviers les plus rentables pour votre configuration spécifique. Possibilité d'un appel découverte de 30 min gratuit pour évaluer si c'est le bon moment.
 
 ---
 

@@ -1,264 +1,136 @@
+# Services & tarifs — OptiPro
+
+Conseil ops · Développement · IA opérationnelle
+
 ---
-title: Services & Tarifs — OptiPro
-description: Audit, création de sites, automatisation et formation — offres et tarifs pour artisans, TPE et projets structurants.
-url: https://www.opti-pro.fr/services
-last_updated: 2026-04-26
+
+## Trois portes d'entrée
+
+OptiPro propose 3 catégories d'offres selon votre situation :
+
+1. **Artisans & TPE** — vous démarrez en ligne, vous voulez un site qui ressemble à votre activité.
+2. **PME ops & exploitation** — vous pilotez une PME logistique, transport ou BTP et vos process tiennent par habitude.
+3. **Projets sur mesure** — sites complexes, web apps métier, intégrations API.
+
+Chaque mission démarre par un **premier appel découverte gratuit (30 min, sans engagement)**. On parle de votre situation, je vous dis honnêtement si je peux vous être utile et comment.
+
 ---
 
-Services & tarifs
+## 🔧 Artisans & TPE
 
-# Des solutions adaptées à votre réalité, pas aux nôtres
+Démarrer en ligne proprement, sans payer pour ce qui ne sert pas.
 
-Artisan solo, TPE structurée ou projet de transformation complète — chaque situation appelle une réponse différente. Voici comment j'accompagne chacune.
+### Pack Visibilité
 
-## Nos offres
+890 € HT — 3-5 jours
 
-Des formules claires selon votre taille et votre besoin. Les prix sont affichés pour les petites prestations, sur devis pour les projets structurants.
+Pour exister en ligne proprement et capter les clients qui cherchent sur Google. Le minimum vital pour un artisan ou un indépendant qui démarre.
 
-🔧Artisans & commerçants🏢TPE & PME🚀Projets sur mesure
-
-🔧
-
-Pour les indépendants
-
-### Artisans & commerçants
-
-Des outils simples, livrés rapidement.
-
-Vous êtes seul ou à quelques personnes. Vous avez besoin de visibilité et de gagner du temps sur l'admin, sans vous lancer dans un gros projet.
-
-#### Pack Visibilité
-
-Pour exister en ligne proprement et capter les clients qui cherchent sur Google.
-
-690 € HT3-5 jours
-
-- Fiche Google Business optimisée
+- Fiche Google Business optimisée (catégories, zone, photos)
 - Mini-site 1 page (présentation, contact, horaires)
-- Formation 1h pour gérer votre fiche
+- Optimisation locale pour votre ville et alentours
+- Formation 1h pour gérer votre fiche en autonomie
 
-#### Sheets Devis / Factures
+### Site vitrine pro
 
-Un fichier prêt à l'emploi pour ne plus jamais refaire un devis à la main.
+À partir de 2 400 € HT — 1 semaine
 
-390 € HT2-3 jours
+Un vrai site sur mesure (3-5 pages), pas un template. Pensé comme un outil commercial qui génère des contacts.
 
-- Modèles de devis et factures personnalisés
-- Calculs automatiques (HT / TVA / TTC)
-- Suivi des paiements intégré
-- Formation à l'utilisation
+- 3-5 pages, design unique, responsive mobile
+- SEO local + fiche Google Business optimisée
+- Formulaire de contact intelligent (anti-spam, notif instantanée)
+- Formation 2h incluse pour mettre à jour le contenu
+- 30 jours de support après mise en ligne
 
-#### Bot Telegram Notifs
+**Option** : Notification Telegram instantanée à chaque demande de contact (+ 500 € HT)
 
-Recevez une notification sur votre téléphone à chaque événement important.
+---
 
-290 € HT1-2 jours
+## 📦 PME ops & exploitation
 
-- Nouvelle demande de contact sur votre site
-- Paiement reçu
-- Rappel de devis à envoyer
-- Configuration sur mesure
+10 ans à piloter des flux tendus, appliqués à votre opérationnel.
 
-#### Formation ponctuelle
+### Audit ops
 
-Une heure en visio sur le sujet de votre choix.
+À partir de 1 500 € HT — sur devis — 1 semaine
 
-120 € HT1h visio
+Diagnostic complet de votre exploitation : flux, outils, ERP, sous-traitants, reporting. Restitution écrite avec plan d'action chiffré et ROI estimé.
 
-- Fiche Google, gestion admin, prise en main outil
-- Bases de l'IA pour le quotidien
-- Au choix selon votre besoin
+- Cartographie complète des flux (entrants, sortants, internes)
+- Audit ERP/TMS/WMS et points de friction
+- Identification des gisements de temps et de coûts
+- Plan d'action priorisé avec ROI estimé par chantier
+- Restitution écrite + visio de cadrage 1h
 
-[Parler de mon besoin](/contact?cible=artisans)
+### Automatisation reporting hebdo
 
-🏢
+À partir de 3 500 € HT — sur devis — 2-3 semaines
 
-Pour les TPE structurées
+Vos KPIs (taux de service, marge transport, retards, sous-traitance) consolidés automatiquement chaque lundi matin. Plus de 3h passées à jongler entre Excel, TMS et compta.
 
-### TPE & PME
+- Connexion à vos sources (ERP, Excel, TMS, GPS)
+- Tableau de bord hebdomadaire automatisé
+- Alertes sur dérives (taux de service, retards, dépassements)
+- Formation équipe + documentation utilisateur
 
-Des outils pros, pensés pour votre métier.
+### Refonte process sous-traitants
 
-Vous avez une équipe, des process qui s'alourdissent, et vous voulez structurer sans tout casser. Chaque outil est construit sur mesure.
+Sur devis — 4-8 semaines
 
-#### Site vitrine pro
+Cadrage opérationnel et outillage pour piloter 10 à 50 sous-traitants : ordres de service, suivi terrain, facturation, conformité documentaire.
 
-Un vrai site sur mesure, pas un template. Pensé comme un outil commercial.
+- Cadrage avec vos exploitants et chefs de chantier
+- Outil de pilotage sur mesure (web app ou Sheets+scripts)
+- Synchronisation avec ERP / facturation
+- Formation terrain et accompagnement 1 mois
 
-à partir de 2 400 € HT2-3 semaines
+---
 
-- 3-5 pages, design unique, responsive
-- SEO local + fiche Google optimisée
-- Formulaire de contact intelligent
-- Formation 2h incluse
+## 🚀 Projets sur mesure
 
-#### Sheets automatisé pro
+Pour les sites complexes et les outils métier dédiés.
 
-Un fichier métier avec des automatisations avancées (formules, scripts, liaisons).
+### Site complet + espace client
 
-à partir de 590 € HT3-5 jours
+À partir de 6 500 € HT — sur devis — 4-6 semaines
 
-- Devis, factures, suivi clients, indicateurs
-- Scripts et automatisations avancées
-- Documentation personnalisée
-
-#### Bot Telegram avancé
-
-Bien plus que des notifs : interagir avec vos outils depuis votre téléphone.
-
-à partir de 390 € HT2-4 jours
-
-- Créer un devis depuis Telegram
-- Recevoir un rapport quotidien automatisé
-- Actions personnalisées selon votre métier
-
-#### Formation sur mesure
-
-Une heure ou plus sur l'usage pro de l'IA ou sur un outil livré.
-
-à partir de 150 € HT1h ou 2h visio
-
-- IA pour votre métier (prompts, outils)
-- Prise en main complète d'un outil livré
-- Documentation personnalisée
-
-[Discuter de mon projet](/contact?cible=tpe)
-
-🚀
-
-Projets structurants
-
-### Projets sur mesure
-
-Pour les transformations complètes.
-
-Site complet avec espace client, web app, intégrations API, automatisations multi-outils. Des projets ambitieux qui demandent un vrai cadrage.
-
-#### Audit approfondi
-
-Avant tout devis complexe, on cadre le projet ensemble. Cet audit est déduit si la mission est signée.
-
-490 € HT1 semaine
-
-- 3-4h d'analyse de votre activité
-- Rapport écrit avec recommandations
-- Devis précis pour la suite
-- Déduit du devis final si mission signée
-
-#### Site complet + espace client
-
-Un site avec catalogue, espace client, mode édition en ligne et admin dédiée.
-
-à partir de 5 000 € HT4-6 semaines
+Un site avec catalogue produits, espace client, mode édition en ligne, back-office dédié. Possibilité d'inclure intégrations API (Pennylane, CRM…) et automatisations sur mesure dans le devis.
 
 - Catalogue produits (jusqu'à 1000+ références)
-- Espace client (devis, factures, commandes)
+- Espace client (devis, factures, commandes en ligne)
 - Mode édition en ligne pour l'admin
-- Suivi des performances intégré
+- Suivi des performances intégré (analytics, conversion)
+- Intégrations API et automatisations en option (chiffrées au devis)
 
-#### Web app sur mesure
+### Web app sur mesure
 
-Une application dédiée à votre activité : CRM, planning, outil métier spécifique.
+Sur devis — 4-12 semaines
 
-Sur devis4-12 semaines
+Une application dédiée à votre activité : CRM, planning, outil métier spécifique, dashboard exécutif.
 
 - Cahier des charges co-construit
 - Architecture adaptée à votre volume
 - Intégrations avec vos outils existants
 - Formation et documentation complète
 
-#### Transformation complète
+---
 
-Site + espace client + admin + automatisations + intégrations. Le projet qui change tout.
+## Maintenance technique
 
-à partir de 10 000 € HT6-10 semaines
+90 € HT / mois
 
-- Audit approfondi inclus
-- Site complet avec catalogue et espace client
-- Intégration API (Pennylane, CRM, etc.)
-- Automatisations et notifications sur mesure
-- Formation + accompagnement 1 mois
+Pour garder votre site ou votre outil sécurisé et à jour, sans surprise. Les évolutions sont facturées à la demande.
 
-[Cadrer mon projet](/contact?cible=projets)
+- Hébergement et nom de domaine maintenus
+- Mises à jour techniques et sécurité
+- Support technique sous 48h ouvrées
+- Évolutions ponctuelles facturées 80 €/h HT
+- Sans engagement, résiliable au mois
 
-**Tous les prix sont indiqués HT.** TVA 20% applicable. Les devis sont valables 30 jours. Pour les projets complexes, un audit approfondi est facturé avant engagement — il est déduit du devis final si la mission est signée.
+---
 
-## L'abonnement qui fait la différence
-
-Proposé à la fin de chaque mission. Parce qu'un bon outil doit pouvoir évoluer sans re-devis à chaque fois.
-
-### Suivi & Évolution
-
-180 € HT / mois
-
-Pour les clients qui veulent garder leur outil à jour et le faire évoluer sans re-devis à chaque fois.
-
-- Maintenance technique (hébergement, mises à jour)
-- 1h d'évolution incluse par mois (reportable 3 mois)
-- Support prioritaire sous 24h ouvrées
-- Point trimestriel pour anticiper les besoins
-- Engagement 6 mois minimum
-
-[En savoir plus](/contact?cible=abonnement)
-
-## Notre démarche
-
-Une méthode éprouvée en 4 étapes, adaptée à chaque projet.
-
-1
-
-### 🔍 Audit de l'existant
-
-Je passe en revue vos outils actuels, vos process quotidiens et vos points de friction. L'objectif : comprendre précisément où vous perdez du temps et de l'énergie, et identifier les leviers d'amélioration.
-
-- Cartographie de vos outils et process
-- Identification des points de friction
-- Rapport détaillé avec recommandations priorisées
-
-L'audit est gratuit
-
-2
-
-### 📊 Analyse des blocages
-
-À partir de l'audit, je priorise les sujets admin qui vous bloquent ou vous coûtent le plus de temps. On définit ensemble un plan d'action concret, avec les solutions adaptées à votre budget et vos contraintes.
-
-- Liste priorisée des blocages identifiés
-- Plan d'action avec solutions recommandées
-- Estimation des gains de temps attendus
-
-3
-
-### 🛠️ Création sur mesure
-
-Je conçois et développe les outils dont vous avez besoin : site vitrine, application web dédiée, tableau de bord, espace client. Pas de template générique — chaque solution est construite pour votre métier.
-
-- Maquettes et validation avant développement
-- Développement sur mesure
-- Mise en production et formation
-
-4
-
-### ⚡ Automatisation
-
-Je connecte vos outils entre eux et j'automatise les tâches répétitives : envoi de documents, relances, synchronisations, exports comptables. Vous gagnez du temps chaque jour sans y penser.
-
-- Workflows automatisés entre vos outils
-- Intégrations et synchronisations
-- Documentation et support
-
-👨‍💻
-
-### Pierre Laurent
-
-Fondateur d'OptiPro. 10 ans à optimiser des process dans des entreprises avant de mettre cette expérience au service des artisans, TPE et indépendants.
-
-Un interlocuteur unique du début à la fin. Pas de commercial, pas de sous-traitance — c'est moi qui analyse, conçoit et développe vos outils.
-
-## Commencez par un audit
-
-On regarde ensemble vos outils et vos process. Vous repartez avec un diagnostic clair et des recommandations concrètes.
-
-100% gratuit et sans engagement
-
-[Demander un contact](/contact)
+*OptiPro — Pierre Laurent*
+*Conseil ops & IA opérationnelle pour artisans, TPE et PME logistique/transport/BTP*
+*Vence (06140) — Côte d'Azur — France entière à distance*
+*Site : [opti-pro.fr](https://www.opti-pro.fr) — Email : p.laurent@opti-pro.fr — Tél : 06 70 25 93 33*
