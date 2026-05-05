@@ -355,7 +355,7 @@ export default function LandingPage({
                 Pierre Laurent — Fondateur OptiPro
               </h3>
               <p style={{ color: 'var(--secondary)', fontSize: '0.93rem', lineHeight: 1.6 }}>
-                10 ans d&apos;expérience auprès d&apos;artisans et TPE. Vous parlerez toujours avec moi directement — aucune sous-traitance, aucun commercial.
+                10 ans d&apos;expérience auprès d&apos;artisans et TPE. Un interlocuteur unique du diagnostic à la livraison.
               </p>
             </div>
           </div>

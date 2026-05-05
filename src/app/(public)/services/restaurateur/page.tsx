@@ -64,7 +64,7 @@ const jsonLd = {
           name: 'Comment gérer les avis Google pour mon restaurant ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OptiPro vous forme à répondre aux avis (positifs et négatifs) de manière professionnelle, à demander des avis aux clients satisfaits via un lien direct, et à signaler les avis abusifs. C&apos;est inclus dans tous les packs incluant la fiche Google Business. La gestion active des avis impacte directement votre visibilité dans le Local Pack Google Maps.',
+            text: 'Je vous forme à répondre aux avis (positifs et négatifs) de manière professionnelle, à demander des avis aux clients satisfaits via un lien direct, et à signaler les avis abusifs. C&apos;est inclus dans tous les packs incluant la fiche Google Business. La gestion active des avis impacte directement votre visibilité dans le Local Pack Google Maps.',
           },
         },
         {
@@ -72,7 +72,7 @@ const jsonLd = {
           name: 'Pouvez-vous m&apos;aider à réduire ma dépendance à TheFork / Uber Eats ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. La stratégie consiste à capter les recherches Google directement avec votre propre site et fiche Google Business optimisée, puis à proposer la réservation/commande via un canal sans commission. Le ROI est généralement visible en 3-6 mois selon votre zone et la concurrence locale.',
+            text: 'Oui. La stratégie consiste à capter les recherches Google directement avec votre propre site et fiche Google Business optimisée, puis à proposer la réservation/commande via un canal sans commission. ROI typiquement observé dans le secteur : 3 à 6 mois selon votre zone et la concurrence locale.',
           },
         },
       ],
@@ -142,11 +142,11 @@ export default function RestaurateurPage() {
         },
         {
           question: 'Comment gérer les avis Google pour mon restaurant ?',
-          answer: "OptiPro vous forme à répondre aux avis, demander des avis aux clients satisfaits via un lien direct, et signaler les avis abusifs. C'est inclus dans tous les packs avec fiche Google Business. La gestion active des avis impacte directement votre visibilité dans le Local Pack Google Maps.",
+          answer: "Je vous forme à répondre aux avis, demander des avis aux clients satisfaits via un lien direct, et signaler les avis abusifs. C'est inclus dans tous les packs avec fiche Google Business. La gestion active des avis impacte directement votre visibilité dans le Local Pack Google Maps.",
         },
         {
           question: "Pouvez-vous m'aider à réduire ma dépendance à TheFork / Uber Eats ?",
-          answer: "Oui. La stratégie consiste à capter les recherches Google directement avec votre propre site et fiche Google Business optimisée, puis à proposer la réservation via un canal sans commission. ROI généralement visible en 3-6 mois.",
+          answer: "Oui. La stratégie consiste à capter les recherches Google directement avec votre propre site et fiche Google Business optimisée, puis à proposer la réservation via un canal sans commission. ROI typiquement observé : 3 à 6 mois.",
         },
       ]}
       localMentions={['Vence', 'Nice', 'Antibes', 'Cannes', 'Grasse', "toute la PACA et la France à distance"]}

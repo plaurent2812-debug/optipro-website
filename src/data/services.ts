@@ -22,7 +22,7 @@ export const services: ServiceStep[] = [
       'Identification des points de friction',
       'Rapport détaillé avec recommandations priorisées',
     ],
-    note: 'L\'audit est gratuit',
+    note: 'Le premier appel découverte est gratuit',
   },
   {
     id: 'analyse',

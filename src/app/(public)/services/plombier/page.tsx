@@ -117,13 +117,13 @@ export default function PlombierPage() {
         },
         {
           step: '2',
-          title: 'Premier appel gratuit (30 min)',
-          description: "Je vérifie votre fiche Google Business actuelle (si elle existe), votre référencement local et votre processus de devis. Vous recevez un état des lieux écrit en 48h.",
+          title: 'État des lieux écrit (48h)',
+          description: "Je vérifie votre fiche Google Business actuelle (si elle existe), votre référencement local et votre processus de devis. Vous recevez un diagnostic écrit en 48h avec recommandations priorisées.",
         },
         {
           step: '3',
           title: 'Construction sur mesure',
-          description: "Site web, fichier de devis automatisé, ou bot Telegram — selon ce qui vous fait gagner le plus de temps. Maquette validée avant tout développement. Délai garanti.",
+          description: "Site web, fichier de devis automatisé, ou bot Telegram — selon ce qui vous fait gagner le plus de temps. Maquette validée avant tout développement. Délai engagé contractuellement.",
         },
         {
           step: '4',

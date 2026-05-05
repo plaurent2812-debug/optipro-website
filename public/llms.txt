@@ -81,7 +81,7 @@ Website: https://www.opti-pro.fr/contact
 ## Key Facts
 
 - Solo consultant: Pierre Laurent does all the work — no subcontracting, no account manager
-- Experience: 10 years in operations, logistics, and supply chain (real-estate startup, GL Events, BTP sector)
+- Experience: 10 years in operations, logistics, and supply chain (e-commerce, retail, BTP/construction sector, event logistics)
 - AI and automation specialist: proficient in workflow automation, no-code/low-code tools, AI integration
 - Tech stack used for client projects: Next.js, Supabase, Google Sheets scripting, Telegram Bot API, Stripe, n8n/Make
 - Launched: 2025
@@ -125,7 +125,7 @@ A: No. Pierre handles everything: analysis, design, development, and delivery. N
 A: Yes. Every engagement starts with a free 30-minute call and a process audit at no charge. The 490 € deep audit (for complex projects) is deducted from the project fee if you sign.
 
 **Q: What sectors do you serve?**
-A: Two main audiences. (1) Artisans and tradespeople (plumbers, electricians, carpenters, painters), freelancers, real estate professionals, restaurateurs, and any small business looking to reduce administrative overhead. (2) Operations-heavy SMEs in logistics, transport, BTP, distribution and event logistics — where Pierre's 10 years of operational background (ERP deployment, ADV portfolio management, subcontractor coordination, KPI structuring) creates direct value.
+A: Two main audiences. (1) Artisans and tradespeople (plumbers, electricians, carpenters, painters), freelancers, restaurateurs, and any small business looking to reduce administrative overhead. (2) Operations-heavy SMEs in logistics, transport, BTP, distribution and event logistics — where Pierre's 10 years of operational background (ERP deployment, ADV portfolio management, subcontractor coordination, KPI structuring) creates direct value.
 
 
 ## Markdown Mirrors

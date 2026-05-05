@@ -185,13 +185,13 @@ export default function HeroAnimation() {
         </div>
       </div>
 
-      {/* Dashboard */}
+      {/* Dashboard — illustration décorative */}
       <div className={styles.dashboard}>
         <div className={styles.dashHeader}>
-          <div className={styles.dashTitle}>Audit OptiPro</div>
+          <div className={styles.dashTitle}>Tableau de bord — exemple</div>
           <div className={styles.dashLive}>
             <div className={styles.dashLiveDot} data-live-dot />
-            Live
+            Demo
           </div>
         </div>
 
@@ -255,8 +255,8 @@ export default function HeroAnimation() {
             <span ref={scoreNumberRef}>87</span>
           </div>
           <div className={styles.scoreText}>
-            <span className={styles.scoreTextStrong}>Score Optimisation</span>
-            Excellente performance
+            <span className={styles.scoreTextStrong}>Score d&apos;exemple</span>
+            Visualisation décorative
           </div>
         </div>
       </div>

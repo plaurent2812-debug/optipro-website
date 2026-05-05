@@ -47,7 +47,7 @@ const timeline: TimelineItem[] = [
     company: 'Groupe EDDIFIS',
     role: 'Responsable Logistique — création de filiale',
     description:
-      "Création complète d'une filiale depuis zéro : montage de l'entrepôt, déploiement personnel de l'ERP EBP, structuration des process d'approvisionnement, des stocks, des KPIs et de la facturation. 80 k€/mois de CA en quelques mois. Tout construire depuis la page blanche — exactement ce qu'on fait ensuite chez OptiPro pour des TPE/PME.",
+      "Création complète d'une filiale depuis zéro : montage de l'entrepôt, déploiement personnel de l'ERP EBP, structuration des process d'approvisionnement, des stocks, des KPIs et de la facturation. 80 k€/mois de CA en quelques mois. Tout construire depuis la page blanche — exactement la posture qu'OptiPro propose aux TPE/PME aujourd'hui.",
   },
   {
     period: 'Déc. 2017 → Janv. 2019',
@@ -70,7 +70,7 @@ const valeurs = [
     icon: '\u{1F91D}',
     title: 'Un seul interlocuteur',
     description:
-      "Pas de commercial qui passe la main, pas de sous-traitance. C'est moi qui analyse, concçoit et développe — du premier appel à la livraison finale.",
+      "Pas de commercial qui passe la main, pas de sous-traitance. C'est moi qui analyse, conçois et développe — du premier appel à la livraison finale.",
   },
   {
     icon: '\u{1F527}',
@@ -80,9 +80,9 @@ const valeurs = [
   },
   {
     icon: '\u{1F4CA}',
-    title: 'Résultats mesurables',
+    title: 'Objectifs chiffrés d\'avance',
     description:
-      "Premier appel sans engagement, chiffres concrets, ROI visible. On part des heures que vous perdez chaque semaine et on les transforme en heures récupérées.",
+      "Pas de promesse floue. On part des heures que vous perdez chaque semaine, on cible un nombre d'heures à récupérer, et on mesure ensemble à 90 jours.",
   },
 ];
 

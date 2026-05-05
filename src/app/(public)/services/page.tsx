@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import ServiceStep from '@/components/ui/ServiceStep';
 import AuditCta from '@/components/ui/AuditCta';
 import { services } from '@/data/services';
@@ -137,7 +138,7 @@ export default function ServicesPage() {
               lineHeight: 1.1,
             }}
           >
-            Des solutions adaptées à votre réalité, pas aux nôtres
+            Des solutions adaptées à votre réalité, pas à mes templates
           </h1>
           <p
             style={{
@@ -179,7 +180,7 @@ export default function ServicesPage() {
                 lineHeight: 1.6,
               }}
             >
-              Une méthode éprouvée en 4 étapes, adaptée à chaque projet.
+              Une méthode claire en 4 étapes, adaptée à chaque projet.
             </p>
           </div>
           <div className="timeline">
@@ -194,7 +195,15 @@ export default function ServicesPage() {
       <section style={{ padding: '3rem 0 4rem', background: 'var(--background)' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
           <div className="pierre-section">
-            <div className="pierre-avatar">👨‍💻</div>
+            <div className="pierre-avatar" style={{ width: '80px', height: '80px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0 }}>
+              <Image
+                src="/pierre-laurent.png"
+                alt="Pierre Laurent, fondateur d'OptiPro"
+                width={80}
+                height={80}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
             <div className="pierre-content">
               <h3>Pierre Laurent</h3>
               <p style={{ marginBottom: '0.75rem' }}>
@@ -204,7 +213,7 @@ export default function ServicesPage() {
               </p>
               <p>
                 Un interlocuteur unique du début à la fin. Pas de commercial, pas
-                de sous-traitance — c&apos;est moi qui analyse, conçoit et
+                de sous-traitance — c&apos;est moi qui analyse, conçois et
                 développe vos outils.
               </p>
             </div>

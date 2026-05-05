@@ -39,7 +39,7 @@ export const articles: Article[] = [
     contenu: `
 <p class="lead">Vous êtes plombier, électricien ou maçon. Vous rentrez du chantier à 18h, fatigué. Et là, au lieu de souffler, vous ouvrez Excel pour faire vos devis. Une heure plus tard, vous avez recopié les mêmes lignes que la semaine dernière, vous avez oublié la TVA sur un poste, et le client n'a toujours pas reçu son chiffrage.</p>
 
-<p>Si vous faites 10 devis par semaine, ça représente <strong>10 heures perdues</strong>. À 50 € de l'heure facturable, c'est 500 € de chiffre d'affaires qui s'envolent chaque semaine. Soit 24 000 € par an. Pour des tâches que des outils peuvent gérer en grande partie à votre place.</p>
+<p>Si vous faites 10 devis par semaine, ça représente <strong>10 heures perdues</strong>. À 50 € de l'heure facturable (hypothèse haute, 48 semaines), c'est l'équivalent de 24 000 € de potentiel CA non facturé sur l'année si vous arriviez à reconvertir ces heures en chantiers. Pour des tâches que des outils peuvent gérer en grande partie à votre place.</p>
 
 <p>Cet article vous explique concrètement comment passer de l'enfer du devis manuel à un système qui tourne presque tout seul, avec des outils accessibles à un artisan indépendant.</p>
 
@@ -47,7 +47,7 @@ export const articles: Article[] = [
 
 <p>Le problème avec le devis manuel, c'est qu'il ne se voit pas dans la compta. C'est du temps qui disparaît dans un fichier Excel, dans une boîte mail, dans un coin de bureau le dimanche soir. Mais les chiffres sont là.</p>
 
-<p>D'après une enquête de la <em>CAPEB</em> (Confédération de l'Artisanat et des Petites Entreprises du Bâtiment), un artisan du bâtiment passe en moyenne <strong>15 à 20 % de son temps</strong> sur l'administratif. Sur 40 heures par semaine, c'est 6 à 8 heures consacrées à du travail non facturable.</p>
+<p>D'après les retours d'organisations professionnelles comme la <em>CAPEB</em> (Confédération de l'Artisanat et des Petites Entreprises du Bâtiment), un artisan du bâtiment consacrerait en moyenne <strong>15 à 20 % de son temps</strong> à l'administratif. Sur 40 heures par semaine, c'est 6 à 8 heures consacrées à du travail non facturable.</p>
 
 <ul>
   <li><strong>Re-saisie des informations client</strong> à chaque nouveau devis (nom, adresse, téléphone, SIRET).</li>
@@ -64,6 +64,8 @@ export const articles: Article[] = [
 <p>Bonne nouvelle : il n'est plus nécessaire d'avoir un comptable à temps plein ou un logiciel à 5 000 € pour automatiser. Voici les trois outils qui couvrent 95 % des besoins d'un artisan.</p>
 
 <h3>1. Pennylane — le plus complet (à partir de 29 € HT/mois)</h3>
+
+<p><em>Note de transparence : je n'ai aucun lien commercial avec Pennylane ni aucun des outils mentionnés dans cet article. Les recommandations reflètent mon avis personnel après tests.</em></p>
 
 <p><strong>Pour qui ?</strong> Les artisans qui veulent un outil unique pour devis, factures, comptabilité et suivi de trésorerie. Idéal si vous avez déjà un expert-comptable (Pennylane est conçu pour collaborer avec lui).</p>
 
@@ -134,7 +136,7 @@ export const articles: Article[] = [
 
 <h2>Par où commencer ?</h2>
 
-<p>Pas besoin de tout révolutionner d'un coup. Voici la séquence que je recommande aux artisans que j'accompagne :</p>
+<p>Pas besoin de tout révolutionner d'un coup. Voici la séquence que je recommande à un artisan qui démarre cette transition :</p>
 
 <ol>
   <li><strong>Semaine 1</strong> : choisir un outil (Pennylane si vous voulez le plus simple) et créer son compte.</li>
@@ -460,7 +462,7 @@ export const articles: Article[] = [
     contenu: `
 <p class="lead">En France, un artisan passe en moyenne <strong>15 % de son temps sur des tâches administratives</strong>. Sur une semaine de 40 heures, c'est 6 heures. Et la facturation représente la moitié : 3 heures à éditer des factures, les envoyer, relancer les impayés, vérifier qui a payé.</p>
 
-<p>Cet article vous montre comment passer de 3 heures à 20 minutes par semaine. Pas avec une recette miracle, mais avec une méthode simple en 3 étapes que j'ai vue fonctionner chez tous les artisans que j'ai accompagnés.</p>
+<p>Cet article vous montre comment passer de 3 heures à 20 minutes par semaine. Pas avec une recette miracle, mais avec une méthode simple en 3 étapes, éprouvée pendant 10 ans à coordonner des artisans sous-traitants — et que je reproduirais aujourd'hui chez n'importe quel artisan indépendant.</p>
 
 <h2>Pourquoi la facturation prend autant de temps</h2>
 
@@ -515,7 +517,7 @@ export const articles: Article[] = [
 
 <p>L'outil envoie tout seul, signé en votre nom. Vous n'intervenez que si le client appelle pour discuter.</p>
 
-<p>Résultat constaté : <strong>taux d'impayés divisé par 3</strong>, et 1 à 2 heures par semaine récupérées sur les relances.</p>
+<p>Résultat couramment rapporté par les utilisateurs (témoignages publics éditeurs) : <strong>taux d'impayés divisé par 2 à 3</strong>, et 1 à 2 heures par semaine récupérées sur les relances.</p>
 
 <h2>Pennylane : pourquoi c'est le meilleur choix pour beaucoup d'artisans</h2>
 
@@ -602,7 +604,7 @@ export const articles: Article[] = [
 
 <p>Quand j'ai lancé OptiPro en 2025, j'ai démarré sur ce que je connaissais aussi très bien : les artisans et les TPE. Parce que j'ai passé une partie de ces 10 ans à coordonner des plombiers, électriciens, chauffagistes, peintres. Et parce que c'est la cible la plus accessible quand on lance une activité de conseil.</p>
 
-<p>Mais à force de parler avec des dirigeants de PME logistique, transport, BTP — qui me connaissent par mon parcours — je me suis rendu compte d'un truc évident : <strong>j'ai un capital opérationnel rare dans le monde du conseil IA</strong>. La plupart des consultants IA n'ont jamais déployé un ERP, jamais coordonné 20 sous-traitants, jamais construit un fichier de KPIs hebdo qui ne casse pas. Moi si.</p>
+<p>Mais en discutant avec d'anciens collègues, dirigeants et sous-traitants croisés pendant ces 10 ans — je me suis rendu compte d'un truc évident : <strong>j'ai un capital opérationnel rare dans le monde du conseil IA</strong>. La plupart des consultants IA n'ont jamais déployé un ERP, jamais coordonné 20 sous-traitants, jamais construit un fichier de KPIs hebdo qui ne casse pas. Moi si.</p>
 
 <h2>Ce qui change concrètement</h2>
 
@@ -619,7 +621,7 @@ export const articles: Article[] = [
 
 <h2>Ce qui ne change pas</h2>
 
-<p>Le ton terrain. Les ratés assumés. Pas de jargon dev. Pas de hype. Vous parlerez toujours avec moi directement — du diagnostic à la livraison. Pas de sous-traitance, pas de commercial, pas de "chargé de relation client". J'analyse, je conçois, je construis.</p>
+<p>Le ton terrain. Les ratés assumés. Pas de hype. J'analyse, je conçois, je construis. Si on bosse ensemble, vous m'avez en direct du diagnostic à la livraison.</p>
 
 <p>Le blog OptiPro continue avec deux types d'articles : ceux pour les artisans/TPE (devis, fiche Google, relances) et ceux pour les responsables d'exploitation PME (reporting hebdo, sous-traitants, KPI ops). Vous filtrez par catégorie sur la page <a href="/blog">/blog</a>.</p>
 
@@ -627,7 +629,7 @@ export const articles: Article[] = [
 
 <p><strong>C'est fait pour vous si</strong> vous dirigez ou pilotez l'exploitation d'une PME (transport, logistique, BTP, distribution, événementiel). Vos process tiennent par habitude. Votre ERP ne se parle pas avec le terrain. Vous passez 3h chaque lundi à monter un reporting que personne ne lit vraiment. Vous avez 10 à 50 sous-traitants pilotés à coups d'emails et d'Excel.</p>
 
-<p><strong>C'est pas fait pour vous si</strong> vous cherchez un consultant IA "transformation digitale" qui vend du LLM custom à 50 k€. OptiPro reste un atelier solo, pas un cabinet. Mes interventions sont chiffrées, livrables clairs, ROI démontrable. Pas de salaire-mission qui s'éternise.</p>
+<p><strong>C'est pas fait pour vous si</strong> vous cherchez un consultant IA "transformation digitale" qui vend du LLM custom à 50 k€. OptiPro reste un atelier solo, pas un cabinet. Mes interventions sont chiffrées d'avance, les livrables sont clairs, et le ROI cible est défini noir sur blanc avant signature. Pas de salaire-mission qui s'éternise.</p>
 
 <div class="callout">
   <p><strong>Vous êtes responsable d'exploitation, directeur logistique ou dirigeant PME ?</strong></p>
@@ -782,7 +784,7 @@ Livre :
 
 <ul>
   <li><strong>Une passe de nettoyage avec l'IA.</strong> Demandez-lui de normaliser le CSV avant de produire le rapport. Ajoutez en début de prompt : <em>"Si le séparateur est anormal ou les dates ambiguës, corrige avant de calculer et explique-moi ce que tu as fait."</em></li>
-  <li><strong>Un mini-script Python ou JavaScript généré par l'IA</strong>, lancé une fois pour transformer l'export brut en CSV propre. C'est ce qu'on fait souvent en intervention OptiPro — 30 minutes pour avoir un script qui tourne tout seul ensuite.</li>
+  <li><strong>Un mini-script Python ou JavaScript généré par l'IA</strong>, lancé une fois pour transformer l'export brut en CSV propre. C'est ce que je mets en place lors d'une intervention OptiPro : 30 minutes pour produire un script qui tourne ensuite tout seul.</li>
   <li><strong>Demander à votre éditeur TMS un export propre</strong>, en vous appuyant sur la structure attendue. Vous découvrirez parfois que l'option existe déjà et personne ne l'avait jamais cochée.</li>
 </ul>
 
@@ -986,7 +988,7 @@ Donne-moi 3 variantes :
 
 <p>Je ne suis pas ingénieur. Je n'ai pas fait d'école d'informatique. J'ai passé 10 ans à piloter des flux logistiques — je connais surtout les Excel, les bons de livraison et les clients qui râlent quand une commande est en retard.</p>
 
-<p>Et pourtant, j'utilise l'IA tous les jours. Pour mon boulot, pour ma vie perso, pour presque tout.</p>
+<p>Et pourtant, j'utilise l'IA tous les jours. Pour OptiPro, pour préparer mes interventions, pour ma vie perso.</p>
 
 <p><strong>La seule compétence qu'il faut pour démarrer, c'est de savoir écrire un message clair en français.</strong></p>
 

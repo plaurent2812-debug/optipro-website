@@ -4,7 +4,7 @@ import { Suspense, useEffect, useState, type FormEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Button from '@/components/ui/Button';
 
-type Cible = 'artisans' | 'tpe' | 'projets' | 'abonnement' | 'default';
+type Cible = 'artisans' | 'tpe' | 'pme-ops' | 'projets' | 'abonnement' | 'default';
 
 interface CibleConfig {
     intro: string;
@@ -18,7 +18,7 @@ interface CibleConfig {
 
 const cibleConfigs: Record<Cible, CibleConfig> = {
     artisans: {
-        intro: 'Vous êtes artisan, commerçant ou indépendant. Dites-nous ce qui vous fait perdre du temps — on regarde ensemble.',
+        intro: 'Vous êtes artisan, commerçant ou indépendant. Dites-moi ce qui vous fait perdre du temps — on regarde ensemble.',
         projectLabel: 'Ce qui vous prend le plus de temps en ce moment',
         projectPlaceholder: 'Ex : je passe mes soirées à faire des devis, j\'ai des impayés depuis 3 mois, je n\'ai pas de site visible sur Google...',
         showBudget: true,
@@ -35,8 +35,17 @@ const cibleConfigs: Record<Cible, CibleConfig> = {
         ctaLabel: 'Discuter de mon projet — Réponse sous 24h',
         footnote: 'Premier échange de 30 min gratuit. Devis chiffré après cadrage.',
     },
+    'pme-ops': {
+        intro: 'Vous dirigez ou pilotez l\'exploitation d\'une PME (logistique, transport, BTP, distribution, événementiel). Décrivez votre situation — flux, ERP, sous-traitants, reporting — on regarde où sont les gisements.',
+        projectLabel: 'Décrivez votre exploitation',
+        projectPlaceholder: 'Ex : reporting hebdo qui prend 3h, ERP qui ne se parle pas avec le terrain, 30 sous-traitants pilotés à coups d\'emails, KPIs éparpillés...',
+        showBudget: true,
+        showUrgence: true,
+        ctaLabel: 'Parler de mon exploitation — Pierre me recontacte sous 24h',
+        footnote: 'Premier appel de 30 min gratuit. Audit ops complet à 1 200€ HT (1 semaine, livrable écrit).',
+    },
     projets: {
-        intro: 'Pour les projets complexes, un audit approfondi (490€ HT, déduit si mission signée) garantit un devis précis. Décrivez-nous votre projet.',
+        intro: 'Pour les projets complexes, un audit approfondi (490€ HT, déduit si mission signée) garantit un devis précis. Décrivez votre projet.',
         projectLabel: 'Présentez votre projet',
         projectPlaceholder: 'Ex : je veux un site complet avec espace client et catalogue, une web app métier, une intégration complète avec ma compta...',
         showBudget: true,
@@ -45,7 +54,7 @@ const cibleConfigs: Record<Cible, CibleConfig> = {
         footnote: 'Premier échange de 30 min offert pour évaluer la pertinence de l\'audit approfondi.',
     },
     abonnement: {
-        intro: 'Vous êtes déjà client ou vous envisagez l\'abonnement Suivi & Évolution (180€/mois HT). Dites-nous comment on peut vous accompagner.',
+        intro: 'Vous êtes déjà client ou vous envisagez l\'abonnement Suivi & Évolution (180€/mois HT). Dites-moi comment je peux vous accompagner.',
         projectLabel: 'Ce que vous souhaitez mettre en place ou faire évoluer',
         projectPlaceholder: 'Ex : je veux un suivi régulier de mon site, des évolutions mensuelles, un support prioritaire...',
         showBudget: false,
@@ -67,6 +76,7 @@ const cibleConfigs: Record<Cible, CibleConfig> = {
 const cibleLabels: Record<Cible, string> = {
     artisans: '🔧 Artisan / Indépendant',
     tpe: '🏢 TPE / PME',
+    'pme-ops': '📦 PME logistique / transport / BTP',
     projets: '🚀 Projet sur mesure',
     abonnement: '🔄 Abonnement Suivi & Évolution',
     default: 'Demande générale',
@@ -278,7 +288,7 @@ export default function ContactPageClient() {
         <div style={{ minHeight: '100vh', background: 'var(--background)', paddingTop: 'var(--header-height)' }}>
             <div className="container" style={{ padding: '4rem 1.5rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '3rem', opacity: titleReady ? 1 : 0, transition: 'opacity 0.4s ease' }}>
-                    <div className="section-label">Contactez-nous</div>
+                    <div className="section-label">Me contacter</div>
                     <h1 style={{ fontSize: '2.75rem', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '1rem', color: 'var(--foreground)' }}>
                         Parlons de votre projet
                     </h1>

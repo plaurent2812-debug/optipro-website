@@ -106,7 +106,7 @@ export default function CreationSiteWebVencePage() {
     <LandingPage
       badge="Création web · Vence · Côte d'Azur"
       h1="Création de site web à Vence pour artisans et TPE"
-      intro="Pierre Laurent, basé à Vence (06140), conçoit et développe des sites web sur mesure pour les artisans, indépendants et TPE de la Côte d'Azur. Pas de template générique, pas de sous-traitance — juste un interlocuteur, des prix affichés et des délais respectés."
+      intro="Pierre Laurent, basé à Vence (06140), conçoit et développe des sites web sur mesure pour les artisans, indépendants et TPE de la Côte d'Azur. Pas de template générique — des prix affichés, des délais engagés contractuellement."
       painSection={{
         title: "Pourquoi un site générique à 29€/mois ne suffit-il pas pour un artisan local ?",
         points: [

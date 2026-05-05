@@ -13,7 +13,6 @@ import AutomationMockup from '@/components/visuals/AutomationMockup';
 import AuditCta from '@/components/ui/AuditCta';
 import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
-import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import Image from 'next/image';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -316,7 +315,7 @@ export default function HomePageClient() {
                 <li>Cartographie complète de vos outils</li>
                 <li>Identification des points de friction</li>
                 <li>Rapport détaillé avec plan d&apos;action</li>
-                <li>L&apos;audit est gratuit</li>
+                <li>Le premier appel découverte est gratuit</li>
               </ul>
             </div>
             <div className="service-showcase-visual">
@@ -410,8 +409,41 @@ export default function HomePageClient() {
       <div className="section-divider" />
 
 
+      {/* ===== TRANSPARENCE / TÉMOIGNAGES ===== */}
+      <section data-reveal style={{ padding: '4rem 0 1rem' }}>
+        <div className="container">
+          <div style={{
+            maxWidth: '760px',
+            margin: '0 auto',
+            background: 'var(--background)',
+            border: '1px dashed var(--border)',
+            borderRadius: '16px',
+            padding: '2rem 2.5rem',
+          }}>
+            <p style={{ color: 'var(--accent)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem', fontWeight: 700 }}>
+              Honnêteté
+            </p>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '1rem', lineHeight: 1.3 }}>
+              Pas encore de témoignages clients OptiPro
+            </h2>
+            <p style={{ color: 'var(--secondary)', lineHeight: 1.7, fontSize: '0.97rem', marginBottom: '0.75rem' }}>
+              J&apos;ai lancé OptiPro à temps plein en avril 2026. Les premiers cas
+              clients sont en cours et seront documentés ici dès qu&apos;ils seront
+              livrés et validés par les clients concernés.
+            </p>
+            <p style={{ color: 'var(--secondary)', lineHeight: 1.7, fontSize: '0.97rem' }}>
+              En attendant, mon parcours opérationnel — 10 ans, déploiement complet
+              d&apos;un ERP, 7 M€ de portefeuille ADV, 8 500 références gérées,
+              coordination quotidienne de 15 à 20 sous-traitants — est ma seule
+              référence. Et c&apos;est exactement ce que je vous propose de mettre
+              à votre service.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ===== FONDATEUR ===== */}
-      <section data-reveal style={{ padding: '5rem 0' }}>
+      <section data-reveal style={{ padding: '3rem 0 5rem' }}>
         <div className="container">
           <div style={{
             display: 'grid',
@@ -468,21 +500,9 @@ export default function HomePageClient() {
       </section>
 
       {/* ===== TEASING OPTIBOARD ===== */}
-      <section data-reveal style={{ padding: '3rem 0 4rem' }}>
-        <div className="container">
-          <OptiboardTeaser />
-        </div>
-      </section>
-
-      {/* ===== NEWSLETTER ===== */}
       <section data-reveal style={{ padding: '3rem 0 5rem' }}>
         <div className="container">
-          <NewsletterForm
-            source="home"
-            variant="card"
-            title="Newsletter Ops & IA — un email par jeudi"
-            description="Un cas terrain. Un prompt testé. Une mise en garde. Pour artisans, TPE et PME logistique/transport/BTP. Lisible en 5 minutes, désinscription en 1 clic."
-          />
+          <OptiboardTeaser />
         </div>
       </section>
     </main>
