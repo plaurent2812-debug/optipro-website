@@ -1,11 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useTransition } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import RadarChart from '@/components/admin/RadarChart'
 import DownloadAuditPDF from '@/components/admin/DownloadAuditPDF'
 import { PILIER_LABELS, PILIER_COLORS, AUDIT_PILIERS, type AuditPilierKey } from '@/data/audit-grid'
 import { formatDate, AUDIT_STATUT_LABELS } from '@/lib/utils'
+import { deleteAuditAction } from '../actions'
 import styles from '../../audits/audits.module.css'
 import crmStyles from '../../clients/clients.module.css'
 
@@ -32,8 +34,22 @@ export default function AuditResultsClient({
   valorisationSmic,
   valorisationArtisan,
 }: AuditResultsClientProps) {
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
   const [animatedScore, setAnimatedScore] = useState(0)
   const [showBars, setShowBars] = useState(false)
+
+  const handleDelete = () => {
+    if (!confirm('Supprimer définitivement cet audit ? Action irréversible.')) return
+    startTransition(async () => {
+      const r = await deleteAuditAction(audit.id)
+      if (r?.error) {
+        alert(r.error)
+      } else {
+        router.push('/admin/audits')
+      }
+    })
+  }
 
   // Animate the score counter
   useEffect(() => {
@@ -82,6 +98,16 @@ export default function AuditResultsClient({
           <Link href={`/admin/audits/${audit.id}/conduire`} className={crmStyles.secondaryBtn || crmStyles.actionBtn} style={{ fontSize: '0.85rem' }}>
             ✏️ Modifier
           </Link>
+          <button
+            type="button"
+            onClick={handleDelete}
+            disabled={isPending}
+            className={crmStyles.secondaryBtn || crmStyles.actionBtn}
+            style={{ fontSize: '0.85rem', color: '#DC2626', borderColor: '#FCA5A5' }}
+            title="Supprimer cet audit définitivement"
+          >
+            {isPending ? '⏳…' : '🗑 Supprimer'}
+          </button>
           <Link href="/admin/audits" className={crmStyles.actionBtn} style={{ fontSize: '0.85rem' }}>
             ← Retour
           </Link>

@@ -69,7 +69,7 @@ export default function NewAbonnementPage() {
 
             <div className={styles.formGroup}>
               <label htmlFor="nom" className={styles.label}>Nom du contrat <span style={{ color: '#EF4444' }}>*</span></label>
-              <input type="text" id="nom" name="nom" required className={styles.input} placeholder="Ex: Forfait Hébergement & Maintien à jour" />
+              <input type="text" id="nom" name="nom" required className={styles.input} placeholder="Ex : Maintenance technique mensuelle" />
             </div>
 
             <div className={styles.formGroup}>
@@ -84,7 +84,7 @@ export default function NewAbonnementPage() {
             <div className={styles.formGroup}>
               <label htmlFor="montant_mensuel_ht" className={styles.label}>Montant de base HT <span style={{ color: '#EF4444' }}>*</span></label>
               <div style={{ position: 'relative' }}>
-                <input type="number" step="0.5" id="montant_mensuel_ht" name="montant_mensuel_ht" required className={styles.input} style={{ width: '100%', paddingRight: '2rem' }} defaultValue="50" />
+                <input type="number" step="0.5" id="montant_mensuel_ht" name="montant_mensuel_ht" required className={styles.input} style={{ width: '100%', paddingRight: '2rem' }} defaultValue="90" />
                 <span style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', color: '#6B7280' }}>€</span>
               </div>
             </div>

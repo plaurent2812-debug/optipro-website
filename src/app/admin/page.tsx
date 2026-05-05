@@ -50,6 +50,21 @@ export default async function AdminDashboardPage() {
     .select('id', { count: 'exact', head: true })
     .eq('statut', 'client_actif')
 
+  // 5. Impayés (factures envoyée ou en_retard, échéance dépassée ou non)
+  const { data: facturesImpayees } = await supabase
+    .from('factures')
+    .select('montant_ht, date_echeance, statut')
+    .in('statut', ['envoyee', 'en_retard'])
+
+  const today = new Date().toISOString().slice(0, 10)
+  const totalImpayes = (facturesImpayees ?? []).reduce(
+    (acc, f) => acc + (Number(f.montant_ht) || 0),
+    0,
+  )
+  const nbImpayesEnRetard = (facturesImpayees ?? []).filter(
+    (f) => f.statut === 'en_retard' || (f.date_echeance && f.date_echeance < today),
+  ).length
+
 
   // --- Activité récente ---
   const { data: devisRecents } = await supabase
@@ -120,6 +135,30 @@ export default async function AdminDashboardPage() {
           <span style={{ fontSize: '2rem', fontWeight: 800, color: '#111827' }}>
             {clientsActifs || 0}
           </span>
+        </div>
+
+        {/* KPI 5: Impayés */}
+        <div
+          className={styles.card}
+          style={{
+            padding: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            borderLeft: `4px solid ${totalImpayes > 0 ? '#DC2626' : '#10B981'}`,
+          }}
+        >
+          <span style={{ fontSize: '0.9rem', color: '#6B7280', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            Impayés à recouvrer
+          </span>
+          <span style={{ fontSize: '2rem', fontWeight: 800, color: totalImpayes > 0 ? '#DC2626' : '#111827' }}>
+            {formatMontant(totalImpayes)}
+          </span>
+          {nbImpayesEnRetard > 0 && (
+            <span style={{ fontSize: '0.8rem', color: '#DC2626', fontWeight: 600 }}>
+              ⚠ {nbImpayesEnRetard} en retard
+            </span>
+          )}
         </div>
 
       </div>

@@ -35,16 +35,17 @@ export default async function AbonnementsPage() {
               <tr>
                 <th>Contrat</th>
                 <th>Client</th>
-                <th>Montant Base HT</th>
+                <th>Montant /période</th>
                 <th>Rythme</th>
                 <th>Prochaine Facture</th>
                 <th>Statut</th>
+                <th className={styles.actionsBox}>Actions</th>
               </tr>
             </thead>
             <tbody>
               {abonnements?.length === 0 ? (
                 <tr>
-                  <td colSpan={6} style={{ textAlign: 'center', padding: '3rem' }}>
+                  <td colSpan={7} style={{ textAlign: 'center', padding: '3rem' }}>
                     <div className={styles.emptyState} style={{ padding: 0 }}>
                       <p>Aucun abonnement ou contrat en cours.</p>
                     </div>
@@ -87,6 +88,11 @@ export default async function AbonnementsPage() {
                         <span className={`${styles.badge} ${sub.statut === 'actif' ? styles['badge--client_actif'] : styles['badge--client_inactif']}`}>
                           {ABONNEMENT_STATUT_LABELS[sub.statut]}
                         </span>
+                      </td>
+                      <td className={styles.actionsBox}>
+                        <Link href={`/admin/abonnements/${sub.id}`} className={styles.actionBtn}>
+                          Gérer
+                        </Link>
                       </td>
                     </tr>
                   )

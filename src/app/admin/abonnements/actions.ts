@@ -58,3 +58,67 @@ export async function createAbonnementAction(prevState: any, formData: FormData)
   revalidatePath('/admin/abonnements')
   redirect('/admin/abonnements')
 }
+
+export async function suspendreAbonnementAction(id: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Session expirée.' }
+
+  const { error } = await supabase
+    .from('abonnements')
+    .update({ statut: 'suspendu' })
+    .eq('id', id)
+
+  if (error) return { error: error.message }
+  revalidatePath('/admin/abonnements')
+  revalidatePath(`/admin/abonnements/${id}`)
+  return { success: true, message: 'Abonnement suspendu.' }
+}
+
+export async function reactiverAbonnementAction(id: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Session expirée.' }
+
+  const { error } = await supabase
+    .from('abonnements')
+    .update({ statut: 'actif' })
+    .eq('id', id)
+
+  if (error) return { error: error.message }
+  revalidatePath('/admin/abonnements')
+  revalidatePath(`/admin/abonnements/${id}`)
+  return { success: true, message: 'Abonnement réactivé.' }
+}
+
+export async function terminerAbonnementAction(id: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Session expirée.' }
+
+  const today = new Date().toISOString().slice(0, 10)
+  const { error } = await supabase
+    .from('abonnements')
+    .update({ statut: 'termine', date_fin: today })
+    .eq('id', id)
+
+  if (error) return { error: error.message }
+  revalidatePath('/admin/abonnements')
+  revalidatePath(`/admin/abonnements/${id}`)
+  return { success: true, message: 'Abonnement terminé.' }
+}
+
+export async function deleteAbonnementAction(id: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Session expirée.' }
+
+  const { error } = await supabase
+    .from('abonnements')
+    .delete()
+    .eq('id', id)
+
+  if (error) return { error: error.message }
+  revalidatePath('/admin/abonnements')
+  redirect('/admin/abonnements')
+}

@@ -24,6 +24,11 @@ export default async function FacturesPage() {
           <h1 className={styles.title}>Factures</h1>
           <p className={styles.subtitle}>Suivez vos encaissements et gérez les relances</p>
         </div>
+        <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <Link href="/admin/factures/new" className={styles.primaryBtn}>
+            + Nouvelle facture
+          </Link>
+        </div>
       </div>
 
       <div className={styles.card}>
@@ -34,7 +39,7 @@ export default async function FacturesPage() {
                 <th>Numéro</th>
                 <th>Client</th>
                 <th>Émise le</th>
-                <th>Montant TTC</th>
+                <th>Net à payer</th>
                 <th>Statut</th>
                 <th className={styles.actionsBox}>Actions</th>
               </tr>

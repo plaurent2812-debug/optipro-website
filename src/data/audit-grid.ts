@@ -461,7 +461,7 @@ export const ACTION_TEMPLATES: ActionTemplate[] = [
   {
     questionId: '2.2', maxScore: 2,
     probleme: 'Temps excessif passé sur l\'administratif',
-    solution: 'Plan de transformation complète : automatisation des tâches admin récurrentes',
+    solution: 'Audit ops + automatisations ciblées (sur devis) : on cible les tâches admin récurrentes',
     gain: '10h+/semaine', complexite: 'complexe', budget: '€€€', delai: '1-3 mois', service: 'les_deux',
   },
   {

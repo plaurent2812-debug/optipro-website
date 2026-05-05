@@ -13,9 +13,12 @@ export interface PennylaneInvoiceItem {
 
 export interface PennylaneInvoicePayload {
   draft: boolean;
+  /** Si fourni, on réutilise un client Pennylane existant (anti-doublon). */
+  customer_id?: string;
+  /** Sinon, on crée un nouveau client Pennylane. */
   create_customer?: {
     name: string;
-    organization_type?: string; 
+    organization_type?: string;
     registration_number?: string; // SIRET
     emails?: string[];
     address?: string;

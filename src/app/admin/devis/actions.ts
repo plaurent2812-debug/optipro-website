@@ -291,6 +291,32 @@ export async function pushDevisToPennylaneAction(devisId: string) {
   }
 }
 
+/**
+ * Marque manuellement un devis comme accepté (vente fermée hors Pennylane).
+ */
+export async function markDevisAsAcceptedAction(devisId: string) {
+  const supabase = await createClient()
+
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  if (authError || !user) {
+    return { error: 'Session expirée. Veuillez vous reconnecter.' }
+  }
+
+  const { error } = await supabase
+    .from('devis')
+    .update({ statut: 'accepte' })
+    .eq('id', devisId)
+
+  if (error) {
+    return { error: "Erreur lors du marquage du devis." }
+  }
+
+  revalidatePath(`/admin/devis/${devisId}`)
+  revalidatePath('/admin/devis')
+  revalidatePath('/admin')
+  return { success: true, message: 'Devis marqué comme accepté.' }
+}
+
 export async function archiveDevisAction(devisId: string) {
   const supabase = await createClient()
 

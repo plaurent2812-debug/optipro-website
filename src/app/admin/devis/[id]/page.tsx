@@ -5,7 +5,7 @@ import styles from '../../clients/clients.module.css'
 import { DEVIS_STATUT_LABELS, formatDate, formatMontant } from '@/lib/utils'
 import DevisActions from './DevisActions'
 
-export const dynamicConfig = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export default async function DevisDetailPage(props: { params: Promise<{ id: string }> }) {
   const params = await props.params
@@ -26,6 +26,13 @@ export default async function DevisDetailPage(props: { params: Promise<{ id: str
   if (error || !devis) {
     notFound()
   }
+
+  // Récupère les factures liées à ce devis
+  const { data: facturesLiees } = await supabase
+    .from('factures')
+    .select('id, numero, statut, montant_ht, date_emission, date_paiement')
+    .eq('devis_id', id)
+    .order('date_emission', { ascending: false })
 
   // Tri des lignes pour un affichage cohérent
   const lignesAffichees = devis.devis_lignes?.sort((a: any, b: any) => a.ordre - b.ordre) || []
@@ -81,12 +88,12 @@ export default async function DevisDetailPage(props: { params: Promise<{ id: str
             <strong style={{ color: '#6B7280' }}>Expiration le:</strong>
             <span style={{ color: '#374151' }}>{formatDate(devis.date_validite) || '—'}</span>
 
-            <strong style={{ color: '#6B7280' }}>Total (TTC):</strong>
+            <strong style={{ color: '#6B7280' }}>Total HT (net à payer):</strong>
             <span style={{ color: '#111827', fontWeight: 800, fontSize: '1.2rem' }}>
               {formatMontant(devis.montant_ht)}
             </span>
             <span style={{ gridColumn: '2', color: '#6B7280', fontSize: '0.8rem', marginTop: '-10px' }}>
-              TVA non applicable
+              TVA non applicable, art. 293 B du CGI
             </span>
           </div>
 
@@ -94,12 +101,42 @@ export default async function DevisDetailPage(props: { params: Promise<{ id: str
             Prestations incluses
           </h3>
           <ul style={{ paddingLeft: '1.2rem', margin: 0, color: '#4B5563', fontSize: '0.95rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            {lignesAffichees.map((l: any) => (
-              <li key={l.id}>
-                <strong>{l.description}</strong> — {l.quantite} {l.unite !== 'forfait' && l.unite} ({formatMontant(l.prix_unitaire_ht * l.quantite)})
-              </li>
-            ))}
+            {lignesAffichees.map((l: any) => {
+              const showQty = !(l.unite === 'forfait' && Number(l.quantite) === 1)
+              const uniteLabel = l.unite === 'forfait' ? 'forfait(s)' : l.unite
+              return (
+                <li key={l.id}>
+                  <strong>{l.description}</strong>
+                  {showQty && ` — ${l.quantite} ${uniteLabel}`}
+                  {' '}({formatMontant(l.prix_unitaire_ht * l.quantite)})
+                </li>
+              )
+            })}
           </ul>
+
+          {/* Factures liées (si le devis est accepté ou facturé) */}
+          {facturesLiees && facturesLiees.length > 0 && (
+            <>
+              <h3 style={{ fontSize: '1.05rem', margin: '1rem 0 0 0', paddingTop: '1rem', borderTop: '1px solid #E5E7EB' }}>
+                Factures liées ({facturesLiees.length})
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {facturesLiees.map((f) => (
+                  <li key={f.id}>
+                    <Link href={`/admin/factures/${f.id}`} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0.8rem', background: '#F9FAFB', borderRadius: '6px', textDecoration: 'none', color: '#111827', border: '1px solid #E5E7EB' }}>
+                      <span style={{ fontWeight: 600 }}>{f.numero}</span>
+                      <span style={{ color: '#6B7280', fontSize: '0.9rem' }}>
+                        {formatDate(f.date_emission)} · {formatMontant(f.montant_ht)} ·
+                        <span style={{ marginLeft: '0.4rem', color: f.statut === 'payee' ? '#16A34A' : f.statut === 'en_retard' ? '#DC2626' : '#4B5563' }}>
+                          {f.statut === 'payee' ? '✓ Payée' : f.statut === 'en_retard' ? '⚠ En retard' : f.statut}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
 
         {/* Section Pennylane - Statut de synchronisation */}

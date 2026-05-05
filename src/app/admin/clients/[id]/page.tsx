@@ -2,7 +2,8 @@ import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import styles from '../clients.module.css'
-import { CLIENT_STATUT_LABELS, formatDate } from '@/lib/utils'
+import { CLIENT_STATUT_LABELS, DEVIS_STATUT_LABELS, FACTURE_STATUT_LABELS, formatDate, formatMontant } from '@/lib/utils'
+import DeleteClientButton from './DeleteClientButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -43,11 +44,15 @@ export default async function ClientDetailPage(props: { params: Promise<{ id: st
           {client.entreprise && <p className={styles.subtitle} style={{ color: '#4F46E5', fontWeight: 600 }}>{client.entreprise}</p>}
         </div>
         
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
           <Link href={`/admin/clients/${client.id}/edit`} className={styles.secondaryBtn}>Modifier</Link>
           <Link href={`/admin/devis/new?client_id=${client.id}`} className={styles.primaryBtn}>
             + Nouveau devis
           </Link>
+          <Link href={`/admin/factures/new?client_id=${client.id}`} className={styles.secondaryBtn}>
+            + Nouvelle facture
+          </Link>
+          <DeleteClientButton clientId={client.id} />
         </div>
       </div>
 
@@ -99,30 +104,64 @@ export default async function ClientDetailPage(props: { params: Promise<{ id: st
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           
           <div className={styles.card} style={{ padding: '2rem' }}>
-            <h2 style={{ fontSize: '1.1rem', margin: '0 0 1rem 0' }}>Derniers Devis</h2>
-            
+            <h2 style={{ fontSize: '1.1rem', margin: '0 0 1rem 0' }}>Derniers Devis ({client.devis?.length ?? 0})</h2>
+
             {!client.devis || client.devis.length === 0 ? (
               <div style={{ padding: '1rem', background: '#F9FAFB', borderRadius: '8px', textAlign: 'center', color: '#6B7280', fontSize: '0.9rem' }}>
                 Aucun devis pour le moment.
               </div>
             ) : (
-              <p style={{ color: '#4B5563', fontSize: '0.95rem' }}>
-                <i>L'historique des devis apparaîtra ici.</i>
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {[...client.devis]
+                  .sort((a: any, b: any) => (b.date_emission ?? '').localeCompare(a.date_emission ?? ''))
+                  .map((d: any) => (
+                  <li key={d.id}>
+                    <Link href={`/admin/devis/${d.id}`} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.7rem 0.9rem', background: '#F9FAFB', borderRadius: '6px', textDecoration: 'none', color: '#111827', border: '1px solid #E5E7EB' }}>
+                      <span>
+                        <strong>{d.numero}</strong>
+                        <span style={{ marginLeft: '0.5rem', fontSize: '0.85rem', color: '#6B7280' }}>{formatDate(d.date_emission)}</span>
+                      </span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <span style={{ fontWeight: 600 }}>{formatMontant(d.montant_ht)}</span>
+                        <span className={`${styles.badge} ${styles[`badge--${d.statut}`]}`}>
+                          {DEVIS_STATUT_LABELS[d.statut] || d.statut}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
 
           <div className={styles.card} style={{ padding: '2rem' }}>
-            <h2 style={{ fontSize: '1.1rem', margin: '0 0 1rem 0' }}>Factures récentes</h2>
-            
+            <h2 style={{ fontSize: '1.1rem', margin: '0 0 1rem 0' }}>Factures récentes ({client.factures?.length ?? 0})</h2>
+
             {!client.factures || client.factures.length === 0 ? (
               <div style={{ padding: '1rem', background: '#F9FAFB', borderRadius: '8px', textAlign: 'center', color: '#6B7280', fontSize: '0.9rem' }}>
                 Aucune facture émise.
               </div>
             ) : (
-              <p style={{ color: '#4B5563', fontSize: '0.95rem' }}>
-                <i>L'historique des factures apparaîtra ici.</i>
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {[...client.factures]
+                  .sort((a: any, b: any) => (b.date_emission ?? '').localeCompare(a.date_emission ?? ''))
+                  .map((f: any) => (
+                  <li key={f.id}>
+                    <Link href={`/admin/factures/${f.id}`} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.7rem 0.9rem', background: '#F9FAFB', borderRadius: '6px', textDecoration: 'none', color: '#111827', border: '1px solid #E5E7EB' }}>
+                      <span>
+                        <strong>{f.numero}</strong>
+                        <span style={{ marginLeft: '0.5rem', fontSize: '0.85rem', color: '#6B7280' }}>{formatDate(f.date_emission)}</span>
+                      </span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <span style={{ fontWeight: 600 }}>{formatMontant(f.montant_ht)}</span>
+                        <span className={`${styles.badge} ${styles[`badge--${f.statut}`]}`}>
+                          {FACTURE_STATUT_LABELS[f.statut] || f.statut}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
 

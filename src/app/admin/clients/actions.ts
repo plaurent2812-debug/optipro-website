@@ -44,6 +44,39 @@ export async function createClientAction(prevState: any, formData: FormData) {
   redirect(`/admin/clients/${data.id}`)
 }
 
+/**
+ * Supprime un client. Échoue si le client a des devis/factures liés
+ * (foreign keys actives — l'utilisateur doit d'abord supprimer manuellement).
+ */
+export async function deleteClientAction(clientId: string) {
+  const supabase = await createClient()
+
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  if (authError || !user) return { error: 'Session expirée.' }
+
+  // Vérifie qu'il n'y a pas de devis/factures/audits liés
+  const [{ count: nbDevis }, { count: nbFactures }, { count: nbAudits }] = await Promise.all([
+    supabase.from('devis').select('id', { count: 'exact', head: true }).eq('client_id', clientId),
+    supabase.from('factures').select('id', { count: 'exact', head: true }).eq('client_id', clientId),
+    supabase.from('audits').select('id', { count: 'exact', head: true }).eq('client_id', clientId),
+  ])
+
+  const liens: string[] = []
+  if ((nbDevis ?? 0) > 0) liens.push(`${nbDevis} devis`)
+  if ((nbFactures ?? 0) > 0) liens.push(`${nbFactures} facture(s)`)
+  if ((nbAudits ?? 0) > 0) liens.push(`${nbAudits} audit(s)`)
+
+  if (liens.length > 0) {
+    return { error: `Impossible de supprimer : ce client a ${liens.join(', ')} liés. Supprimez-les d'abord.` }
+  }
+
+  const { error } = await supabase.from('clients').delete().eq('id', clientId)
+  if (error) return { error: error.message }
+
+  revalidatePath('/admin/clients')
+  redirect('/admin/clients')
+}
+
 export async function updateClientAction(prevState: any, formData: FormData) {
   const supabase = await createClient()
 

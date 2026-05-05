@@ -3,9 +3,9 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import styles from '../../clients/clients.module.css'
 import { FACTURE_STATUT_LABELS, formatDate, formatMontant } from '@/lib/utils'
-import { pushFactureToPennylaneAction } from '../actions'
+import { pushFactureToPennylaneAction, markFactureAsPaidAction, validateFactureAction } from '../actions'
 
-export const dynamicConfig = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 
 export default async function FactureDetailPage(props: { params: Promise<{ id: string }> }) {
   const params = await props.params
@@ -52,12 +52,24 @@ export default async function FactureDetailPage(props: { params: Promise<{ id: s
         
         <div style={{ display: 'flex', gap: '1rem' }}>
           {facture.statut === 'brouillon' && (
-            <button className={styles.primaryBtn} style={{ backgroundColor: '#2563EB' }}>Valider & Envoyer</button>
+            <form action={async () => {
+              'use server';
+              await validateFactureAction(facture.id);
+            }}>
+              <button type="submit" className={styles.primaryBtn} style={{ backgroundColor: '#2563EB' }}>
+                Valider &amp; Envoyer
+              </button>
+            </form>
           )}
           {(facture.statut === 'envoyee' || facture.statut === 'en_retard') && (
-            <button className={styles.primaryBtn} style={{ backgroundColor: '#059669' }}>
-              ✓ Marquer comme payée
-            </button>
+            <form action={async () => {
+              'use server';
+              await markFactureAsPaidAction(facture.id);
+            }}>
+              <button type="submit" className={styles.primaryBtn} style={{ backgroundColor: '#059669' }}>
+                ✓ Marquer comme payée
+              </button>
+            </form>
           )}
         </div>
       </div>
@@ -79,6 +91,9 @@ export default async function FactureDetailPage(props: { params: Promise<{ id: s
             <strong style={{ color: '#6B7280' }}>Net à payer:</strong>
             <span style={{ color: '#4F46E5', fontWeight: 800, fontSize: '1.2rem' }}>
               {formatMontant(facture.montant_ht)}
+            </span>
+            <span style={{ gridColumn: '2', color: '#6B7280', fontSize: '0.8rem', marginTop: '-10px' }}>
+              TVA non applicable, art. 293 B du CGI
             </span>
           </div>
 

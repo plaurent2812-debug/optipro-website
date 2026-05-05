@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useActionState, useEffect } from 'react'
+import { useState, useActionState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import styles from '../../clients/clients.module.css'
 import { createDevisAction } from '../actions'
 import { createClient } from '@/lib/supabase/client'
 import { formatMontant } from '@/lib/utils'
 import { useFormStatus } from 'react-dom'
+import { offerCategories } from '@/data/offers'
 
 type ClientOption = { id: string; prenom: string | null; nom: string; entreprise: string | null }
 
@@ -19,13 +21,37 @@ function SubmitButton() {
   )
 }
 
-export default function NewDevisPage() {
+// Catalogue d'offres pré-remplies extraites du catalogue public.
+// Quand Pierre choisit une offre, les champs description / unité / prix sont remplis.
+const CATALOG_OFFERS: Array<{ key: string; label: string; description: string; unite: string; prix: number }> = (() => {
+  const list: Array<{ key: string; label: string; description: string; unite: string; prix: number }> = []
+  for (const cat of offerCategories) {
+    for (const offer of cat.offers) {
+      // On extrait un montant numérique simple si l'offre a un prix exact, sinon on laisse à 0.
+      const match = offer.price.match(/(\d{1,3}(?:[\s.]\d{3})*|\d+)\s*€/)
+      const num = match ? Number(match[1].replace(/[\s.]/g, '')) : 0
+      list.push({
+        key: offer.id,
+        label: `${offer.name} (${offer.price})`,
+        description: offer.name,
+        unite: 'forfait',
+        prix: num,
+      })
+    }
+  }
+  return list
+})()
+
+function NewDevisInner() {
+  const searchParams = useSearchParams()
+  const preselectedClient = searchParams.get('client_id') ?? ''
+
   const [state, formAction] = useActionState(createDevisAction, null)
   const [clients, setClients] = useState<ClientOption[]>([])
-  
-  // Builder State
+
+  // Builder State : démarre avec une ligne vide (pas de pré-remplissage hors-grille)
   const [lignes, setLignes] = useState([
-    { id: '1', description: 'Développement Web All-in (NextJS/Supabase)', quantite: 1, unite: 'forfait', prix: 1500 }
+    { id: '1', description: '', quantite: 1, unite: 'forfait', prix: 0 }
   ])
 
   useEffect(() => {
@@ -82,7 +108,7 @@ export default function NewDevisPage() {
             {/* Sélection du Client */}
             <div className={styles.formGroup} style={{ maxWidth: '400px' }}>
               <label htmlFor="client_id" className={styles.label}>Sélectionnez un Client <span style={{ color: '#EF4444' }}>*</span></label>
-              <select id="client_id" name="client_id" className={styles.select} required defaultValue="">
+              <select id="client_id" name="client_id" className={styles.select} required defaultValue={preselectedClient}>
                 <option value="" disabled>-- Choisir dans la liste --</option>
                 {clients.map(client => (
                   <option key={client.id} value={client.id}>
@@ -104,15 +130,42 @@ export default function NewDevisPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {lignes.map((ligne, index) => (
                   <div key={ligne.id} style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 2fr) 100px 120px 120px 40px', gap: '1rem', alignItems: 'end', background: '#F9FAFB', padding: '1rem', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
-                    
+
                     <div className={styles.formGroup}>
                       <label className={styles.label}>Description</label>
-                      <input type="text" name={`lignes[${index}][description]`} required value={ligne.description} onChange={e => updateLigne(ligne.id, 'description', e.target.value)} className={styles.input} placeholder="Ex: Audit UX/UI" />
+                      <input type="text" name={`lignes[${index}][description]`} required value={ligne.description} onChange={e => updateLigne(ligne.id, 'description', e.target.value)} className={styles.input} placeholder="Ex : Site vitrine pro 3-5 pages" />
+                      <select
+                        className={styles.select}
+                        style={{ marginTop: '0.4rem', fontSize: '0.85rem' }}
+                        value=""
+                        onChange={(e) => {
+                          const offer = CATALOG_OFFERS.find(o => o.key === e.target.value)
+                          if (!offer) return
+                          setLignes(prev => prev.map(l => l.id === ligne.id ? { ...l, description: offer.description, unite: offer.unite, prix: offer.prix } : l))
+                        }}
+                      >
+                        <option value="">⚡ Insérer une offre du catalogue…</option>
+                        {CATALOG_OFFERS.map(o => (
+                          <option key={o.key} value={o.key}>{o.label}</option>
+                        ))}
+                      </select>
                     </div>
-                    
+
                     <div className={styles.formGroup}>
                       <label className={styles.label}>Qté</label>
-                      <input type="number" name={`lignes[${index}][quantite]`} step="0.5" required min="0" value={ligne.quantite} onChange={e => updateLigne(ligne.id, 'quantite', parseFloat(e.target.value))} className={styles.input} />
+                      <input
+                        type="number"
+                        name={`lignes[${index}][quantite]`}
+                        step="0.5"
+                        required
+                        min="0"
+                        value={ligne.quantite}
+                        onChange={e => {
+                          const v = parseFloat(e.target.value)
+                          updateLigne(ligne.id, 'quantite', Number.isNaN(v) ? 0 : v)
+                        }}
+                        className={styles.input}
+                      />
                     </div>
 
                     <div className={styles.formGroup}>
@@ -127,14 +180,27 @@ export default function NewDevisPage() {
 
                     <div className={styles.formGroup}>
                       <label className={styles.label}>Prix Un. HT</label>
-                      <input type="number" name={`lignes[${index}][prix_unitaire_ht]`} step="1" required min="0" value={ligne.prix} onChange={e => updateLigne(ligne.id, 'prix', parseFloat(e.target.value))} className={styles.input} />
+                      <input
+                        type="number"
+                        name={`lignes[${index}][prix_unitaire_ht]`}
+                        step="0.01"
+                        required
+                        min="0"
+                        value={ligne.prix}
+                        onChange={e => {
+                          const v = parseFloat(e.target.value)
+                          updateLigne(ligne.id, 'prix', Number.isNaN(v) ? 0 : v)
+                        }}
+                        className={styles.input}
+                      />
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '40px' }}>
-                      <button 
-                        type="button" 
-                        onClick={() => removeLigne(ligne.id)} 
+                      <button
+                        type="button"
+                        onClick={() => removeLigne(ligne.id)}
                         disabled={lignes.length === 1}
+                        title={lignes.length === 1 ? 'Au moins une ligne requise' : 'Supprimer la ligne'}
                         style={{ color: lignes.length === 1 ? '#D1D5DB' : '#DC2626', background: 'none', border: 'none', cursor: lignes.length === 1 ? 'not-allowed' : 'pointer', fontSize: '1.2rem'}}
                       >
                         🗑
@@ -172,5 +238,13 @@ export default function NewDevisPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function NewDevisPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: '2rem' }}>Chargement…</div>}>
+      <NewDevisInner />
+    </Suspense>
   )
 }
