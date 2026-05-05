@@ -13,12 +13,30 @@ interface DownloadAuditPDFProps {
   pilierScores: Record<AuditPilierKey, number>
 }
 
+async function fetchLogoAsDataUrl(): Promise<string | null> {
+  try {
+    const res = await fetch('/optipro-logo.png', { cache: 'force-cache' })
+    if (!res.ok) return null
+    const blob = await res.blob()
+    return await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = reject
+      reader.readAsDataURL(blob)
+    })
+  } catch {
+    return null
+  }
+}
+
 export default function DownloadAuditPDF({ audit, client, frictions, actions, pilierScores }: DownloadAuditPDFProps) {
   const [isGenerating, setIsGenerating] = useState(false)
 
   const handleDownload = async () => {
     setIsGenerating(true)
     try {
+      const logoDataUrl = await fetchLogoAsDataUrl()
+
       const blob = await pdf(
         <AuditReportPDF
           audit={audit}
@@ -26,6 +44,7 @@ export default function DownloadAuditPDF({ audit, client, frictions, actions, pi
           frictions={frictions}
           actions={actions}
           pilierScores={pilierScores}
+          logoDataUrl={logoDataUrl}
         />
       ).toBlob()
 
@@ -41,7 +60,8 @@ export default function DownloadAuditPDF({ audit, client, frictions, actions, pi
       URL.revokeObjectURL(url)
     } catch (err) {
       console.error('Erreur génération PDF:', err)
-      alert('Erreur lors de la génération du PDF. Veuillez réessayer.')
+      const msg = err instanceof Error ? err.message : String(err)
+      alert(`Erreur lors de la génération du PDF.\n\nDétail : ${msg}\n\nOuvrez la console (F12) pour plus d'informations.`)
     } finally {
       setIsGenerating(false)
     }

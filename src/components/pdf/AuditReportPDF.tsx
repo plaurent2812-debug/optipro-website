@@ -28,7 +28,8 @@ const BRAND = {
   bgLight: '#F9FAFB',
 }
 
-const LOGO_URL = 'https://www.opti-pro.fr/optipro-logo.png'
+// Note : aucune URL distante pour le logo. Le data URL est préchargé côté client
+// (cf. fetchLogoAsDataUrl dans DownloadAuditPDF.tsx) pour éviter tout problème CSP/CORS.
 
 const s = StyleSheet.create({
   // ============== COVER PAGE ==============
@@ -205,7 +206,7 @@ const s = StyleSheet.create({
     fontSize: 9,
     color: BRAND.muted,
     marginBottom: 12,
-    fontStyle: 'italic',
+    lineHeight: 1.5,
   },
 
   // Pilier bars
@@ -568,9 +569,11 @@ interface AuditReportPDFProps {
   frictions: any[]
   actions: any[]
   pilierScores: Record<AuditPilierKey, number>
+  logoDataUrl?: string | null
 }
 
-export default function AuditReportPDF({ audit, client, frictions, actions, pilierScores }: AuditReportPDFProps) {
+export default function AuditReportPDF({ audit, client, frictions, actions, pilierScores, logoDataUrl }: AuditReportPDFProps) {
+  const logoSrc = logoDataUrl || null
   const level = getLevel(audit.score_global || 0)
   const heuresSemaine = audit.heures_recuperables_semaine || 0
   const heuresAn = heuresSemaine * 47
@@ -605,7 +608,7 @@ export default function AuditReportPDF({ audit, client, frictions, actions, pili
         <View style={s.coverTopBar} />
 
         <View style={s.coverHeader}>
-          <Image src={LOGO_URL} style={s.coverLogo} />
+          {logoSrc ? <Image src={logoSrc} style={s.coverLogo} /> : <View style={s.coverLogo} />}
           <View>
             <Text style={s.coverDate}>Rapport audit</Text>
             <Text style={s.coverDateValue}>{dateStr}</Text>
@@ -659,7 +662,7 @@ export default function AuditReportPDF({ audit, client, frictions, actions, pili
       {/* ═══════════════ PAGE 2 — DETAIL PILIERS + GAINS ═══════════════ */}
       <Page size="A4" style={s.page}>
         <View style={s.header} fixed>
-          <Image src={LOGO_URL} style={s.headerLogo} />
+          {logoSrc ? <Image src={logoSrc} style={s.headerLogo} /> : <View style={s.headerLogo} />}
           <View style={s.headerRight}>
             <Text style={s.headerLabel}>Audit · {clientName}</Text>
             <Text style={s.headerValue}>{dateStr}</Text>
@@ -744,7 +747,7 @@ export default function AuditReportPDF({ audit, client, frictions, actions, pili
       {/* ═══════════════ PAGE 3 — PLAN D'ACTION PAR PRIORITE ═══════════════ */}
       <Page size="A4" style={s.page}>
         <View style={s.header} fixed>
-          <Image src={LOGO_URL} style={s.headerLogo} />
+          {logoSrc ? <Image src={logoSrc} style={s.headerLogo} /> : <View style={s.headerLogo} />}
           <View style={s.headerRight}>
             <Text style={s.headerLabel}>Audit · {clientName}</Text>
             <Text style={s.headerValue}>{dateStr}</Text>
@@ -832,7 +835,7 @@ export default function AuditReportPDF({ audit, client, frictions, actions, pili
       {recommendedOffers.length > 0 && (
         <Page size="A4" style={s.page}>
           <View style={s.header} fixed>
-            <Image src={LOGO_URL} style={s.headerLogo} />
+            {logoSrc ? <Image src={logoSrc} style={s.headerLogo} /> : <View style={s.headerLogo} />}
             <View style={s.headerRight}>
               <Text style={s.headerLabel}>Audit · {clientName}</Text>
               <Text style={s.headerValue}>{dateStr}</Text>
