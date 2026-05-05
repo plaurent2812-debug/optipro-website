@@ -91,12 +91,18 @@
 /* Article */
 .article {
   max-width: 720px;
+  /* CRITIQUE : permet au grid item de se rétrécir en dessous de la taille
+     intrinsèque de son contenu (sinon les longs titres / mots débordent
+     le parent grid sur mobile) */
+  min-width: 0;
 }
 
 .articleHeader {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
+  /* Empêcher le header de pousser le parent par son contenu (titre long) */
+  min-width: 0;
 }
 
 .articleMeta {
@@ -288,6 +294,37 @@
   color: var(--secondary);
   font-size: 1.075rem;
   line-height: 1.75;
+  /* Anti-débordement mobile : casse les longs mots/URLs dans tout le contenu HTML */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  min-width: 0;
+}
+
+/* Anti-overflow sur tout le contenu HTML interne (paragraphes, h2, h3, listes) */
+.body :global(*) {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Tableaux : scroll horizontal interne plutôt que de pousser la page */
+.body :global(table) {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Code/pré : pareil */
+.body :global(pre),
+.body :global(code) {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Images du contenu : limiter à 100% du container */
+.body :global(img) {
+  max-width: 100%;
+  height: auto;
 }
 
 .body :global(p) {
