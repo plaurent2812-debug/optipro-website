@@ -4,7 +4,7 @@ import styles from './blog-list.module.css';
 import BlogListClient from './BlogListClient';
 
 export const metadata: Metadata = {
-  title: 'Blog — Conseils pour artisans et TPE | OptiPro',
+  title: 'Blog — Conseils pour artisans et TPE',
   description:
     "Guides pratiques, retours d'expérience et conseils concrets pour les artisans et TPE qui veulent reprendre le contrôle de leur temps et de leurs outils.",
   alternates: {
@@ -36,11 +36,18 @@ export default function BlogPage() {
       headline: a.titre,
       description: a.description,
       datePublished: a.datePublication,
+      dateModified: a.dateMaj || a.datePublication,
       url: `https://www.opti-pro.fr/blog/${a.slug}`,
+      image: a.image
+        ? `https://www.opti-pro.fr${a.image.startsWith('/') ? '' : '/'}${a.image}`
+        : 'https://www.opti-pro.fr/og-image.jpg',
       author: {
         '@type': 'Person',
+        '@id': 'https://www.opti-pro.fr/a-propos#pierre-laurent',
         name: 'Pierre Laurent',
+        url: 'https://www.opti-pro.fr/a-propos',
       },
+      publisher: { '@id': 'https://www.opti-pro.fr/#organization' },
     })),
   };
 

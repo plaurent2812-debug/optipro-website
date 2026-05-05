@@ -17,6 +17,29 @@ const cspDirectives = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      // Alias RGPD : URL canonique attendue par crawlers/visiteurs externes
+      {
+        source: '/politique-de-confidentialite',
+        destination: '/confidentialite',
+        permanent: true,
+      },
+      // /realisations retiré de la nav et du sitemap — redirect vers /services
+      {
+        source: '/realisations',
+        destination: '/services',
+        permanent: true,
+      },
+      // Force le redirect non-www → www en 308 permanent (consolidation PageRank)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'opti-pro.fr' }],
+        destination: 'https://www.opti-pro.fr/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

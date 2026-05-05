@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import HomePageClient from './HomePageClient';
 
 export const metadata: Metadata = {
-  title: 'OptiPro — Conseil & développement sur mesure | Vence',
+  title: { absolute: 'OptiPro — Conseil & développement sur mesure pour artisans et TPE | Vence' },
   description:
     "Création de sites web, automatisation, conseil exploitation — OptiPro accompagne artisans, TPE et PME logistique/transport/BTP. Basé à Vence, PACA. Premier appel gratuit.",
   alternates: {
@@ -33,6 +33,46 @@ export const metadata: Metadata = {
   },
 };
 
+const homepageJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.opti-pro.fr/#webpage',
+      url: 'https://www.opti-pro.fr/',
+      name: 'OptiPro — Conseil & développement sur mesure pour artisans et TPE',
+      description:
+        "Création de sites web, automatisation, conseil exploitation pour artisans, TPE et PME logistique/transport/BTP. Basé à Vence, PACA. Premier appel gratuit.",
+      isPartOf: { '@id': 'https://www.opti-pro.fr/#website' },
+      about: { '@id': 'https://www.opti-pro.fr/#organization' },
+      inLanguage: 'fr-FR',
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://www.opti-pro.fr/og-image.jpg?v=2',
+        width: 1200,
+        height: 626,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.opti-pro.fr/#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Accueil',
+          item: 'https://www.opti-pro.fr/',
+        },
+      ],
+    },
+  ],
+};
+
 export default function HomePage() {
-  return <HomePageClient />;
+  return (
+    <>
+      <script type="application/ld+json">{JSON.stringify(homepageJsonLd)}</script>
+      <HomePageClient />
+    </>
+  );
 }

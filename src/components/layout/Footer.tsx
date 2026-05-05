@@ -62,7 +62,10 @@ export default function Footer() {
                         <h4 style={{ color: 'var(--muted)', marginBottom: '1.25rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Contact</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--secondary)', fontSize: '0.95rem' }}>
                             <li>Pierre Laurent — Fondateur</li>
-                            <li style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Vence, 06140 — PACA</li>
+                            <li style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>OptiPro · Vence (06140) · Alpes-Maritimes</li>
+                            <li style={{ color: 'var(--muted)', fontSize: '0.85rem', lineHeight: 1.5 }}>
+                                Interventions Vence, Nice, Antibes, Cannes, Grasse, Mougins, Cagnes-sur-Mer · France entière à distance
+                            </li>
                             <li>
                                 <a
                                     href="tel:+33670259333"

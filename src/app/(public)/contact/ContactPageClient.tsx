@@ -287,7 +287,7 @@ export default function ContactPageClient() {
     return (
         <div style={{ minHeight: '100vh', background: 'var(--background)', paddingTop: 'var(--header-height)' }}>
             <div className="container" style={{ padding: '4rem 1.5rem' }}>
-                <div style={{ textAlign: 'center', marginBottom: '3rem', opacity: titleReady ? 1 : 0, transition: 'opacity 0.4s ease' }}>
+                <div style={{ textAlign: 'center', marginBottom: '2rem', opacity: titleReady ? 1 : 0, transition: 'opacity 0.4s ease' }}>
                     <div className="section-label">Me contacter</div>
                     <h1 style={{ fontSize: '2.75rem', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '1rem', color: 'var(--foreground)' }}>
                         Parlons de votre projet
@@ -297,17 +297,94 @@ export default function ContactPageClient() {
                     </p>
                 </div>
 
-                <Suspense fallback={<div style={{ textAlign: 'center', color: 'var(--muted)' }}>Chargement du formulaire...</div>}>
+                {/* Contacts directs — affichés AVANT le formulaire pour offrir une alternative immédiate */}
+                <div style={{
+                    maxWidth: '620px',
+                    margin: '0 auto 2.5rem',
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '1.25rem',
+                    padding: '1.5rem 1.75rem',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr',
+                    gap: '0.75rem',
+                }}>
+                    <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--foreground)', margin: 0 }}>
+                        Préférez le contact direct ?
+                    </p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                        <a
+                            href="tel:+33670259333"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                padding: '0.7rem 1.1rem',
+                                background: 'var(--accent)',
+                                color: 'white',
+                                borderRadius: '0.6rem',
+                                fontWeight: 600,
+                                textDecoration: 'none',
+                                fontSize: '0.95rem',
+                            }}
+                        >
+                            📞 06 70 25 93 33
+                        </a>
+                        <a
+                            href="mailto:p.laurent@opti-pro.fr"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                padding: '0.7rem 1.1rem',
+                                background: 'transparent',
+                                color: 'var(--accent)',
+                                border: '1.5px solid var(--accent)',
+                                borderRadius: '0.6rem',
+                                fontWeight: 600,
+                                textDecoration: 'none',
+                                fontSize: '0.95rem',
+                            }}
+                        >
+                            ✉️ p.laurent@opti-pro.fr
+                        </a>
+                    </div>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: 0 }}>
+                        Réponse garantie sous 24h · Du lundi au vendredi, 9h-18h
+                    </p>
+                </div>
+
+                <Suspense
+                    fallback={
+                        <div style={{
+                            maxWidth: '620px',
+                            margin: '0 auto',
+                            background: 'var(--surface)',
+                            padding: '2.25rem',
+                            borderRadius: '1.25rem',
+                            border: '1px solid var(--border)',
+                        }}>
+                            {/* Skeleton */}
+                            <div style={{ height: '1rem', background: 'var(--border)', borderRadius: '0.25rem', marginBottom: '1.5rem', width: '70%' }} />
+                            {[1, 2, 3, 4].map((i) => (
+                                <div key={i} style={{ marginBottom: '1.25rem' }}>
+                                    <div style={{ height: '0.75rem', background: 'var(--border)', borderRadius: '0.25rem', marginBottom: '0.5rem', width: '30%' }} />
+                                    <div style={{ height: '2.5rem', background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '0.5rem' }} />
+                                </div>
+                            ))}
+                            <div style={{ height: '3rem', background: 'var(--accent)', opacity: 0.3, borderRadius: '0.5rem', marginTop: '1rem' }} />
+                            <p style={{ textAlign: 'center', color: 'var(--muted)', fontSize: '0.85rem', marginTop: '1rem' }}>
+                                Chargement du formulaire...
+                            </p>
+                        </div>
+                    }
+                >
                     <ContactForm />
                 </Suspense>
 
                 <div style={{ marginTop: '3rem', textAlign: 'center', color: 'var(--muted)' }}>
-                    <p style={{ fontSize: '0.95rem' }}>Ou contactez Pierre directement :</p>
-                    <p style={{ marginTop: '0.5rem', fontWeight: 700, color: '#fb923c' }}>
-                        <a href="mailto:p.laurent@opti-pro.fr" style={{ color: '#fb923c' }}>p.laurent@opti-pro.fr</a>
-                    </p>
-                    <p style={{ marginTop: '0.25rem', fontSize: '0.875rem' }}>
-                        Réponse garantie sous 24h ·{' '}
+                    <p style={{ fontSize: '0.875rem' }}>
+                        OptiPro · Pierre Laurent · Vence (06140) · Alpes-Maritimes ·{' '}
                         <a href="https://www.linkedin.com/in/pierre-laurent-809410123" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--secondary)' }}>
                             LinkedIn
                         </a>

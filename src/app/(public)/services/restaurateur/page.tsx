@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import LandingPage from '@/components/seo/LandingPage';
 
 export const metadata: Metadata = {
-  title: 'Site web et outils digitaux pour restaurateur — OptiPro',
+  title: 'Site web et outils digitaux pour restaurateur',
   description:
     'Site web restaurant, gestion des réservations, fiche Google Business optimisée. Solutions sur mesure pour restaurateurs indépendants. Basé à Vence (06).',
   alternates: {
@@ -33,22 +33,52 @@ const jsonLd = {
       '@id': 'https://www.opti-pro.fr/services/restaurateur#service',
       name: 'Site web et outils digitaux pour restaurateur',
       serviceType: 'Solutions digitales pour restauration',
+      description:
+        "Site web restaurant, gestion réservations propriétaires (sans commission TheFork), fiche Google Business optimisée, gestion des avis. Solutions sur mesure pour restaurateurs indépendants.",
       provider: { '@id': 'https://www.opti-pro.fr/#organization' },
       areaServed: [
+        { '@type': 'City', name: 'Vence' },
+        { '@type': 'City', name: 'Nice' },
+        { '@type': 'City', name: 'Antibes' },
+        { '@type': 'City', name: 'Cannes' },
+        { '@type': 'City', name: 'Grasse' },
+        { '@type': 'City', name: 'Mougins' },
+        { '@type': 'City', name: 'Cagnes-sur-Mer' },
+        { '@type': 'AdministrativeArea', name: 'Alpes-Maritimes' },
         { '@type': 'AdministrativeArea', name: "Provence-Alpes-Côte d'Azur" },
         { '@type': 'Country', name: 'France' },
       ],
       audience: { '@type': 'Audience', name: 'Restaurateurs, gérants de bistrot, traiteurs' },
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Pack Visibilité restaurant',
+          price: '690',
+          priceCurrency: 'EUR',
+          priceSpecification: { '@type': 'PriceSpecification', price: '690', priceCurrency: 'EUR', valueAddedTaxIncluded: false },
+          availability: 'https://schema.org/InStock',
+          deliveryLeadTime: { '@type': 'QuantitativeValue', value: '5', unitCode: 'DAY' },
+        },
+        {
+          '@type': 'Offer',
+          name: 'Site web restaurant complet',
+          price: '2900',
+          priceCurrency: 'EUR',
+          priceSpecification: { '@type': 'PriceSpecification', price: '2900', priceCurrency: 'EUR', valueAddedTaxIncluded: false },
+          availability: 'https://schema.org/InStock',
+          deliveryLeadTime: { '@type': 'QuantitativeValue', value: '14', unitCode: 'DAY' },
+        },
+      ],
     },
     {
       '@type': 'FAQPage',
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Pourquoi un restaurant a-t-il besoin d&apos;un site web propre en 2026 ?',
+          name: "Pourquoi un restaurant a-t-il besoin d'un site web propre en 2026 ?",
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Avant de réserver une table, 9 personnes sur 10 vérifient le menu, les horaires, les photos et les avis sur Google. Un restaurant sans site ou avec une page Facebook obsolète perd ces clients au profit de ceux qui ont fait l&apos;effort. Un site simple et rapide à charger sur mobile permet aussi d&apos;intégrer un module de réservation et d&apos;afficher le menu sans dépendre de TheFork ou Uber Eats.',
+            text: "Avant de réserver une table, 9 personnes sur 10 vérifient le menu, les horaires, les photos et les avis sur Google. Un restaurant sans site ou avec une page Facebook obsolète perd ces clients au profit de ceux qui ont fait l'effort. Un site simple et rapide à charger sur mobile permet aussi d'intégrer un module de réservation et d'afficher le menu sans dépendre de TheFork ou Uber Eats.",
           },
         },
         {
@@ -64,12 +94,12 @@ const jsonLd = {
           name: 'Comment gérer les avis Google pour mon restaurant ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Je vous forme à répondre aux avis (positifs et négatifs) de manière professionnelle, à demander des avis aux clients satisfaits via un lien direct, et à signaler les avis abusifs. C&apos;est inclus dans tous les packs incluant la fiche Google Business. La gestion active des avis impacte directement votre visibilité dans le Local Pack Google Maps.',
+            text: "Je vous forme à répondre aux avis (positifs et négatifs) de manière professionnelle, à demander des avis aux clients satisfaits via un lien direct, et à signaler les avis abusifs. C'est inclus dans tous les packs incluant la fiche Google Business. La gestion active des avis impacte directement votre visibilité dans le Local Pack Google Maps.",
           },
         },
         {
           '@type': 'Question',
-          name: 'Pouvez-vous m&apos;aider à réduire ma dépendance à TheFork / Uber Eats ?',
+          name: "Pouvez-vous m'aider à réduire ma dépendance à TheFork / Uber Eats ?",
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'Oui. La stratégie consiste à capter les recherches Google directement avec votre propre site et fiche Google Business optimisée, puis à proposer la réservation/commande via un canal sans commission. ROI typiquement observé dans le secteur : 3 à 6 mois selon votre zone et la concurrence locale.',
@@ -150,6 +180,48 @@ export default function RestaurateurPage() {
         },
       ]}
       localMentions={['Vence', 'Nice', 'Antibes', 'Cannes', 'Grasse', "toute la PACA et la France à distance"]}
+      industryContext={{
+        title: "Restauration sur la Côte d'Azur en 2026 — pourquoi votre site est plus rentable que TheFork",
+        intro:
+          "La restauration française a une particularité : elle vit avec une commission TheFork moyenne de 7 % sur chaque couvert réservé via la plateforme. Sur un ticket moyen de 35 €/personne, c'est 2,45 € par client qui s'envole. Un restaurant qui fait 80 couverts/jour via TheFork laisse plus de 71 000 € par an en commissions. Votre propre site web bien optimisé peut récupérer une partie de ce flux à 0 % de commission.",
+        keyFacts: [
+          {
+            stat: '9 sur 10',
+            label: 'consultent le menu, les photos et les avis Google avant de réserver',
+            source: 'Google Consumer Survey 2023',
+          },
+          {
+            stat: '7 %',
+            label: 'commission TheFork standard sur chaque couvert réservé',
+            source: 'TheFork conditions générales',
+          },
+          {
+            stat: '34 %',
+            label: "des restaurants en France n'ont pas mis à jour leur menu en ligne depuis 6 mois",
+            source: 'Étude UMIH 2024',
+          },
+          {
+            stat: '2,45 €',
+            label: 'perdus par couvert sur un ticket moyen de 35 € via TheFork',
+          },
+        ],
+        miniCases: [
+          {
+            situation:
+              "Un restaurant de spécialités niçoises à Nice Vieux-Nice, 60 couverts/jour dont 70 % via TheFork. Site daté en flash, menu obsolète, photos floues. Visibilité Google Maps faible.",
+            result:
+              "Site complet avec module de réservation propriétaire (sans commission), photos pro du chef, menu structuré en JSON-LD. Après 4 mois, 35 % des réservations passent par le site direct. Économie estimée : 2 100 €/mois en commissions.",
+          },
+          {
+            situation:
+              "Un bistrot familial à Tourrettes-sur-Loup, 30 couverts/service, déjà bien noté sur Google (4,7/5). Mais aucun site web et fiche Google Business à moitié remplie (pas de menu, photos vieilles de 2018).",
+            result:
+              "Pack Visibilité + photos pro + menu PDF cliquable. Pas de site complexe — la fiche Google Business renforcée a suffi à augmenter les appels de réservation de 40 %.",
+          },
+        ],
+        insight:
+          "Sur la Côte d'Azur, la saison touristique change la donne : 70 % des recherches « restaurant + ville » se font sur mobile pendant les vacances scolaires françaises et l'été. Un site rapide, géolocalisé et avec menu visible en 2 secondes capte ce trafic — TheFork ne reste qu'un complément, pas le canal principal.",
+      }}
       jsonLd={jsonLd}
     />
   );

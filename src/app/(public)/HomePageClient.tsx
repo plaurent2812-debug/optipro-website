@@ -214,19 +214,21 @@ export default function HomePageClient() {
           <div className={styles.heroGrid}>
             <div className={styles.heroText}>
               <span className={styles.heroBadge}>
-                10 ans d&apos;exploitation × IA opérationnelle
+                Conseil ops, sites web et automatisation — Vence, PACA
               </span>
               <h1 className={styles.heroTitle}>
-                Pendant 10 ans, j&apos;ai été responsable logistique et exploitation.{' '}
+                Sites web, automatisation et outils sur mesure pour{' '}
                 <span className={styles.heroAccent}>
-                  Aujourd&apos;hui, je crée avec l&apos;IA les outils que j&apos;aurais voulu avoir.
+                  artisans, TPE et PME ops sur la Côte d&apos;Azur
                 </span>
               </h1>
               <p className={styles.heroSub}>
-                ERP déployé, 8 500 références gérées, 7 M€ de portefeuille piloté —
-                je sais ce que coûte une erreur sur le terrain. OptiPro accompagne
-                artisans, TPE et PME logistique/transport/BTP : audit ops, automatisation
-                des flux, outils sur mesure.
+                10 ans en exploitation logistique : ERP déployé, 8 500 références gérées,
+                7 M€ de portefeuille piloté. Je connais le coût d&apos;une erreur sur le
+                terrain. OptiPro accompagne plombiers, restaurateurs, TPE et PME
+                logistique/transport/BTP : audit ops, automatisation des flux,
+                outils sur mesure. Basé à Vence (06140), interventions Vence, Nice,
+                Antibes, Cannes, Grasse — France entière à distance.
               </p>
               <div className={styles.heroCtas}>
                 <Button href="/contact" variant="primary">

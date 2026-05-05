@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import AProposPageClient from './AProposPageClient';
 
 export const metadata: Metadata = {
-  title: 'À propos — Pierre Laurent | OptiPro',
+  title: 'À propos — Pierre Laurent',
   description:
     "Pierre Laurent, fondateur d'OptiPro — 10 ans en exploitation logistique : ERP déployé, 8 500 références gérées, 7 M€ ADV piloté. Aujourd'hui au service des artisans, TPE et PME logistique/transport/BTP.",
   alternates: {
@@ -36,6 +36,10 @@ const personJsonLd = {
     addressCountry: 'FR',
   },
   worksFor: { '@id': 'https://www.opti-pro.fr/#organization' },
+  sameAs: [
+    'https://www.linkedin.com/in/pierre-laurent-809410123',
+  ],
+  image: 'https://www.opti-pro.fr/pierre-laurent.png',
   alumniOf: {
     '@type': 'EducationalOrganization',
     name: 'Afipe',

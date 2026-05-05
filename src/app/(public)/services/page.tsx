@@ -7,7 +7,7 @@ import { offerCategories } from '@/data/offers';
 import OffersSection from './OffersSection';
 
 export const metadata: Metadata = {
-  title: 'Services & tarifs — Création web, automatisation | OptiPro',
+  title: 'Services & tarifs — Création web, automatisation',
   description:
     'Nos offres claires pour artisans, TPE et projets structurants : sites sur mesure, automatisations, IA et accompagnement. Prix affichés pour les petites prestations, sur devis pour les projets complexes.',
   alternates: {

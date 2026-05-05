@@ -107,15 +107,30 @@ export default function MentionsLegalesPage() {
           </p>
 
           {/* 4. Données personnelles */}
-          <h2 style={sectionHeadingStyle}>4. Données personnelles</h2>
+          <h2 style={sectionHeadingStyle}>4. Données personnelles &amp; RGPD</h2>
+          <p style={paragraphStyle}>
+            <strong>Responsable de traitement :</strong> Pierre Laurent (OptiPro), Bâtiment Le Matisse, 541 Avenue Colonel Meyère, 06140 Vence — <a href="mailto:p.laurent@opti-pro.fr" style={linkStyle}>p.laurent@opti-pro.fr</a>.
+          </p>
+          <p style={paragraphStyle}>
+            <strong>Délégué à la protection des données (DPO) :</strong> OptiPro étant une structure individuelle (EI), aucun DPO n&apos;est désigné. Pierre Laurent assure directement le rôle de point de contact pour toute question RGPD.
+          </p>
           <p style={paragraphStyle}>
             Le site collecte des données personnelles uniquement via le formulaire de contact. Les informations collectées sont : nom, adresse e-mail, numéro de téléphone (facultatif), nom de l&apos;entreprise (facultatif), secteur d&apos;activité (facultatif) et message.
           </p>
           <p style={paragraphStyle}>
-            Ces données sont traitées dans le seul but de répondre aux demandes de contact. Elles sont transmises via l&apos;API Resend pour l&apos;envoi d&apos;e-mails et ne sont pas conservées dans une base de données tierce.
+            <strong>Base légale :</strong> consentement explicite (formulaire de contact, RGPD art. 6.1.a) et intérêt légitime (réponse aux demandes commerciales, RGPD art. 6.1.f).
           </p>
           <p style={paragraphStyle}>
-            Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez : <a href="mailto:p.laurent@opti-pro.fr" style={linkStyle}>p.laurent@opti-pro.fr</a>.
+            <strong>Destinataires :</strong> les données sont traitées par Pierre Laurent uniquement, transmises via l&apos;API Resend (sous-traitant) pour l&apos;envoi d&apos;e-mails. Aucune cession ni revente à des tiers. Aucun transfert hors Union européenne (Resend opère depuis Delaware, USA, mais via les Standard Contractual Clauses approuvées par la Commission européenne).
+          </p>
+          <p style={paragraphStyle}>
+            <strong>Durée de conservation :</strong> les e-mails de contact sont conservés 3 ans à compter du dernier contact pour permettre le suivi commercial. Les données client (devis signés, factures) sont conservées 10 ans conformément aux obligations légales comptables.
+          </p>
+          <p style={paragraphStyle}>
+            <strong>Vos droits RGPD :</strong> conformément aux articles 15 à 22 du RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification, d&apos;effacement, de limitation, d&apos;opposition et de portabilité de vos données. Vous pouvez aussi définir des directives sur le sort de vos données après votre décès. Pour exercer ces droits, contactez <a href="mailto:p.laurent@opti-pro.fr" style={linkStyle}>p.laurent@opti-pro.fr</a> en précisant votre nom et l&apos;objet de votre demande. Réponse sous 1 mois maximum.
+          </p>
+          <p style={paragraphStyle}>
+            <strong>Réclamation CNIL :</strong> si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission Nationale de l&apos;Informatique et des Libertés (CNIL) — <a href="https://www.cnil.fr/fr/plaintes" style={linkStyle} target="_blank" rel="noopener noreferrer">cnil.fr/fr/plaintes</a>, ou par courrier : 3 Place de Fontenoy — TSA 80715 — 75334 PARIS CEDEX 07.
           </p>
           <p style={paragraphStyle}>
             Pour en savoir plus, consultez la <a href="/confidentialite" style={linkStyle}>politique de confidentialité</a>.
@@ -144,7 +159,7 @@ export default function MentionsLegalesPage() {
 
           <hr style={{ margin: '2.5rem 0 1.5rem', border: 'none', borderTop: '1px solid var(--border)' }} />
           <p style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>
-            Dernière mise à jour : mars 2025
+            Dernière mise à jour : 5 mai 2026
           </p>
 
         </div>

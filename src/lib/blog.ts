@@ -11,10 +11,12 @@ export type Article = {
   titre: string;
   description: string; // meta description ~155 chars
   datePublication: string; // ISO "YYYY-MM-DD"
+  dateMaj?: string; // ISO "YYYY-MM-DD" — optionnel, fallback sur datePublication
   tempsLecture: number; // minutes
   categorie: string;
   motsCles: string[];
   contenu: string; // HTML interne maîtrisé (statique, pas d'input utilisateur)
+  image?: string; // URL relative à /public, ex "/og-image.jpg"
 };
 
 export const articles: Article[] = [

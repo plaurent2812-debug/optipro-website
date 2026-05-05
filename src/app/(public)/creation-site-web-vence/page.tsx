@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Création de site web à Vence — OptiPro',
     description:
-      'Sites web sur mesure pour artisans et TPE de la Côte d&apos;Azur. Livraison rapide, prix affichés, premier appel gratuit.',
+      "Sites web sur mesure pour artisans et TPE de la Côte d'Azur. Livraison rapide, prix affichés, premier appel gratuit.",
     url: 'https://www.opti-pro.fr/creation-site-web-vence',
     type: 'website',
   },
@@ -77,7 +77,7 @@ const jsonLd = {
           name: 'Êtes-vous basé à Vence ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. OptiPro est basé à Vence (06140), Provence-Alpes-Côte d&apos;Azur. Les rendez-vous en présentiel sont possibles sur Vence, Nice, Antibes, Cannes, Grasse et toute la Côte d&apos;Azur. Le travail à distance est possible partout en France.',
+            text: "Oui. OptiPro est basé à Vence (06140), Provence-Alpes-Côte d'Azur. Les rendez-vous en présentiel sont possibles sur Vence, Nice, Antibes, Cannes, Grasse et toute la Côte d'Azur. Le travail à distance est possible partout en France.",
           },
         },
         {
@@ -93,7 +93,7 @@ const jsonLd = {
           name: 'Faites-vous de la sous-traitance ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Non. Pierre Laurent, fondateur d&apos;OptiPro, gère l&apos;intégralité de chaque projet : analyse, conception, développement, livraison et formation. Aucune sous-traitance, aucun commercial intermédiaire.',
+            text: "Non. Pierre Laurent, fondateur d'OptiPro, gère l'intégralité de chaque projet : analyse, conception, développement, livraison et formation. Aucune sous-traitance, aucun commercial intermédiaire.",
           },
         },
       ],

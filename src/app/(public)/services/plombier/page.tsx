@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import LandingPage from '@/components/seo/LandingPage';
 
 export const metadata: Metadata = {
-  title: 'Site web et automatisation pour plombier — OptiPro',
+  title: 'Site web et automatisation pour plombier',
   description:
     'Création de site web, automatisation des devis et factures pour plombiers indépendants. Pack à 690€, livré en 3-5 jours. Basé à Vence (06), interventions PACA.',
   alternates: {
@@ -33,22 +33,52 @@ const jsonLd = {
       '@id': 'https://www.opti-pro.fr/services/plombier#service',
       name: 'Création de site web et automatisation pour plombier',
       serviceType: 'Solutions digitales pour plombiers',
+      description:
+        "Création de sites web, automatisation des devis et factures, notifications Telegram pour les urgences. Solutions sur mesure pour plombiers indépendants et plombiers-chauffagistes.",
       provider: { '@id': 'https://www.opti-pro.fr/#organization' },
       areaServed: [
+        { '@type': 'City', name: 'Vence' },
+        { '@type': 'City', name: 'Nice' },
+        { '@type': 'City', name: 'Antibes' },
+        { '@type': 'City', name: 'Cannes' },
+        { '@type': 'City', name: 'Grasse' },
+        { '@type': 'City', name: 'Mougins' },
+        { '@type': 'City', name: 'Cagnes-sur-Mer' },
+        { '@type': 'AdministrativeArea', name: 'Alpes-Maritimes' },
         { '@type': 'AdministrativeArea', name: "Provence-Alpes-Côte d'Azur" },
         { '@type': 'Country', name: 'France' },
       ],
       audience: { '@type': 'Audience', name: 'Plombiers, plombiers-chauffagistes, sanitaire' },
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Pack Visibilité plombier',
+          price: '690',
+          priceCurrency: 'EUR',
+          priceSpecification: { '@type': 'PriceSpecification', price: '690', priceCurrency: 'EUR', valueAddedTaxIncluded: false },
+          availability: 'https://schema.org/InStock',
+          deliveryLeadTime: { '@type': 'QuantitativeValue', value: '5', unitCode: 'DAY' },
+        },
+        {
+          '@type': 'Offer',
+          name: 'Site web professionnel plombier',
+          price: '2900',
+          priceCurrency: 'EUR',
+          priceSpecification: { '@type': 'PriceSpecification', price: '2900', priceCurrency: 'EUR', valueAddedTaxIncluded: false },
+          availability: 'https://schema.org/InStock',
+          deliveryLeadTime: { '@type': 'QuantitativeValue', value: '14', unitCode: 'DAY' },
+        },
+      ],
     },
     {
       '@type': 'FAQPage',
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Pourquoi un plombier a-t-il besoin d&apos;un site web ?',
+          name: "Pourquoi un plombier a-t-il besoin d'un site web ?",
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Plus de 80% des particuliers cherchent un plombier sur Google avant d&apos;appeler. Sans site web ni fiche Google Business, vous êtes invisible face aux concurrents qui ont fait l&apos;effort. Un site simple permet aussi d&apos;afficher votre zone d&apos;intervention, vos spécialités (dépannage, chauffage, sanitaire) et de capter les urgences hors horaires.',
+            text: "Plus de 80% des particuliers cherchent un plombier sur Google avant d'appeler. Sans site web ni fiche Google Business, vous êtes invisible face aux concurrents qui ont fait l'effort. Un site simple permet aussi d'afficher votre zone d'intervention, vos spécialités (dépannage, chauffage, sanitaire) et de capter les urgences hors horaires.",
           },
         },
         {
@@ -56,7 +86,7 @@ const jsonLd = {
           name: 'Combien coûte un site web pour un plombier ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Le Pack Visibilité OptiPro à 690€ HT inclut un site 1 page, votre fiche Google Business optimisée et une formation. C&apos;est suffisant pour la majorité des plombiers indépendants. Pour un site multi-pages avec présentation des services, comptez à partir de 2 900€ HT.',
+            text: "Le Pack Visibilité OptiPro à 690€ HT inclut un site 1 page, votre fiche Google Business optimisée et une formation. C'est suffisant pour la majorité des plombiers indépendants. Pour un site multi-pages avec présentation des services, comptez à partir de 2 900€ HT.",
           },
         },
         {
@@ -64,7 +94,7 @@ const jsonLd = {
           name: 'Comment automatiser mes devis et factures ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Pour la facturation, je recommande directement des outils SaaS éprouvés (Pennylane, Indy, Henrri) — pas la peine de réinventer la roue. Si votre besoin est plus spécifique (devis avec calculs métier complexes, intégration à un ERP, etc.), je le construis sur mesure dans le cadre d&apos;un site professionnel ou d&apos;une mission ops dédiée.',
+            text: "Pour la facturation, je recommande directement des outils SaaS éprouvés (Pennylane, Indy, Henrri) — pas la peine de réinventer la roue. Si votre besoin est plus spécifique (devis avec calculs métier complexes, intégration à un ERP, etc.), je le construis sur mesure dans le cadre d'un site professionnel ou d'une mission ops dédiée.",
           },
         },
         {
@@ -72,7 +102,7 @@ const jsonLd = {
           name: 'Travaillez-vous avec des plombiers en dehors de la PACA ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Oui. Le présentiel est possible sur la Côte d&apos;Azur (Vence, Nice, Antibes, Cannes, Grasse). Pour les plombiers ailleurs en France, tout se fait à distance : appel découverte, validation des maquettes par lien, formation en visio. La majorité des projets se réalisent à 100% en remote.',
+            text: "Oui. Le présentiel est possible sur la Côte d'Azur (Vence, Nice, Antibes, Cannes, Grasse). Pour les plombiers ailleurs en France, tout se fait à distance : appel découverte, validation des maquettes par lien, formation en visio. La majorité des projets se réalisent à 100% en remote.",
           },
         },
       ],
@@ -150,6 +180,49 @@ export default function PlombierPage() {
         },
       ]}
       localMentions={['Vence', 'Nice', 'Antibes', 'Cannes', 'Grasse', "toute la PACA et la France à distance"]}
+      industryContext={{
+        title: "La réalité du plombier indépendant en 2026 — pourquoi le digital n'est plus un luxe",
+        intro:
+          "Pendant 5 ans chez Factory, j'ai piloté 15 à 20 sous-traitants BTP au quotidien (plomberie, électricité, climatisation, second œuvre). J'ai vu de l'intérieur ce qui distingue les plombiers qui gagnent leur vie sereinement de ceux qui s'épuisent. Voici ce que j'ai appris, appliqué à la réalité d'un plombier indépendant des Alpes-Maritimes.",
+        keyFacts: [
+          {
+            stat: '83 %',
+            label: "des particuliers cherchent un plombier sur Google avant d'appeler",
+            source: 'BVA Local Search 2024',
+          },
+          {
+            stat: '6 à 8 h',
+            label: "consacrées chaque semaine à l\'administratif (devis, factures, relances)",
+            source: 'CAPEB',
+          },
+          {
+            stat: '17 %',
+            label: "des plombiers indépendants en PACA n'ont aucune fiche Google Business",
+            source: 'Estimation propre, échantillon Vence-Nice 2026',
+          },
+          {
+            stat: '42 €/h',
+            label: "taux horaire moyen facturable d\'un plombier indépendant en France",
+            source: 'INSEE 2024',
+          },
+        ],
+        miniCases: [
+          {
+            situation:
+              "Un plombier de Cagnes-sur-Mer, 8 ans d'activité, 2 chantiers par jour, fait ses devis le dimanche soir sur Excel. Il loupe régulièrement des urgences car les emails arrivent en mode silencieux.",
+            result:
+              "Pack Visibilité OptiPro + bot Telegram urgences (+500 €). Le téléphone notifie chaque demande de devis en temps réel. Gain estimé : 4 à 6 heures par semaine, et environ 15 % de chantiers urgents capturés en plus.",
+          },
+          {
+            situation:
+              "Un plombier-chauffagiste d'Antibes facture 60 % de son CA sur des installations de pompes à chaleur (PAC). Son site n'en parle nulle part — il rate tout le trafic SEO sur « installation pompe à chaleur Antibes ».",
+            result:
+              "Site multi-pages avec page dédiée PAC (technique, certifications RGE, MaPrimeRénov'). 3 mois après mise en ligne, 7 demandes de devis qualifiées par mois sur cette seule entrée.",
+          },
+        ],
+        insight:
+          "La spécificité d'un plombier sur la Côte d'Azur : la concurrence est forte dans les centres-villes (Nice, Cannes, Antibes), mais les arrière-pays (Vence, Saint-Paul, Tourrettes-sur-Loup, La Colle-sur-Loup) sont sous-couverts. Une fiche Google bien faite avec zone d'intervention précise vous fait remonter sur des recherches que vos concurrents ignorent.",
+      }}
       jsonLd={jsonLd}
     />
   );

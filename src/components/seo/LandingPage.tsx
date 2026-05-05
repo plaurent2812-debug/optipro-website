@@ -27,6 +27,14 @@ export interface LandingPageProps {
   faq: Array<{ question: string; answer: string }>;
   // Local context (mentions de villes/zone)
   localMentions?: string[];
+  // Section spécifique métier — différenciation E-E-A-T (anti-near-duplicate)
+  industryContext?: {
+    title: string;
+    intro: string;
+    keyFacts: Array<{ stat: string; label: string; source?: string }>;
+    miniCases?: Array<{ situation: string; result: string }>;
+    insight?: string;
+  };
   // Schema additionnel (BreadcrumbList + Service custom)
   jsonLd: object;
 }
@@ -40,6 +48,7 @@ export default function LandingPage({
   process,
   faq,
   localMentions,
+  industryContext,
   jsonLd,
 }: LandingPageProps) {
   return (
@@ -211,6 +220,120 @@ export default function LandingPage({
       )}
 
       <div className="section-divider" />
+
+      {/* ===== INDUSTRY CONTEXT ===== Section différenciatrice par métier (anti near-duplicate) */}
+      {industryContext && (
+        <>
+          <section style={{ padding: '4rem 0', background: 'var(--surface-subtle, #fafafa)' }}>
+            <div className="container" style={{ maxWidth: '820px' }}>
+              <h2
+                style={{
+                  fontSize: '1.75rem',
+                  fontWeight: 800,
+                  color: 'var(--primary)',
+                  marginBottom: '1.5rem',
+                  lineHeight: 1.25,
+                }}
+              >
+                {industryContext.title}
+              </h2>
+              <p
+                style={{
+                  color: 'var(--secondary)',
+                  fontSize: '1.05rem',
+                  lineHeight: 1.7,
+                  marginBottom: '2rem',
+                }}
+              >
+                {industryContext.intro}
+              </p>
+
+              {/* Stats clés sectorielles */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gap: '1rem',
+                  marginBottom: '2.5rem',
+                }}
+              >
+                {industryContext.keyFacts.map((fact, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: 'var(--surface)',
+                      border: '1px solid var(--border)',
+                      borderRadius: '12px',
+                      padding: '1.25rem',
+                    }}
+                  >
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '0.4rem' }}>
+                      {fact.stat}
+                    </div>
+                    <div style={{ color: 'var(--secondary)', fontSize: '0.92rem', lineHeight: 1.5 }}>
+                      {fact.label}
+                    </div>
+                    {fact.source && (
+                      <div style={{ color: 'var(--muted)', fontSize: '0.78rem', marginTop: '0.5rem', fontStyle: 'italic' }}>
+                        Source : {fact.source}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Mini cas concrets */}
+              {industryContext.miniCases && industryContext.miniCases.length > 0 && (
+                <>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1.25rem' }}>
+                    Situations rencontrées sur le terrain
+                  </h3>
+                  <div style={{ display: 'grid', gap: '1rem', marginBottom: '2rem' }}>
+                    {industryContext.miniCases.map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          background: 'var(--surface)',
+                          border: '1px solid var(--border)',
+                          borderLeft: '3px solid var(--accent)',
+                          borderRadius: '8px',
+                          padding: '1.1rem 1.25rem',
+                        }}
+                      >
+                        <p style={{ color: 'var(--secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                          <strong style={{ color: 'var(--primary)' }}>Situation :</strong> {c.situation}
+                        </p>
+                        <p style={{ color: 'var(--secondary)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                          <strong style={{ color: 'var(--accent)' }}>→ Résultat :</strong> {c.result}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* Insight final */}
+              {industryContext.insight && (
+                <div
+                  style={{
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '12px',
+                    padding: '1.5rem',
+                    fontStyle: 'italic',
+                    color: 'var(--secondary)',
+                    fontSize: '1rem',
+                    lineHeight: 1.7,
+                  }}
+                >
+                  💡 {industryContext.insight}
+                </div>
+              )}
+            </div>
+          </section>
+          <div className="section-divider" />
+        </>
+      )}
 
       {/* ===== PROCESS ===== */}
       <section style={{ padding: '4rem 0' }}>

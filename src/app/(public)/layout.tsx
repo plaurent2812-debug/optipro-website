@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
   },
+  other: {
+    'geo.region': 'FR-06',
+    'geo.placename': 'Vence',
+    'geo.position': '43.72226;7.11382',
+    'ICBM': '43.72226, 7.11382',
+  },
 };
 
 const jsonLd = {
@@ -35,24 +41,44 @@ const jsonLd = {
       email: 'p.laurent@opti-pro.fr',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Vence (sur rendez-vous)',
         addressLocality: 'Vence',
         postalCode: '06140',
         addressRegion: "Provence-Alpes-Côte d'Azur",
         addressCountry: 'FR',
       },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 43.72226,
+        longitude: 7.11382,
+      },
       areaServed: [
-        {
-          '@type': 'AdministrativeArea',
-          name: "Provence-Alpes-Côte d'Azur",
-        },
-        {
-          '@type': 'Country',
-          name: 'France',
-        },
+        { '@type': 'City', name: 'Vence' },
+        { '@type': 'City', name: 'Nice' },
+        { '@type': 'City', name: 'Antibes' },
+        { '@type': 'City', name: 'Cannes' },
+        { '@type': 'City', name: 'Grasse' },
+        { '@type': 'City', name: 'Mougins' },
+        { '@type': 'City', name: 'Cagnes-sur-Mer' },
+        { '@type': 'City', name: 'Saint-Laurent-du-Var' },
+        { '@type': 'AdministrativeArea', name: 'Alpes-Maritimes' },
+        { '@type': 'AdministrativeArea', name: "Provence-Alpes-Côte d'Azur" },
+        { '@type': 'Country', name: 'France' },
       ],
+      serviceArea: {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: 43.72226,
+          longitude: 7.11382,
+        },
+        geoRadius: '50000',
+      },
       founder: {
         '@type': 'Person',
+        '@id': 'https://www.opti-pro.fr/a-propos#pierre-laurent',
         name: 'Pierre Laurent',
+        url: 'https://www.opti-pro.fr/a-propos',
         sameAs: 'https://www.linkedin.com/in/pierre-laurent-809410123',
       },
       image: 'https://www.opti-pro.fr/opengraph-image.png',

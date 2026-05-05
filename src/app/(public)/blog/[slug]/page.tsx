@@ -37,7 +37,7 @@ export async function generateMetadata(
   const url = `${SITE_URL}/blog/${article.slug}`;
 
   return {
-    title: `${article.titre} | OptiPro`,
+    title: article.titre,
     description: article.description,
     keywords: article.motsCles,
     alternates: {
@@ -81,11 +81,12 @@ export default async function ArticlePage(
     description: article.description,
     url,
     datePublished: article.datePublication,
-    dateModified: article.datePublication,
+    dateModified: article.dateMaj || article.datePublication,
     author: {
       '@type': 'Person',
+      '@id': `${SITE_URL}/a-propos#pierre-laurent`,
       name: 'Pierre Laurent',
-      url: 'https://www.linkedin.com/in/pierre-laurent-809410123',
+      url: `${SITE_URL}/a-propos`,
     },
     publisher: {
       '@id': `${SITE_URL}/#organization`,
@@ -94,6 +95,9 @@ export default async function ArticlePage(
       '@type': 'WebPage',
       '@id': url,
     },
+    image: article.image
+      ? `${SITE_URL}${article.image.startsWith('/') ? '' : '/'}${article.image}`
+      : `${SITE_URL}/og-image.jpg`,
     keywords: article.motsCles.join(', '),
     inLanguage: 'fr-FR',
   };
