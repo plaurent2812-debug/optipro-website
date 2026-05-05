@@ -8,7 +8,7 @@ export interface Offer {
 }
 
 export interface OfferCategory {
-  id: 'artisans' | 'tpe' | 'projets';
+  id: 'artisans' | 'tpe' | 'pme-ops' | 'projets';
   icon: string;
   tagline: string;
   title: string;
@@ -144,6 +144,71 @@ export const offerCategories: OfferCategory[] = [
     ],
     ctaLabel: 'Discuter de mon projet',
     ctaHref: '/contact?cible=tpe',
+  },
+  {
+    id: 'pme-ops',
+    icon: '📦',
+    tagline: 'Pour les PME logistique, transport, BTP',
+    title: 'PME ops & exploitation',
+    subtitle: '10 ans à piloter des flux tendus, appliqués à votre opérationnel.',
+    description:
+      "Vous dirigez ou pilotez l'exploitation d'une PME (transport, logistique, BTP, distribution). Vos process tiennent par habitude, vos KPIs sont éparpillés, et vos sous-traitants ne se synchronisent pas avec votre ERP. Je passe par votre métier avant de proposer la moindre solution.",
+    offers: [
+      {
+        id: 'audit-ops',
+        name: 'Audit ops',
+        description: "Diagnostic de votre exploitation : flux, outils, ERP, sous-traitants, reporting. Restitution écrite avec plan d'action chiffré.",
+        price: '1 200 € HT',
+        delay: '1 semaine',
+        features: [
+          'Cartographie complète des flux (entrants, sortants, internes)',
+          'Audit ERP/TMS/WMS et points de friction',
+          'Identification des gisements de temps et de coûts',
+          "Plan d'action priorisé avec ROI estimé",
+        ],
+      },
+      {
+        id: 'reporting-auto',
+        name: 'Automatisation reporting hebdo',
+        description: "Vos KPIs (taux de service, marge transport, retards, sous-traitance) consolidés automatiquement chaque lundi matin.",
+        price: '2 500 € HT',
+        delay: '2 semaines',
+        features: [
+          'Connexion à vos sources (ERP, Excel, TMS, GPS)',
+          'Tableau de bord hebdomadaire automatisé',
+          "Alertes sur dérives (taux de service, retards, dépassements)",
+          'Formation équipe + documentation',
+        ],
+      },
+      {
+        id: 'process-sous-traitants',
+        name: 'Refonte process sous-traitants',
+        description: "Cadrage opérationnel et outillage pour piloter 10 à 50 sous-traitants : ordres de service, suivi terrain, facturation.",
+        price: 'Sur devis',
+        delay: '4-8 semaines',
+        features: [
+          'Cadrage avec vos exploitants et chefs de chantier',
+          'Outil de pilotage sur mesure (web app ou Sheets+scripts)',
+          'Synchronisation avec ERP / facturation',
+          'Formation terrain et accompagnement 1 mois',
+        ],
+      },
+      {
+        id: 'accompagnement-mensuel',
+        name: 'Accompagnement mensuel ops',
+        description: "Un point hebdomadaire, un consultant qui comprend l'exploitation, des évolutions continues sur vos outils.",
+        price: '800 € HT / mois',
+        delay: 'Engagement 6 mois',
+        features: [
+          '1 point hebdo de 1h (visio ou présentiel PACA)',
+          "4h d'évolutions/optimisations par mois (reportables)",
+          'Support prioritaire sous 4h ouvrées',
+          'Veille IA/automatisation appliquée à votre métier',
+        ],
+      },
+    ],
+    ctaLabel: 'Parler de mon exploitation',
+    ctaHref: '/contact?cible=pme-ops',
   },
   {
     id: 'projets',

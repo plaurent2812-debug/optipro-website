@@ -4,14 +4,14 @@ import AProposPageClient from './AProposPageClient';
 export const metadata: Metadata = {
   title: 'À propos — Pierre Laurent | OptiPro',
   description:
-    "Pierre Laurent, fondateur d'OptiPro — 10 ans de logistique et pilotage de projets au service des artisans et TPE. Basé à Vence (06).",
+    "Pierre Laurent, fondateur d'OptiPro — 10 ans en exploitation logistique : ERP déployé, 8 500 références gérées, 7 M€ ADV piloté. Aujourd'hui au service des artisans, TPE et PME logistique/transport/BTP.",
   alternates: {
     canonical: '/a-propos',
   },
   openGraph: {
     title: 'À propos — Pierre Laurent | OptiPro',
     description:
-      "10 ans à piloter des process et coordonner des artisans — maintenant au service des TPE et indépendants. Basé à Vence (06).",
+      "10 ans en exploitation logistique. ERP déployé, 8 500 références gérées, 7 M€ ADV piloté. Aujourd'hui au service des artisans, TPE et PME ops.",
     url: '/a-propos',
     type: 'profile',
   },
@@ -22,9 +22,9 @@ const personJsonLd = {
   '@type': 'Person',
   '@id': 'https://www.opti-pro.fr/a-propos#pierre-laurent',
   name: 'Pierre Laurent',
-  jobTitle: "Fondateur d'OptiPro",
+  jobTitle: "Fondateur d'OptiPro · Consultant exploitation & IA opérationnelle",
   description:
-    "Fondateur d'OptiPro. 10 ans de logistique, pilotage de projets et déploiement d'outils ERP au service des artisans et TPE.",
+    "Fondateur d'OptiPro. 10 ans en exploitation logistique : déploiement complet d'un ERP EBP chez Eddifis, 8 500 références gérées chez DBS Drive, 7 M€ ADV piloté chez Factory, dépôt événementiel chez GL Events Live.",
   url: 'https://www.opti-pro.fr/a-propos',
   telephone: '+33670259333',
   knowsLanguage: ['fr', 'en'],
@@ -41,13 +41,19 @@ const personJsonLd = {
     name: 'Afipe',
   },
   knowsAbout: [
-    'Logistique',
-    'Optimisation des process',
-    'ERP',
-    'Coordination artisans',
-    'Pilotage de projets',
-    'Automatisation',
-    'Outils sur mesure',
+    'Exploitation logistique',
+    'Pilotage des flux',
+    'Déploiement ERP (EBP)',
+    'Coordination de sous-traitants',
+    'Reporting opérationnel et KPIs',
+    'Approvisionnement et gestion des stocks',
+    'Logistique événementielle',
+    'Automatisation des process métier',
+    'IA appliquée aux opérations',
+    'Création de filiale et structuration process',
+    'Pilotage ADV (Administration des Ventes)',
+    'Coordination artisans BTP',
+    'Outils sur mesure pour TPE/PME',
   ],
 };
 

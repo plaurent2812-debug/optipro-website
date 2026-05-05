@@ -21,32 +21,40 @@ type TimelineItem = {
 
 const timeline: TimelineItem[] = [
   {
-    period: 'Sept. 2025 — Mars 2026',
+    period: 'Sept. 2025 → aujourd\'hui',
     company: 'GL Events Live',
     role: 'Responsable Exploitation logistique événementielle',
     description:
-      "Pilotage de l'exploitation logistique sur la Côte d'Azur. Une nouvelle facette du métier : tempo serré, terrain mouvant, et toujours la même logique — anticiper, structurer, livrer.",
+      "Pilotage du dépôt événementiel sur la Côte d'Azur, équipe de 6 personnes, coordination des sous-traitants. Tempo serré, terrain mouvant, marges d'erreur quasi nulles — toujours la même logique : anticiper, structurer, livrer.",
+    current: true,
   },
   {
-    period: 'Nov. 2019 — Sept. 2024',
+    period: 'Nov. 2019 → Sept. 2024',
     company: 'Factory',
     role: 'Responsable Logistique & Exploitation',
     description:
-      "Pilotage de projets d'aménagement de bureaux de 20 k€ à 1 M€, portefeuille ADV de 7 M€/an, coordination quotidienne de 15 à 20 artisans et techniciens. C'est là que j'ai vu de près ce qui freine vraiment les indépendants : pas le travail terrain, mais tout ce qui gravite autour.",
+      "Pilotage d'un portefeuille ADV de 7 M€/an, projets d'aménagement de bureaux de 20 k€ à 1 M€, supervision quotidienne de 15 à 20 artisans et techniciens sous-traitants. C'est là que j'ai vu de près ce qui freine vraiment les PME et les indépendants : pas le travail terrain, mais tout ce qui gravite autour.",
   },
   {
-    period: 'Janv. 2019 — Nov. 2019',
+    period: 'Janv. 2019 → Nov. 2019',
     company: 'Groupe EDDIFIS',
-    role: 'Responsable Logistique',
+    role: 'Responsable Logistique — création de filiale',
     description:
-      "Création d'une filiale from scratch : déploiement EBP, structuration des process d'approvisionnement, des stocks et de la facturation. Tout construire depuis la page blanche — exactement ce qu'on fait ensuite chez OptiPro pour des TPE.",
+      "Création complète d'une filiale depuis zéro : montage de l'entrepôt, déploiement personnel de l'ERP EBP, structuration des process d'approvisionnement, des stocks, des KPIs et de la facturation. 80 k€/mois de CA en quelques mois. Tout construire depuis la page blanche — exactement ce qu'on fait ensuite chez OptiPro pour des TPE/PME.",
   },
   {
-    period: 'Déc. 2017 — Janv. 2019',
+    period: 'Déc. 2017 → Janv. 2019',
     company: 'DBS Drive',
-    role: 'Responsable d’agence — robinetterie & chauffage',
+    role: "Responsable d'agence — robinetterie & chauffage",
     description:
-      "Gestion d'une agence avec 8 500 références, en relation directe et quotidienne avec des artisans plombiers et chauffagistes. J'ai parlé leur langue tous les jours pendant un an. Ça ne s'oublie pas.",
+      "Gestion d'une agence avec 8 500 références, en relation directe et quotidienne avec des artisans plombiers et chauffagistes. J'ai parlé leur langue tous les jours pendant plus d'un an. Ça ne s'oublie pas.",
+  },
+  {
+    period: '2015 → 2017',
+    company: 'Toute la Nutrition',
+    role: "Gestionnaire d'opérations e-commerce",
+    description:
+      "Premier contact avec les flux opérationnels intenses : 400 commandes traitées par jour, gestion des stocks, des retours, du SAV. C'est là que j'ai compris l'importance d'outils qui scalent avec le volume.",
   },
 ];
 
@@ -343,8 +351,9 @@ export default function AProposPageClient() {
             <span className={styles.heroBadge}>Fondateur · OptiPro</span>
             <h1 className={styles.heroTitle}>Pierre Laurent</h1>
             <p className={styles.heroSubtitle}>
-              10 ans à piloter des process et coordonner des artisans —
-              maintenant de l’autre côté.
+              10 ans en exploitation logistique. ERP déployé, 8 500 références gérées,
+              7 M€ de portefeuille piloté. Aujourd&apos;hui, je mets cette expérience au
+              service des artisans, TPE et PME logistique/transport/BTP.
             </p>
             <div className={styles.heroMeta}>
               <span className={styles.heroMetaItem}>
@@ -385,34 +394,37 @@ export default function AProposPageClient() {
           <div className={styles.philosophieInner}>
             <span className={styles.sectionLabel}>Pourquoi OptiPro</span>
             <h2 className={styles.sectionTitle}>
-              J’ai vu les mêmes problèmes pendant dix ans.
+              J&apos;ai vu les mêmes problèmes pendant dix ans.
             </h2>
             <div className={styles.philosophieText}>
               <p>
-                Chez Factory, j’ai passé cinq ans à coordonner des
-                installations d’artisans et de techniciens sur des chantiers
-                d’aménagement de bureaux. Avant ça, chez DBS Drive, je
-                discutais tous les jours avec des plombiers et chauffagistes au
-                comptoir d’une agence. Toujours la même scène : des gens
-                qui excellent dans leur métier, mais qui rentrent le soir face
-                à une montagne d’admin, des tableurs Excel à rallonge et
-                des outils mal adaptés.
+                Chez Toute la Nutrition, j&apos;ai débuté en gérant 400 commandes
+                par jour. Chez DBS Drive ensuite, je discutais tous les jours avec
+                des plombiers et chauffagistes au comptoir, en gérant 8 500 références
+                en stock. Puis chez Eddifis, j&apos;ai créé une filiale entière depuis
+                zéro : entrepôt, ERP EBP déployé personnellement, KPI, 80 k€/mois de
+                CA. Toujours la même scène : des opérations qui tiennent par habitude,
+                des outils qui ne se parlent pas, et personne qui prend le temps de
+                régler ça vraiment.
               </p>
               <p>
-                En parallèle, j’ai piloté des projets de 1 M€,
-                déployé un ERP from scratch dans une filiale, structuré des
-                process d’approvisionnement et de facturation. J’ai vu ce qui
-                fait gagner du temps, ce qui en fait perdre, et surtout pourquoi les
-                outils des grandes structures ne se transposent jamais tels quels
-                chez un artisan ou une TPE.
+                Chez Factory pendant 5 ans, j&apos;ai piloté un portefeuille ADV
+                de 7 M€, des projets d&apos;aménagement entre 20 k€ et 1 M€, et
+                supervisé 15 à 20 intervenants sous-traitants en permanence.
+                C&apos;est là que j&apos;ai vu de près ce qui freine vraiment les
+                indépendants et les PME : pas le travail terrain, mais tout ce
+                qui gravite autour. Aujourd&apos;hui chez GL Events Live, je
+                pilote un dépôt événementiel et coordonne sous-traitants et
+                équipes de 6 personnes sur des événements à délais ultra-courts.
               </p>
               <p>
-                À un moment, j’ai décidé de passer de l’autre
-                côté. Plutôt que d’optimiser des process pour de
-                grandes structures qui en avaient déjà trois consultants,
-                mettre cette expertise au service de ceux qui en ont vraiment
-                besoin : les artisans, les TPE, les indépendants. C’est
-                exactement ça, OptiPro.
+                À un moment, j&apos;ai décidé de passer de l&apos;autre côté.
+                Plutôt qu&apos;optimiser pour des grandes structures qui ont
+                déjà trois consultants, mettre cette expertise — exploitation,
+                ERP, sous-traitance, KPIs — au service de ceux qui en ont
+                vraiment besoin : artisans, TPE, et PME logistique, transport,
+                BTP. Avec en plus l&apos;IA opérationnelle pour automatiser ce
+                qui peut l&apos;être. C&apos;est exactement ça, OptiPro.
               </p>
             </div>
           </div>
@@ -426,8 +438,9 @@ export default function AProposPageClient() {
             <span className={styles.sectionLabel}>Mon parcours</span>
             <h2 className={styles.sectionTitle}>10 ans à structurer, piloter, coordonner.</h2>
             <p className={styles.sectionLead}>
-              Du comptoir d’une agence robinetterie au pilotage de projets
-              d’1 M€, chaque étape a alimenté ce qu’OptiPro est aujourd’hui.
+              De 400 commandes/jour à un portefeuille ADV de 7 M€, en passant par
+              le déploiement complet d&apos;un ERP — chaque étape a alimenté ce
+              qu&apos;OptiPro est aujourd&apos;hui.
             </p>
           </div>
 

@@ -217,16 +217,19 @@ export default function HomePageClient() {
           <div className={styles.heroGrid}>
             <div className={styles.heroText}>
               <span className={styles.heroBadge}>
-                Conseil · Développement · Automatisation
+                10 ans d&apos;exploitation × IA opérationnelle
               </span>
               <h1 className={styles.heroTitle}>
-                Vos outils ralentissent votre activité ?{' '}
-                <span className={styles.heroAccent}>On règle ça.</span>
+                Pendant 10 ans, j&apos;ai été responsable logistique et exploitation.{' '}
+                <span className={styles.heroAccent}>
+                  Aujourd&apos;hui, je crée avec l&apos;IA les outils que j&apos;aurais voulu avoir.
+                </span>
               </h1>
               <p className={styles.heroSub}>
-                Audit de vos process, création de sites et d&apos;outils sur
-                mesure, automatisation — Pierre analyse vos blocages admin et
-                construit les solutions adaptées.
+                ERP déployé, 8 500 références gérées, 7 M€ de portefeuille piloté —
+                je sais ce que coûte une erreur sur le terrain. OptiPro accompagne
+                artisans, TPE et PME logistique/transport/BTP : audit ops, automatisation
+                des flux, outils sur mesure.
               </p>
               <div className={styles.heroCtas}>
                 <Button href="/contact" variant="primary">
@@ -262,7 +265,7 @@ export default function HomePageClient() {
                   lineHeight: 1.2,
                 }}
               >
-                Pourquoi les artisans et TPE perdent-ils autant de temps sur l&apos;administratif ?
+                Pourquoi les TPE, artisans et PME perdent-ils autant de temps sur leurs opérations ?
               </h2>
               <p
                 style={{
@@ -271,14 +274,17 @@ export default function HomePageClient() {
                   lineHeight: 1.7,
                 }}
               >
-                Et quand un outil ne marche pas, personne n&apos;est là pour le régler.
+                Outils mal adaptés, ERP qui ne se parle pas avec le terrain, sous-traitants
+                pilotés à l&apos;email. Quand un outil casse, personne n&apos;est là pour le régler.
               </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
                 'Outils mal adaptés à votre activité',
                 'Tableurs à rallonge, process manuels',
-                'Relances oubliées, factures en retard',
+                'ERP/TMS désynchronisés du terrain',
+                'Sous-traitants pilotés à coups d\'emails',
+                'Reporting hebdo qui prend 3h chaque lundi',
                 "Des heures perdues sur l'admin",
               ].map((item) => (
                 <div key={item} className="pain-point">
@@ -467,10 +473,10 @@ export default function HomePageClient() {
                 Pierre Laurent — Fondateur OptiPro
               </h2>
               <p style={{ color: 'var(--secondary)', lineHeight: 1.7, fontSize: '0.97rem', marginBottom: '1rem' }}>
-                10 ans d&apos;expérience en opérations, logistique et gestion de projets — en startup immobilière, GL Events et dans le BTP. Je sais ce que coûte une heure perdue sur du travail administratif. J&apos;ai lancé OptiPro en 2025 pour régler ces problèmes concrètement, sans jargon, sans sous-traitance.
+                10 ans à piloter des flux tendus en exploitation logistique : déploiement complet d&apos;un ERP chez Eddifis, 8 500 références gérées chez DBS, 7 M€ de portefeuille ADV piloté chez Factory, dépôt événementiel actuellement chez GL Events Live. Je sais ce que coûte une erreur sur le terrain.
               </p>
               <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
-                Vous parlerez toujours avec moi directement — du diagnostic à la livraison.
+                Vous parlerez toujours avec moi directement — du diagnostic à la livraison. Pas de sous-traitance, pas de commercial.
               </p>
               <a
                 href="https://www.linkedin.com/in/pierre-laurent-809410123"
