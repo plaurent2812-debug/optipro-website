@@ -21,12 +21,19 @@ type TimelineItem = {
 
 const timeline: TimelineItem[] = [
   {
-    period: 'Sept. 2025 → aujourd\'hui',
+    period: '2026 → aujourd\'hui',
+    company: 'OptiPro',
+    role: 'Fondateur — Conseil exploitation & IA opérationnelle',
+    description:
+      "J'ai quitté l'exploitation pour mettre 10 ans de terrain au service des artisans, TPE et PME logistique/transport/BTP. Audit ops, automatisation des flux, déploiement d'outils sur mesure, IA appliquée aux opérations. Pas de sous-traitance, pas de commercial — un seul interlocuteur du diagnostic à la livraison.",
+    current: true,
+  },
+  {
+    period: 'Sept. 2025 → 2026',
     company: 'GL Events Live',
     role: 'Responsable Exploitation logistique événementielle',
     description:
       "Pilotage du dépôt événementiel sur la Côte d'Azur, équipe de 6 personnes, coordination des sous-traitants. Tempo serré, terrain mouvant, marges d'erreur quasi nulles — toujours la même logique : anticiper, structurer, livrer.",
-    current: true,
   },
   {
     period: 'Nov. 2019 → Sept. 2024',
@@ -413,9 +420,10 @@ export default function AProposPageClient() {
                 supervisé 15 à 20 intervenants sous-traitants en permanence.
                 C&apos;est là que j&apos;ai vu de près ce qui freine vraiment les
                 indépendants et les PME : pas le travail terrain, mais tout ce
-                qui gravite autour. Aujourd&apos;hui chez GL Events Live, je
-                pilote un dépôt événementiel et coordonne sous-traitants et
-                équipes de 6 personnes sur des événements à délais ultra-courts.
+                qui gravite autour. Plus récemment chez GL Events Live, j&apos;ai
+                piloté un dépôt événementiel et coordonné sous-traitants et
+                équipes de 6 personnes sur des événements à délais ultra-courts —
+                avant de quitter l&apos;exploitation pour fonder OptiPro.
               </p>
               <p>
                 À un moment, j&apos;ai décidé de passer de l&apos;autre côté.

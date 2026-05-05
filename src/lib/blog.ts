@@ -598,7 +598,7 @@ export const articles: Article[] = [
 
 <h2>D'où ça vient</h2>
 
-<p>Avant OptiPro, j'ai été responsable logistique et exploitation pendant une décennie. Toute la Nutrition (400 commandes/jour), DBS Drive (8 500 références gérées), Eddifis (création complète d'une filiale, ERP EBP déployé personnellement, 80 k€/mois de CA), Factory pendant 5 ans (portefeuille ADV de 7 M€, projets entre 20 k€ et 1 M€, 15 à 20 sous-traitants supervisés au quotidien). Aujourd'hui chez GL Events Live, je pilote un dépôt événementiel et 6 personnes, avec des sous-traitants événementiel sur des délais ultra-courts.</p>
+<p>Avant OptiPro, j'ai été responsable logistique et exploitation pendant une décennie. Toute la Nutrition (400 commandes/jour), DBS Drive (8 500 références gérées), Eddifis (création complète d'une filiale, ERP EBP déployé personnellement, 80 k€/mois de CA), Factory pendant 5 ans (portefeuille ADV de 7 M€, projets entre 20 k€ et 1 M€, 15 à 20 sous-traitants supervisés au quotidien), puis GL Events Live (dépôt événementiel, équipe de 6, sous-traitants événementiel sur délais ultra-courts). En 2026 j'ai quitté l'exploitation pour me consacrer à OptiPro à temps plein.</p>
 
 <p>Quand j'ai lancé OptiPro en 2025, j'ai démarré sur ce que je connaissais aussi très bien : les artisans et les TPE. Parce que j'ai passé une partie de ces 10 ans à coordonner des plombiers, électriciens, chauffagistes, peintres. Et parce que c'est la cible la plus accessible quand on lance une activité de conseil.</p>
 

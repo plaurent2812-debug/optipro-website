@@ -474,7 +474,7 @@ export default function HomePageClient() {
                 Pierre Laurent — Fondateur OptiPro
               </h2>
               <p style={{ color: 'var(--secondary)', lineHeight: 1.7, fontSize: '0.97rem', marginBottom: '1rem' }}>
-                10 ans à piloter des flux tendus en exploitation logistique : déploiement complet d&apos;un ERP chez Eddifis, 8 500 références gérées chez DBS, 7 M€ de portefeuille ADV piloté chez Factory, dépôt événementiel actuellement chez GL Events Live. Je sais ce que coûte une erreur sur le terrain.
+                10 ans à piloter des flux tendus en exploitation logistique : déploiement complet d&apos;un ERP chez Eddifis, 8 500 références gérées chez DBS, 7 M€ de portefeuille ADV piloté chez Factory, dépôt événementiel chez GL Events Live. J&apos;ai quitté l&apos;exploitation pour fonder OptiPro et appliquer ces 10 ans de terrain à l&apos;IA opérationnelle. Je sais ce que coûte une erreur sur le terrain.
               </p>
               <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
                 Vous parlerez toujours avec moi directement — du diagnostic à la livraison. Pas de sous-traitance, pas de commercial.

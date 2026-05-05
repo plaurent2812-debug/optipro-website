@@ -24,7 +24,7 @@ const personJsonLd = {
   name: 'Pierre Laurent',
   jobTitle: "Fondateur d'OptiPro · Consultant exploitation & IA opérationnelle",
   description:
-    "Fondateur d'OptiPro. 10 ans en exploitation logistique : déploiement complet d'un ERP EBP chez Eddifis, 8 500 références gérées chez DBS Drive, 7 M€ ADV piloté chez Factory, dépôt événementiel chez GL Events Live.",
+    "Fondateur d'OptiPro. 10 ans en exploitation logistique : déploiement complet d'un ERP EBP chez Eddifis, 8 500 références gérées chez DBS Drive, 7 M€ ADV piloté chez Factory, dépôt événementiel chez GL Events Live. Aujourd'hui consultant indépendant en IA opérationnelle.",
   url: 'https://www.opti-pro.fr/a-propos',
   telephone: '+33670259333',
   knowsLanguage: ['fr', 'en'],
