@@ -11,7 +11,6 @@ import AnalyseMockup from '@/components/visuals/AnalyseMockup';
 import CreationMockup from '@/components/visuals/CreationMockup';
 import AutomationMockup from '@/components/visuals/AutomationMockup';
 import AuditCta from '@/components/ui/AuditCta';
-import OptiboardTeaser from '@/components/ui/OptiboardTeaser';
 import HeroAnimation from '@/components/visuals/HeroAnimation';
 import Image from 'next/image';
 
@@ -499,12 +498,6 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ===== TEASING OPTIBOARD ===== */}
-      <section data-reveal style={{ padding: '3rem 0 5rem' }}>
-        <div className="container">
-          <OptiboardTeaser />
-        </div>
-      </section>
     </main>
   );
 }

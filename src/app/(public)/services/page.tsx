@@ -151,6 +151,22 @@ export default function ServicesPage() {
             chaque situation appelle une réponse différente. Voici comment
             j&apos;accompagne chacune.
           </p>
+          <p
+            style={{
+              marginTop: '1.5rem',
+              padding: '0.75rem 1.25rem',
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
+              borderRadius: '8px',
+              color: 'var(--muted)',
+              fontSize: '0.85rem',
+              lineHeight: 1.6,
+              fontStyle: 'italic',
+              display: 'inline-block',
+            }}
+          >
+            Tous les prix sont indiqués en euros HT. <strong>TVA non applicable</strong>, art.&nbsp;293&nbsp;B du CGI (franchise en base de TVA).
+          </p>
         </div>
       </section>
 
