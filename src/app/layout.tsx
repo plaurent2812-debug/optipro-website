@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="fr" data-theme="light">
       <body className={`${outfit.variable} ${spaceGrotesk.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
