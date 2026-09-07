@@ -28,9 +28,9 @@ export default function HomePage() {
           <SystemCore />
         </div>
         <div className={`shell ${styles.projectDock}`}>
-          <div className={styles.dockIntro}><span>EN EXPLORATION</span><p>Quatre projets.<br />Quatre terrains de jeu.</p></div>
+          <div className={styles.dockIntro}><span>EN EXPLORATION</span><p>Cinq projets.<br />Cinq terrains de jeu.</p></div>
           <nav aria-label="Accès direct aux projets">
-            {projects.map((project, index) => <a key={project.slug} href={`#projet-${project.slug}`}><Image src={project.icon} width={38} height={38} alt="" /><div><strong>{project.name}</strong><span>{["Actif", "En évolution", "Prototype", "En pause"][index]}</span></div><span className={styles.dockArrow} aria-hidden="true">↘</span></a>)}
+            {projects.map((project) => <a key={project.slug} href={`#projet-${project.slug}`}><Image src={project.icon} width={38} height={38} alt="" /><div><strong>{project.name}</strong><span>{project.status}</span></div><span className={styles.dockArrow} aria-hidden="true">↘</span></a>)}
           </nav>
         </div>
       </section>

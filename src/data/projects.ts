@@ -1,5 +1,5 @@
 export type ProductProject = {
-  slug: "probalab" | "ferdinand" | "ro-nutritionniste" | "odysio";
+  slug: "la-parallaxe" | "probalab" | "ferdinand" | "ro-nutritionniste" | "odysio";
   name: string;
   code: string;
   status: string;
@@ -26,9 +26,34 @@ export type ProductProject = {
 
 export const projects: ProductProject[] = [
   {
+    slug: "la-parallaxe",
+    name: "La Parallaxe",
+    code: "PROJET 01 / LA PARALLAXE",
+    status: "Site en ligne",
+    statusTone: "sage",
+    visual: "browser",
+    statement: "Une expérience de vulgarisation scientifique où l’émerveillement ouvre la voie à la compréhension.",
+    category: "Culture scientifique",
+    summary: "Un site pour explorer des sujets scientifiques par couches, distinguer les faits établis des hypothèses et garder les sources à portée de regard.",
+    linkLabel: "Visiter le site",
+    description:
+      "La Parallaxe propose de découvrir la science autrement : un premier regard pour s’étonner, un second pour comprendre. Chaque exploration relie une scène visuelle, des niveaux de profondeur, des interactions et des sources, sans transformer une hypothèse en certitude.",
+    image: "/projects/la-parallaxe-cosmos.webp",
+    imageWidth: 1672,
+    imageHeight: 941,
+    icon: "/projects/la-parallaxe-icon.png",
+    imageAlt: "Scène cosmique de La Parallaxe autour d’un trou noir",
+    href: "https://laparallaxe.fr",
+    platforms: ["Web", "Site publié"],
+    technologies: ["HTML", "CSS", "JavaScript", "Design de marque"],
+    capabilities: ["Explications par couches", "Interactions", "Sources"],
+    role: "Identité, conception et développement d’une expérience éditoriale interactive",
+    demonstrates: "Rendre un sujet complexe accessible sans effacer ses nuances, ses limites ni les sources qui permettent de le vérifier.",
+  },
+  {
     slug: "probalab",
     name: "ProbaLab",
-    code: "PROJET 01 / PROBALAB",
+    code: "PROJET 02 / PROBALAB",
     status: "Développement actif",
     statusTone: "cyan",
     visual: "phone",
@@ -53,7 +78,7 @@ export const projects: ProductProject[] = [
   {
     slug: "ferdinand",
     name: "Ferdinand",
-    code: "PROJET 02 / FERDINAND",
+    code: "PROJET 03 / FERDINAND",
     status: "Produit en évolution",
     statusTone: "amber",
     visual: "phone",
@@ -77,7 +102,7 @@ export const projects: ProductProject[] = [
   {
     slug: "ro-nutritionniste",
     name: "Ro Nutritionniste",
-    code: "PROJET 03 / RO NUTRITIONNISTE",
+    code: "PROJET 04 / RO NUTRITIONNISTE",
     status: "Prototype avancé",
     statusTone: "sage",
     visual: "browser",
@@ -102,7 +127,7 @@ export const projects: ProductProject[] = [
   {
     slug: "odysio",
     name: "Odysio",
-    code: "PROJET 04 / ODYSIO",
+    code: "PROJET 05 / ODYSIO",
     status: "Projet en pause",
     statusTone: "cyan",
     visual: "identity",

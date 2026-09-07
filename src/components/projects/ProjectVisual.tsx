@@ -9,7 +9,7 @@ export default function ProjectVisual({ project, index = 0 }: { project: Product
       <div className={styles.orbit} aria-hidden="true" />
       {project.visual === "browser" ? (
         <div className={styles.browser}>
-          <div className={styles.browserBar} aria-hidden="true"><span>● ● ●</span><span>Ro Nutritionniste</span><span>↗</span></div>
+          <div className={styles.browserBar} aria-hidden="true"><span>● ● ●</span><span>{project.name}</span><span>↗</span></div>
           <Image src={project.image} alt={project.imageAlt} width={project.imageWidth} height={project.imageHeight} sizes="(max-width: 720px) 85vw, (max-width: 1024px) 70vw, 620px" />
         </div>
       ) : project.visual === "identity" ? (

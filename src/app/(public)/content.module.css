@@ -2,7 +2,7 @@
 .pageHero h1 { max-width: 1000px; margin-top: 2rem; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 1.04; letter-spacing: -.065em; }
 .pageHero h1 em { color: var(--cyan); font-style: normal; }
 .pageHero p:not(:global(.eyebrow)) { max-width: 610px; margin-top: 1.8rem; color: var(--text-dim); font-size: 1.05rem; }
-.projectIndex { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 3.5rem; border-top: 1px solid var(--line-strong); }
+.projectIndex { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 3.5rem; border-top: 1px solid var(--line-strong); }
 .projectIndex a { display: flex; align-items: center; gap: 1rem; min-height: 64px; padding: 1rem; border-bottom: 1px solid var(--line); font-size: .88rem; }.projectIndex a:first-child { padding-left: 0; }
 .projectIndex span { color: var(--muted); font: .65rem var(--font-mono), monospace; }.projectIndex i { margin-left: auto; color: var(--cyan); font-style: normal; }.projectIndex a:hover { color: var(--cyan); background: var(--cyan-soft); }
 .projects { padding-block: 4.5rem; }
