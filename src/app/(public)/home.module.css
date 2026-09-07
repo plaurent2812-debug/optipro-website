@@ -11,7 +11,7 @@
 .projectDock { display: grid; grid-template-columns: 185px 1fr; align-items: center; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); padding-block: 1.5rem; }
 .dockIntro > span { color: var(--muted); font: .6rem var(--font-mono), monospace; letter-spacing: .08em; }
 .dockIntro p { margin-top: .5rem; font-size: .8rem; line-height: 1.5; }
-.projectDock nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.projectDock nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .projectDock nav a { min-width: 0; display: flex; align-items: center; gap: .8rem; padding: .75rem 1rem; border-left: 1px solid var(--line); transition: background 200ms; }
 .projectDock nav a:hover { background: var(--cyan-soft); }
 .projectDock img { flex-shrink: 0; width: 34px; height: 34px; border-radius: .5rem; }

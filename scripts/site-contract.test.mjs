@@ -143,6 +143,16 @@ test("Ro Nutritionniste est présenté comme un prototype web", () => {
   assert.equal(existsSync("public/projects/ro-nutritionniste-site.webp"), true);
 });
 
+test("La Parallaxe est présentée comme un site scientifique publié", () => {
+  const projects = readFileSync("src/data/projects.ts", "utf8");
+
+  assert.match(projects, /slug: "la-parallaxe"/);
+  assert.match(projects, /status: "Site en ligne"/);
+  assert.match(projects, /href: "https:\/\/laparallaxe\.fr"/);
+  assert.equal(existsSync("public/projects/la-parallaxe-cosmos.webp"), true);
+  assert.equal(existsSync("public/projects/la-parallaxe-icon.png"), true);
+});
+
 test("Odysio est présenté sans inventer de disponibilité publique", () => {
   const projects = readFileSync("src/data/projects.ts", "utf8");
 
